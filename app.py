@@ -67,3 +67,21 @@ def joseTrivia():
 
 
 joseTrivia()
+
+
+print(3+7)
+print(3*2)  # =6
+# decimal point notation
+# when an integer is divided by another, the result is not necessarily an integer.
+# The rule in Python is to return a number with a decimal point and a fractional part, even when the result is an integer
+# Values without the decimal point are said to be of type integer or simply int.
+# Values with decimal points and fractional parts are said to be of type floating point or simply float.
+print(5/2)  # = 2.5
+print(4/2)  # = 2.0 not 2
+
+
+# math basically handled using PEMDAS
+print(2 * 3 + 1)  # = 7
+print((3+1) * 3)  # = 12
+print(4.321/3 + 10)  # = 11.440333333333333
+print(4.321 / (3+10))  # = 0.3323846153846154
