@@ -85,3 +85,56 @@ print(2 * 3 + 1)  # = 7
 print((3+1) * 3)  # = 12
 print(4.321/3 + 10)  # = 11.440333333333333
 print(4.321 / (3+10))  # = 0.3323846153846154
+
+
+# To compute 2(the 4th power), you need to use the exponentiation operator **
+print(2**3)  # = 8
+print(2**4)  # = 16
+
+# The // operator in expression a//b returns the integer quotient obtained when integer a is divided by integer b.
+print(14//3)  # = 4 . 3 goes into 14, 4 times
+
+# The % operator in expression a%b computes the remainder obtained when integer a is divided by integer b.
+print(14 % 3)  # = 2 . 2 is the remainder after 3 goes into 14, 4 times.
+
+# how to write f(x) = x + 1
+
+
+def f(x):
+    return x + 1
+
+
+f(3)  # =4
+f(5)  # = 6
+
+# Absolute value of a number value:
+print(abs(-4))  # = 4
+print(abs(4))  # = 4
+print(abs(-3.2))  # = 3.2
+
+# Min Value
+print(min(6, -2, -4, 25))  # = -4
+# Max Value
+print(max(5, -9, 27, 89))  # = 89
+
+# Practice problems
+# A.  The sum of the first five positive integers
+print(1+2+3+4+5)  # = 15
+
+# B. The average age of Sara (age 23), Mark (age 19), and Fatima (age 31)
+print((23+19+31) / 3)
+
+# C.  The number of times 73 goes into 403
+print(403//73)  # = 5
+
+# D. The remainder when 403 is divided by 73
+print(403 % 73)  # = 38
+
+# E. 2 to the 10th power
+print(2**10)  # = 1024
+
+# F. The absolute value of the difference between Sara’s height (54 inches) and Mark’s height (57 inches)
+print(abs(54-57))
+
+# G. The lowest price among the following prices: $34.99, $29.95, and $31.50
+print(min(34.99, 29.95, 31.50))  # = 29.95
