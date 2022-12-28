@@ -219,4 +219,25 @@ not (4 < 3)  # = True
 # <variable> = <expression>
 # variable x can be thought of as a name that enables us to retrieve value 3 later on.
 x = 3
-x  # or print(x)
+x  # or print(x)    = 3
+
+4 * x  # = 12
+
+# An expression involving variables may appear on the right side of an assignment
+counter = 4 * x
+# In statement counter = 4 * x, x is first evaluated to 3,
+# Then the expression 4 * 3 is evaluated to 12, and then 12 gets assigned to variable counter:
+counter  # or print(counter) = 12
+
+# Practice Problems
+# (a) Assign integer value 3 to variable a.
+a = 3
+# (b) Assign 4 to variable b.
+b = 4
+# (c) Assign to variable c the value of expression a * a + b * b
+c = a*a + b*b
+
+# the value of a variable can change
+# variable x is initially 3: print(x) =  3
+x = 7
+x
