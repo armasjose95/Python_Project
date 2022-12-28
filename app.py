@@ -241,3 +241,55 @@ c = a*a + b*b
 # variable x is initially 3: print(x) =  3
 x = 7
 x
+
+
+# Strings
+# a sequence of characters, including blanks, punctuation, and various symbols.
+# A string value is represented as a sequence of characters that is enclosed within quotes:
+'Hello, World!'
+s = "hello"
+s  # = 'hello'
+
+# String Operators
+s == 'hello'  # = true because we assigned variable s to string 'hello'
+t = 'world'
+s != t  # = True because s does NOT EQUAL t
+s == t  # = false. S='hello' and t='world'
+
+# the comparison operators < and > compare strings using the dictionary order:
+s < t  # = true. S comes b4 t
+s > t  # = false. s is before T so not after
+
+# Concatenation
+# the joining of the two strings:
+s + t  # = 'helloworld'
+# ' ' quotes with a space between creates space between strings
+s + ' ' + t  # = 'hello world'
+
+
+# check whether a character appears in a string:
+s = 'hello'
+'h' in s  # = true. 'h' is in hello
+'g' in s  # = false. 'g' is not in hello
+
+
+# Length of a string
+# The length of a string can be computed using the len() function:
+len(s)  # = 5 bcus 'hello' is 5 characters long
+
+# Practice Problems
+s1 = 'ant'
+s2 = 'bat'
+s3 = 'cod'
+# Write Python expressions using s1, s2, and s3 and operators + and * that evaluate to:
+
+# (a) 'ant bat cod'
+s1 + ' ' + s2 + ' ' + s3
+# (b) 'ant ant ant ant ant ant ant ant ant ant '
+(s1 + ' ') * 10
+# (c) 'ant bat bat cod cod cod'
+s1 + ' ' + (s2 + ' ') * 2 + ' ' + (s3 + ' ') * 3
+# (d) 'ant bat ant bat ant bat ant bat ant bat ant bat ant bat '
+(s1 + ' ' + s2 + ' ') * 7
+# (e) 'batbatcod batbatcod batbatcod batbatcod batbatcod '
+((s2 * 2) + s3 + ' ') * 5    # or (s2+s2+s3+' ') * 5
