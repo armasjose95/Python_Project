@@ -256,7 +256,7 @@ t = 'world'
 s != t  # = True because s does NOT EQUAL t
 s == t  # = false. S='hello' and t='world'
 
-# the comparison operators < and > compare strings using the dictionary order:
+# the comparison operators < and > compare strings using the dictionary(alphabetical) order:
 s < t  # = true. S comes b4 t
 s > t  # = false. s is before T so not after
 
@@ -341,3 +341,54 @@ things = ['one', 2, [3, 4]]
 # [3,4] = list
 things[0]  # = 'one'
 things[2]  # = [3,4]
+
+
+# List Operators
+# items in A list may be accessed individually using the indexing operator,
+# just as individual characters can be accessed in a string:
+
+pets[0]  # ='goldfish'
+pets[1]  # ='cat'
+# Negative Indexes for List operators
+pets[-1]  # = 'dog'
+
+# Length of a list
+len(pets)  # = 3
+
+# Adding/Concatenating and multiplying lists
+# Like strings, lists can be “added,” meaning that they can be concatenated.
+
+pets + pets  # = ['goldfish', 'cat', 'dog', 'goldfish', 'cat', 'dog']
+pets * 2  # = ['goldfish', 'cat', 'dog', 'goldfish', 'cat', 'dog']
+
+# Check for an object inside a string
+# IN
+# you can use the in operator in a Boolean expression that evaluates
+'rabbit' in pets  # = false
+'dog' in pets  # = true
+
+# Operators used commonly in lists
+gas = [2.99, 3.49, 2.79, 3.75]
+min(gas)  # = 2.79
+max(gas)  # = 3.75
+sum(gas)  # = 13.02
+
+# Practice Problem 2.6
+# First execute the assignment
+words = ['bat', 'ball', 'barn', 'basket', 'badminton']
+# Now write two Python expressions that evaluate to the first and last, respectively, word in words, in dictionary(a-z) order.
+min(words)  # = 'badminton'
+max(words)  # = 'bat'
+
+
+# Lists Are Mutable, Strings Are Not
+# Lists are mutable and the content of a list can be changed.
+# ex. want to change the type of cat in the list pets
+pets[1] = "Brown cat"
+pets  # or print(pets) = ['goldfish' , 'Brown Cat', 'dog']
+
+# Strings aren't mutable. What that means is that we cannot change the individual characters of a string value.
+# But..We can simply reassign a brand new value to any variable.
+myCat = 'Brown bat'
+myCat = 'Brown cat'
+print(myCat)  # = 'Brown Cat'
