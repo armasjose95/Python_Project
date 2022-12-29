@@ -293,3 +293,51 @@ s1 + ' ' + (s2 + ' ') * 2 + ' ' + (s3 + ' ') * 3
 (s1 + ' ' + s2 + ' ') * 7
 # (e) 'batbatcod batbatcod batbatcod batbatcod batbatcod '
 ((s2 * 2) + s3 + ' ') * 5    # or (s2+s2+s3+' ') * 5
+
+
+# Indexing Operator
+# The individual characters of a string can be accessed using the indexing operator. Starts from 0 -> on.
+s[0]  # = h
+s[1]  # = e
+s[4]  # = o
+
+# Practice Problem 2.5
+z = '0123456789'
+# Now write expressions using string s and the indexing operator that evaluate to:
+# (a) '0'
+z[0]
+# (b) '1'
+z[1]
+# (c) '6'
+z[6]
+# (d) '8'
+z[8]
+# (e) '9'
+z[9]
+
+
+# Negative indexes
+# may be used to access the characters from the back (right side) of the string.
+# The index −1 refers to the last character;
+# so s[-1] evaluates to string 'o'. s[-2] evaluates to 'l'.
+s  # = hello
+s[-1]  # = o
+s[-2]  # = l
+s[-5]  # = h
+
+
+#Lists and Tuples
+# In Python, lists are usually stored in a type of object called a list.
+# A list is a sequence of objects.
+# The objects can be of any type: numbers, strings, even other lists.
+
+pets = ['goldfish', 'cat', 'dog']
+pets  # = ['goldfish' , 'cat', 'dog']
+pets[2]  # = 'dog'
+
+things = ['one', 2, [3, 4]]
+# 'one' = string
+# 2 = integer
+# [3,4] = list
+things[0]  # = 'one'
+things[2]  # = [3,4]
