@@ -392,3 +392,84 @@ pets  # or print(pets) = ['goldfish' , 'Brown Cat', 'dog']
 myCat = 'Brown bat'
 myCat = 'Brown cat'
 print(myCat)  # = 'Brown Cat'
+
+
+# Tuples/Immutable Lists
+# behave like lists except that tuples are immutable.
+# A tuple object contains a sequence of values separated by commas and enclosed in parentheses ( ) instead of brackets [ ]:
+
+days = ('Mon', 'Tue', 'Wed')
+print(days)  # = ('Mon' , 'Tue', 'Wed')
+days = ('Mon', 'Tue', 'Wed', 'Thu')
+days  # = ('Mon' , 'Tue', 'Wed', 'Thu')
+
+# All operators work in tuples as well
+'Fri' in days  # = false
+week = days + ('Fri', 'Sat', 'Sun')
+week  # = ('Mon' , 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')
+len(week)  # = 7
+2*week  # = ('Mon' , 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon' , 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')
+
+days[2]  # = 'Wed'
+
+# Create a one element tuple?
+# add a comma after the first, and only, item to get a one-item tuple object:
+day = ('Mon',)
+type(day)  # = tuple
+
+# List and Tuple Methods
+# There are also functions that are called on lists.
+# Add a string to the list
+
+pets.append('cow')
+pets  # = ['goldfish', 'Brown cat', 'dog', 'cow']
+
+pets.append('dog')
+print(pets)  # = ['goldfish', 'Brown cat', 'dog', 'cow', 'dog']
+
+# append()
+# Append can't be called on it's own, needs to be called on some list.
+# List functions like append are known as methods.
+# List function: COUNT
+pets.count('dog')  # = 2
+
+# remove()
+# To remove the first occurrence of 'dog', we can use the list method remove():
+pets.remove('dog')
+pets  # = ['goldfish', 'Brown cat', 'cow', 'dog']
+
+# reverse()
+# The list method reverse() reverses the order of the objects:
+pets.reverse()
+pets  # = ['dog', 'cow', 'Brown cat', 'goldfish']
+
+# sort()
+# The sort() method sorts the items in the list in increasing order,
+# using the ordering that “naturally” applies to the objects in the list.
+# If the list contains string objects, the order will be lexicographical(i.e., dictionary order(a-z)):
+pets.sort()
+pets  # = ['Brown cat', 'cow', 'dog' , 'goldfish']
+
+nums = [4, 2, 8, 5]
+nums.sort()  # =[2, 4 , 5, 8]
+
+# Practice Problem 2.7
+grades = [9, 7, 7, 10, 3, 9, 6, 6, 2]
+# (a) An expression that evaluates to the number of 7 grades
+grades.count(7)  # = 2
+# (b) A statement that changes the last grade to 4
+grades[-1] = 4
+# or
+grades.remove(2)
+grades.append(4)
+grades  # = [9, 7, 7, 10, 3, 9, 6, 6, 4]
+# (c) An expression that evaluates to the maximum grade
+max(grades)  # = 10
+# (d) A statement that sorts the list grades
+grades.sort()
+grades  # = [3,4,6,6,7,7,9,9,10]
+# (e) An expression that evaluates to the average grade
+averageGrades = sum(grades)/len(grades)
+print(averageGrades)
+
+# The only tuple methods that can be used are count() & index() since tuples are immutable.
