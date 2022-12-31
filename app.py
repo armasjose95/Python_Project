@@ -473,3 +473,21 @@ averageGrades = sum(grades)/len(grades)
 print(averageGrades)
 
 # The only tuple methods that can be used are count() & index() since tuples are immutable.
+
+
+#Objects and Classes
+# In Python, every value, whether a simple integer value (such as 3) or a more complex
+# value (such as the string 'Hello, World!' or the list ['hello', 4, 5]) is stored in memory as an object.
+
+# Object’s type-indicates what kind of values the object can hold and what kind of operations can be performed on the object.
+type(3)  # = int type
+type(3.0)  # = Float type
+type('Hello World')  # = Str Type
+type([1, 2, 3, 4, 5])  # = List Type
+
+# When used on a variable, the type() function will return the type of the object the variable refers to:
+p = 3
+type(p)  # = int type
+
+# Class-refer to types whose values are stored in objects.
+# Because every value in Python is stored in an object, every Python type is a class.
