@@ -1,3 +1,4 @@
+import math
 print('Hello World')
 print('Jose')
 print(48)
@@ -564,3 +565,41 @@ False + False  # = 0 Integer Value
 4 // 2 + 4 % 2  # = 2 Int Value
 # (d) 2 + 3 == 4 or 5 >= 5
 2 + 3 == 4 or 5 >= 5  # = True Boolean Value
+
+
+# Class Methods
+# Pets = Object which is a list
+# Append = Method
+# Pig = 'String'
+pets.append('pig')
+
+
+# Python Standard Library
+# The Standard Library includes modules to support, among others:
+# Network programming
+# Web application programming
+# Graphical user interface (GUI) development
+# Database programming
+# Mathematical functions
+# Pseudorandom number generators
+# Module Math
+
+
+# Module Math
+# The math module is a library of mathematical constants and functions.
+# To use a math module function, the module must first be explicitly imported:
+# import math
+
+math.sqrt(9)
+
+# Practice Problem 2.10
+# Write Python expressions corresponding to the following:
+# (a) The length of the hypotenuse in a right triangle whose other two sides have lengths a and b
+math.sqrt((a**2) + (b**2))
+# (b) The value of the expression that evaluates whether the length of the above hypotenuse is 5
+math.sqrt((a**2) + (b**2)) == (5)
+# (c) The area of a disk of radius a
+math.pi * (a**2)
+# (d) The value of the Boolean expression that checks whether a point with coordinates x
+# and y is inside a circle with center (a, b) and radius r
+(x - a)**2 + (y - b)**2 < r ** 2
