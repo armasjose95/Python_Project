@@ -491,3 +491,76 @@ type(p)  # = int type
 
 # Class-refer to types whose values are stored in objects.
 # Because every value in Python is stored in an object, every Python type is a class.
+
+2 - 3 + 1  # = 0
+# a good developer would use parentheses to clearly indicate her intent:
+(2-3) + 1  # = 0
+
+
+# Practice Problem 2.8
+# In what order are the operators in the following expressions evaluated?
+# (a) 2 + 3 == 4 or a >= 5
+((2+3) == 4) or (a >= 5)  # = False
+# (b) x[1] * -3 < -10 == 0
+(((x[1]) * (-3)) < (-10)) == 0
+#(c) (x[1] * -3 < -10) in [0, True]
+(((x[1]) * (-3)) < (-10)) in [0, True]
+# (d) 2 * 3**2
+2 * (3**2)
+# (e) 4 / 2 in [1, 2, 3]
+(4/2) in [1, 2, 3]
+
+
+# Creating Objects
+# To create an integer object with value 3 (and assign it to variable x), we can use this statement:
+x = 3
+# Python also supports a way to create objects that makes the object type explicit:
+x = int(3)
+print(x)  # = 3
+
+# The function int() is called a constructor; it is used to explicitly instantiate an integer object.
+# The value of the object is determined by the function argument:
+# If no argument is given, a default value is given to the object.
+
+
+x = int()
+print(x)  # = 0
+
+y = float()
+print(y)  # = 0.0
+
+s = str()
+print(s)  # = ' '
+
+z = list()
+print(z)  # = []
+
+
+# Implicit Type Conversions
+# If an algebraic or logical expression involves operands of different types,
+# Python will convert each operand to the type that contains the others.
+
+True + 5  # = 6
+True + 5.0  # = 6.0
+
+
+# Explicit Type Conversions
+# Type conversions can also be done explicitly using the constructor functions.
+
+int(3.4)  # = 3
+int(-3.6)  # = -3
+
+float(3)  # = 3.0
+
+str(2.72)  # = '2.72'
+
+
+# Practice Problems 2.9
+# (a) False + False
+False + False  # = 0 Integer Value
+# (b) 2 * 3**2.0
+2 * 3**2.0  # = 18.0 Float Value
+# (c) 4 // 2 + 4 % 2
+4 // 2 + 4 % 2  # = 2 Int Value
+# (d) 2 + 3 == 4 or 5 >= 5
+2 + 3 == 4 or 5 >= 5  # = True Boolean Value
