@@ -1,3 +1,4 @@
+import fractions
 import math
 print('Hello World')
 print('Jose')
@@ -603,3 +604,58 @@ math.pi * (a**2)
 # (d) The value of the Boolean expression that checks whether a point with coordinates x
 # and y is inside a circle with center (a, b) and radius r
 (x - a)**2 + (y - b)**2 < r ** 2
+
+
+# Module fractions
+# The fractions module makes available a new type of number: the Fraction type.
+
+
+a = fractions.Fraction(3, 4)
+b = fractions.Fraction(1, 2)
+
+print(a)  # = 3/4
+
+a+b
+
+c = a + b
+print(c)
+c  # = Fraction (5,4)
+
+
+# Exercises
+# 2.11 Write Python expressions corresponding to these statements:
+# (a) The sum of negative integers −7 through −1
+sum([-7 + -6 + -5 + -4 + -3 + -2 + -1])  # = -28
+# or
+x = (-7 + -6 + -5 + -4 + -3 + -2 + -1)
+x
+
+# (b) The average age of a group of kids at a summer camp given than 17 are 9 years old, 24 are 10 years old,
+# 21 are 11 years old, and 27 are 12 years old.
+
+campersAge = (17 * 9) + (24 * 10) + (21 * 11) + (27 * 12)
+amountOfCampers = (17 + 24 + 21 + 27)
+campersAge / amountOfCampers  # = 10.65
+
+# (c) 2 to the power −20
+2**-20  # = 9.5367431640625e-07
+# (d) The number of times 61 goes into 4356
+4356 // 61  # = 71
+# (e) The remainder when 4365 is divided by 61
+4356 % 61  # = 25
+
+# 2.12 Start by evaluating, in the interactive shell, the assignment:
+s1 = '-'
+s2 = '+'
+# Now write string expressions involving s1 and s2 and string operators + and * that evaluate to:
+# (a) '- +'
+s1 + s2
+# (b) '- + -'
+s1 + s2 + s1
+# (c) '+ – –'
+s2 + s1 + s1
+# (d) '+ – – + – –'
+s2 + s1 + s1 + s2 + s1 + s1
+# (e) '+––+––+––+––+––+––+––+––+––+––+'
+# (f) '+–+++– –+–+++– –+–+++– –+–+++– –+–+++– –'
+# Try to make your string expressions as succinct as you can.
