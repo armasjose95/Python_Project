@@ -644,6 +644,7 @@ campersAge / amountOfCampers  # = 10.65
 # (e) The remainder when 4365 is divided by 61
 4356 % 61  # = 25
 
+
 # 2.12 Start by evaluating, in the interactive shell, the assignment:
 s1 = '-'
 s2 = '+'
@@ -656,6 +657,34 @@ s1 + s2 + s1
 s2 + s1 + s1
 # (d) '+ – – + – –'
 s2 + s1 + s1 + s2 + s1 + s1
-# (e) '+––+––+––+––+––+––+––+––+––+––+'
-# (f) '+–+++– –+–+++– –+–+++– –+–+++– –+–+++– –'
+# (e) '+ – – + – – + – – + – – + – – + – – + – – + – – + – – + – – +'
+((s2 + (s1*2)) * 10) + s2
+# (f) '+ – + + + – – + – + + + – – + – + + + – – + – + + + – – + – + + + – –'
+(s2 + s1 + (s2 * 3) + (s1 * 2)) * 5
 # Try to make your string expressions as succinct as you can.
+
+
+# 2.13 Start by running, in the shell, the following assignment statement:
+s = 'abcdefghijklmnopqrstuvwxyz'
+# Now write expressions using string s and the indexing operator that evaluate to 'a', 'c', 'z', 'y', and 'q'.
+s[0]  # = a
+s[2]  # = c
+s[25]  # = z or [-1]
+s[24]  # = y or [-2]
+s[16]  # = q or [-10]
+
+
+# 2.14 Start by executing
+s = 'goodbye'
+# Then write a Boolean expression that checks whether:
+# (a) The first character of string s is 'g'
+s[0] == 'g'  # true
+# (b) The seventh character of s is 'g'
+s[6] == 'g'  # false
+# (c) The first two characters of s are 'g' and 'a'
+s[0] == 'g' and s[1] == 'a'  # false
+# (d) The next to last character of s is 'x'
+# (e) The middle character of s is 'd'
+# (f) The first and last characters of string s are equal
+# (g) The last four characters of string s match the string 'tion'
+# Note: These seven statements should evaluate to True, False, False, False, True, False, and False, respectively.
