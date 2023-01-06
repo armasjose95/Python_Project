@@ -684,7 +684,37 @@ s[6] == 'g'  # false
 # (c) The first two characters of s are 'g' and 'a'
 s[0] == 'g' and s[1] == 'a'  # false
 # (d) The next to last character of s is 'x'
+s[-2] == 'x'  # = false
 # (e) The middle character of s is 'd'
+s[3] == 'd'  # = true
 # (f) The first and last characters of string s are equal
+s[0] == s[-1]  # false
 # (g) The last four characters of string s match the string 'tion'
+s[-4:] == 'tion'  # false
 # Note: These seven statements should evaluate to True, False, False, False, True, False, and False, respectively.
+
+
+# 2.15 Write Python expressions corresponding to these statements:
+# (a) The number of characters in the word "anachronistically" is 1 more than the number
+# of characters in the word "counterintuitive."
+a = 'anachronistically'
+c = 'counterintuitive'
+len(a)  # = 17
+len(c)  # = 16
+len(a) == len(c) + 1  # = true
+# (b) The word "misinterpretation" appears earlier in the dictionary than the word "misrepresentation."
+b = ['misrepresentation', 'misinterpretation']
+b.sort()
+print(b)  # = ['misinterpretation', 'misrepresentation']
+# (c) The letter "e" does not appear in the word "floccinaucinihilipilification."
+f = 'floccinaucinihilipilification'
+'e' not in f  # = true     or 'e' in f = false
+# (d) The number of characters in the word "counterrevolution" is equal to the sum of the
+# number of characters in words "counter" and "resolution."
+c1 = 'counterrevolution'
+c2 = 'counter'
+c3 = 'resolution'
+len(c1)  # = 17
+len(c2)  # = 7
+len(c3)  # = 10
+len(c1) == (len(c2) + len(c3))
