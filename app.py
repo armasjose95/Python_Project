@@ -760,6 +760,19 @@ len(inventory) > (len(fullName) * 5)  # = false
 c <= 24
 # (d) 6.75 is between the values of integers a and b.
 (a < 6.75) and (6.75 < b)  # or (a < 6.75) and (b > 6.75)
-a < 6.75 < b
+a < 6.75 < b  # = true or
+b > 6.75 > a
 # (e) The length of string middle is larger than the length of string first and smaller than the length string last.
+len(first) < len(middle) < len(last)  # = False or
+len(last) > len(middle) > len(first)
 # (f) Either the list inventory is empty or it has more than 10 objects in it.
+len(inventory) == 0 or len(inventory) > 10
+
+
+# 2.18 Write Python statements corresponding to the following:
+# (a) Assign to variable flowers a list containing strings 'rose', 'bougainvillea',
+# 'yucca', 'marigold', 'daylilly', and 'lilly of the valley'.
+# (b) Write a Boolean expression that evaluates to True if string 'potato' is in list flowers, and evaluate the expression.
+# (c) Assign to list thorny the sublist consisting of the first three objects in list flowers.
+# (d) Assign to list poisonous the sublist consisting of just the last object of list flowers.
+# (e) Assign to list dangerous the concatenation of lists thorny and poisonous.
