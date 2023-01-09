@@ -733,5 +733,33 @@ print('average:', c)
 inventory = ['paper', 'staples', 'pencils']
 print(inventory)
 # (d) Assign to variables first, middle and last the strings 'John', 'Fitzgerald', and 'Kennedy'.
+first = 'John'
+middle = "Fitzgerald"
+last = 'Kennedy'
+print(first, middle, last)
 # (e) Assign to variable fullname the concatenation of string variables first, middle,
 # and last. Make sure you incorporate blank spaces appropriately.
+fullName = (first + ' ' + middle + ' ' + last)
+print(fullName)
+
+
+# 2.17 Using variables defined in Exercise 2.16, write Boolean expressions corresponding to
+# the following logical statements and evaluate the expressions:
+# (a) The sum of 17 and −9 is less than 10.
+(17 + -9) < 10  # = True
+d = 17
+e = -9
+f = (d + e) < 10  # = True
+print(f)
+# (b) The length of list inventory is more than five times the length of string fullname.
+len(inventory)  # = 3
+len(fullName)  # = 23
+len(fullName) * 5  # = 115
+len(inventory) > (len(fullName) * 5)  # = false
+# (c) c is no more than 24.
+c <= 24
+# (d) 6.75 is between the values of integers a and b.
+(a < 6.75) and (6.75 < b)  # or (a < 6.75) and (b > 6.75)
+a < 6.75 < b
+# (e) The length of string middle is larger than the length of string first and smaller than the length string last.
+# (f) Either the list inventory is empty or it has more than 10 objects in it.
