@@ -771,8 +771,45 @@ len(inventory) == 0 or len(inventory) > 10
 
 # 2.18 Write Python statements corresponding to the following:
 # (a) Assign to variable flowers a list containing strings 'rose', 'bougainvillea',
-# 'yucca', 'marigold', 'daylilly', and 'lilly of the valley'.
+# 'yucca', 'marigold', 'daylily', and 'lily of the valley'.
+flowers = ['rose', 'bougainvillea', 'yucca',
+           'marigold', 'daylily', 'lily of the valley']
 # (b) Write a Boolean expression that evaluates to True if string 'potato' is in list flowers, and evaluate the expression.
+'potato' in flowers  # = false
 # (c) Assign to list thorny the sublist consisting of the first three objects in list flowers.
+#thorny = ['rose', 'bougainvillea', 'yucca']
+thorny = [flowers[0], flowers[1], flowers[2]]  # or
+thorny = flowers[0:3]
+print(thorny)  # = ['rose', 'bougainvillea', 'yucca']
 # (d) Assign to list poisonous the sublist consisting of just the last object of list flowers.
+poisonous = flowers[-1]
+print(poisonous)  # = lilly of the valley
 # (e) Assign to list dangerous the concatenation of lists thorny and poisonous.
+dangerous = [thorny] + str(poisonous)
+print(dangerous)
+
+dangerous = str[thorny] + str(poisonous)
+print(dangerous)
+
+
+# 2.19 Start by assigning to variable answers a list containing an arbitrary sequence of strings 'Y' and 'N'. For example:
+answers = ['Y', 'N', 'N', 'Y', 'N', 'Y', 'Y', 'Y', 'N', 'N', 'N']
+# Write Python statements corresponding to the following:
+# (a) Assign to variable numYes the number of occurrences of 'Y' in list answers.
+numYes = answers.count('Y')
+print(numYes)
+# (b) Assign to variable numNo the number of occurrences of 'N' in list answers.
+numNo = answers.count('N')
+print(numNo)
+# (c) Assign to variable percentYes the percentage of strings in answers that are 'Y'.
+#percentYes = (numYes/len(answers)) * 100
+# print(percentYes)
+# or to get actual %:
+percentYes = (numYes/len(answers))
+print("{0:.0%}".format(percentYes))
+# (d) Sort the list answers.
+answers.sort()
+print(answers)
+# (e) Assign to variable f the index of the first occurrence of 'Y' in sorted list answers.
+f = answers.index('Y')
+print(f)
