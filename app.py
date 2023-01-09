@@ -717,4 +717,21 @@ c3 = 'resolution'
 len(c1)  # = 17
 len(c2)  # = 7
 len(c3)  # = 10
+# or len(counterrevolution) == (len(counter) + len(resolution))
 len(c1) == (len(c2) + len(c3))
+
+
+# 2.16 Write the corresponding Python assignment statements:
+# (a) Assign 6 to variable a and 7 to variable b.
+a = 6
+b = 7
+# (b) Assign to variable c the average of variables a and b.
+c = (a+b) / 2
+c  # = 6.5
+print('average:', c)
+# (c) Assign to variable inventory the list containing strings 'paper', 'staples', and 'pencils'.
+inventory = ['paper', 'staples', 'pencils']
+print(inventory)
+# (d) Assign to variables first, middle and last the strings 'John', 'Fitzgerald', and 'Kennedy'.
+# (e) Assign to variable fullname the concatenation of string variables first, middle,
+# and last. Make sure you incorporate blank spaces appropriately.
