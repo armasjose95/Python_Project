@@ -813,3 +813,62 @@ print(answers)
 # (e) Assign to variable f the index of the first occurrence of 'Y' in sorted list answers.
 f = answers.index('Y')
 print(f)
+
+
+# 2.20 Write an expression involving a three-letter string s that evaluates to a string whose
+# characters are the characters of s in reverse order. If s is 'top', the expression should evaluate to 'pot'.
+s = 'top'
+s[::-1]
+print(s)  # = pot or
+print(s[-1]+s[-2]+s[-3])
+
+
+# 2.21 Write an expression involving strings s and t containing the last name and the first
+# name, respectively, of a person that evaluates to the person’s initials. If the two strings con-
+# tained the first and last name of this book’s author, the expression would evaluate to 'LP'.
+
+s = 'Jose'
+t = 'Armas'
+
+initials = s[0] + t[0]
+print(initials)
+
+
+# 2.22 The range of a list of numbers is the largest difference between any two numbers in the
+# list. Write a Python expression that computes the range of a list of numbers lst. If the list
+# lst is, say, [3, 7, -2, 12], the expression should evaluate to 14 (the difference between
+# 12 and −2).
+
+numList = [2, 5, 7, 10]
+differenceOfNum = max(numList) - min(numList)
+print(differenceOfNum)
+
+
+# 2.23 Start by assigning to variables monthsL and monthsT a list and a tuple, respectively,
+# both containing strings 'Jan', 'Feb', 'Mar', and 'May', in that order. Then attempt the
+# following with both containers:
+
+monthsL = ['Jan', 'Feb', 'Mar', 'May']
+monthsT = ('Jan', 'Feb', 'Mar', 'May')
+
+# (a) Insert string 'Apr' between 'Mar' and 'May'.
+monthsL.insert(3, 'Apr')
+print(monthsL)  # = ['Jan', 'Feb', 'Mar', 'Apr', 'May']
+
+# (b) Append string 'Jun'.
+monthsL.append('Jun')
+print(monthsL)  # = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+
+# (c) Pop the container.
+monthsL.pop()
+print(monthsL)  # = ['Jan', 'Feb', 'Mar', 'Apr', 'May']
+# (d) Remove the second item in the container.
+monthsL.remove('Feb')
+print(monthsL)  # = ['Jan', 'Mar', 'Apr', 'May']
+# (e) Reverse the order of items in the container.
+monthsL.reverse()
+print(monthsL)  # = ['May', 'Apr', 'Mar', 'Jan']
+# (f) Sort the container.
+monthsL.sort()
+print(monthsL)  # = ['Apr', 'Jan', 'Mar', 'May']
+# Note: when attempting these on tuple monthsT you should expect errors.
