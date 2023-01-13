@@ -872,3 +872,40 @@ print(monthsL)  # = ['May', 'Apr', 'Mar', 'Jan']
 monthsL.sort()
 print(monthsL)  # = ['Apr', 'Jan', 'Mar', 'May']
 # Note: when attempting these on tuple monthsT you should expect errors.
+
+
+# 2.24 Start by assigning to variable grades a list containing an arbitrary sequence of grades
+# (strings) 'A', 'B', 'C', 'D', and 'F'.
+
+# Write a sequence of Python statements that ultimately produce a list count that contains
+# the numbers of occurrences of each grade in list grades in alphabetic order.
+
+grades = ['B', 'B', 'F', 'C', 'B', 'A', 'A', 'D', 'C', 'D', 'A', 'A', 'B']
+
+count = [grades.count('A'), grades.count('B'), grades.count(
+    'C'), grades.count('D'), grades.count('F')]
+
+print(count)  # = [4, 4, 2, 2, 1]
+
+
+# 2.25Repeat Problem 2.24 with the following modification: variable grades is defined to be of type tuple rather than of type list:
+gradesTwo = ('B', 'B', 'F', 'C', 'B', 'A', 'A', 'D', 'C', 'D', 'A', 'A', 'B')
+# Variable count should still refer to a list.
+
+countTwo = (gradesTwo.count('A'), gradesTwo.count('B'), gradesTwo.count(
+    'C'), gradesTwo.count('D'), gradesTwo.count('F'))
+
+print(countTwo)  # = (4, 4, 2, 2, 1)
+
+
+# 2.26 #A dartboard of radius 10 and the wall it is hanging on are represented using the two-
+# dimensional coordinate system, with the board’s center at coordinate (0, 0). Variables x and
+# y store the x- and y-coordinate of a dart hit. Write an expression using variables x and y
+# that evaluates to True if the dart hits (is within) the dartboard, and evaluate the expression
+# for these dart coordinates:
+r = 10
+(x, y) = (0, 0)
+(x - a)**2 + (y - b)**2
+#(b) (10, 10)
+# (c) (6, −6)
+# (d) (−7, 8)
