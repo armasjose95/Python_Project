@@ -904,8 +904,82 @@ print(countTwo)  # = (4, 4, 2, 2, 1)
 # that evaluates to True if the dart hits (is within) the dartboard, and evaluate the expression
 # for these dart coordinates:
 r = 10
+#(a) (0, 0)
 (x, y) = (0, 0)
-(x - a)**2 + (y - b)**2
+
+(x - a)**2 + (y - b)**2 < (r ** 2)
 #(b) (10, 10)
+r = 10
+(x, y) = (10, 10)
+landed = ((x-a)**2) + ((y - b)**2) < (r ** 2)
+print(landed)
 # (c) (6, −6)
 # (d) (−7, 8)
+
+
+# 2.27 A ladder put up right against a wall will fall over unless put up at a certain angle less
+# than 90 degrees. Given variables length and angle storing the length of the ladder and the
+# angle that it forms with the ground as it leans against the wall, write a Python expression
+# involving length and angle that computes the height reached by the ladder. Evaluate the
+# expression for these values of length and angle:
+
+# (a) 16 feet and 75 degrees
+length = 16
+angle = 75
+
+
+degree = math.pi * angle/180
+height = length * math.sin(degree)
+print(height)  # = 15.45
+
+# (b) 20 feet and 0 degrees
+length = 20
+angle = 0
+
+degree = math.pi * angle/180
+height = length * math.sin(degree)
+print(height)  # = 0.0
+
+
+# (c) 24 feet and 45 degrees
+length = 24
+angle = 45
+
+degree = math.pi * angle/180
+height = length * math.sin(degree)
+print(height)  # = 16.97
+
+# (d) 24 feet and 80 degrees
+length = 24
+angle = 80
+
+degree = math.pi * angle/180
+height = length * math.sin(degree)
+print(height)  # = 23.64
+
+# Note: You will need to use the trig formula:
+
+# height = length ∗ sin(angle)
+
+# The math module sin() function takes its input in radians. You will thus need to convert
+# the angle given in degrees to the angle given in radians using:
+
+# radians = π ∗ degrees / 180
+
+
+# 2.28 Write the relevant Python expression or statement, involving a list of numbers lst
+# and using list operators and methods for these specifications:
+
+lst = [1, 2, 3, 4, 5, 6]
+
+# (a) An expression that evaluates to the index of the middle element of lst
+middleElement = (len(lst)) // 2
+# = [3] which is #4 because middle element is rightmost of the 2 middle elements
+print(middleElement)
+
+# (b) An expression that evaluates to the middle element of lst
+
+# (c) A statement that sorts the list lst in descending order
+# (d) A statement that removes the first number of list lst and puts it at the end
+# Note: If a list has even length, then the middle element is defined to be the rightmost of the
+# two elements in the middle of the list.
