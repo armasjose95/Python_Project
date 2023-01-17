@@ -971,15 +971,58 @@ print(height)  # = 23.64
 # and using list operators and methods for these specifications:
 
 lst = [1, 2, 3, 4, 5, 6]
+lstTwo = [1, 2, 3, 4, 5]
+
 
 # (a) An expression that evaluates to the index of the middle element of lst
 middleElement = (len(lst)) // 2
 # = [3] which is #4 because middle element is rightmost of the 2 middle elements
-print(middleElement)
+print(middleElement)  # = 3
+
+middleElementTwo = (len(lstTwo)) // 2
+print(middleElementTwo)  # = 2 because #3 is the middle element
 
 # (b) An expression that evaluates to the middle element of lst
-
+(lst[middleElement])  # = 4
+(lst[middleElementTwo])  # = 3
 # (c) A statement that sorts the list lst in descending order
+lst.reverse()
+print(lst)
+
+lstTwo.reverse()
+print(lstTwo)
+
+# another example
+aLost = [2, 5, 0, 3]
+aLost.sort()
+print(aLost)
+aLost.reverse()
+print(aLost)
+
+
+aLost.sort(reverse=True)
+print(aLost)
+
+
 # (d) A statement that removes the first number of list lst and puts it at the end
+lst.remove(1)  # = 1
+print(lst)  # = [2,3,4,5,6]
+lst.append(1)
+print(lst)  # = [2,3,4,5,6,1]
+# or faster way
+lst.append(lst.pop(0))
+print(lst)  # = [2,3,4,5,6,1]
+
 # Note: If a list has even length, then the middle element is defined to be the rightmost of the
 # two elements in the middle of the list.
+
+
+# 2.29 Add one or more pairs of parentheses to each expression so that it evaluates to True.
+# For each expression, explain in what order the operators were evaluated.
+# (a) 0 == 1 == 2
+(0) == (1 == 2)  # = true
+(0) == (1 == 25)
+# (b) 2 + 3 == 4 + 5 == 7
+((2) + (3 == 4) + 5) == 7  # = true
+# (c) 1 < -1 == 3 > 4
+(1 < -1) == (3 > 4)  # = true
