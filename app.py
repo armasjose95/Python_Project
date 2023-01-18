@@ -1085,3 +1085,44 @@ carList.clear()
 print(carList)  # - []
 
 print(cars)  # = ['BMW', 'Jeep', 'Mazda', 'KIA']
+
+
+# Chapter 3
+# Python program is a sequence of Python statements that are executed in order.
+
+line1 = 'Hello Python developer'  # assignment statements
+line2 = 'Welcome to the world of python'
+print(line1)
+print(line2)
+
+# A module is simply a file containing Python code. Every file containing Python code
+# and whose file name ends in .py is a Python module.
+
+# print()
+# This function prints, within the interactive shell, whatever argument is given to it.
+# each print() statement "printed" its argument on a separate line.
+
+print(0)  # = 0
+print([0, 0, 0])  # = [0,0,0]
+# A string argument is printed without the quotes:
+print('zero')  # = zero
+# If the input argument contains an expression, the expression is evaluated and the result is printed:
+x = 0
+print(x)  # = 0
+
+
+# Interactive Input with input()
+# Often an executing program needs to interact with the user.
+# The input() function is used or that purpose. It is always used on the right side of an assignment statement, as in:
+x = input('Enter your first name: ')
+# 1. it will first print its input argument (string 'Enter your first name: ') in the shell:
+# 2. then it will interrupt the execution and wait for the user to type something at the key-board.
+# 3. user types something and hits the Enter/Return key on her keyboard, the execution will resume
+# and whatever the user has typed will be assigned to variable name:
+print(x)
+
+first = input('Enter your first name: ')
+last = input('Enter your last name: ')
+line1 = 'Hello ' + first + ' ' + last + '...'
+print(line1)  # = Hello Jose Armas...
+print('Welcome to the world of Python!')
