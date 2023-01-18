@@ -556,6 +556,11 @@ float(3)  # = 3.0
 
 str(2.72)  # = '2.72'
 
+# = ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+list('hello world')
+
+('hello world'.split())  # = ['hello', 'world']
+
 
 # Practice Problems 2.9
 # (a) False + False
@@ -1026,3 +1031,57 @@ print(lst)  # = [2,3,4,5,6,1]
 ((2) + (3 == 4) + 5) == 7  # = true
 # (c) 1 < -1 == 3 > 4
 (1 < -1) == (3 > 4)  # = true
+
+
+# 2.30 Using an example of your own, explicitly convert some string to a list. Describe, in
+# your own words, the behavior of the list constructor on a string input.
+
+someString = 'Spider'
+
+# = List of Characters =['S', 'p', 'i', 'd', 'e', 'r']
+print(f'List of Characters ={list(someString)}')
+
+secondString = 'Man'
+print(list(secondString))  # = ['M', 'a', 'n']
+
+anotherList = 'Spider Man'
+# List of Words =['Spider', 'Man']
+print(f'List of Words ={anotherList.split()}')
+
+secondList = 'Bat Man'
+print((secondList.split()))  # = ['Bat', 'Man']
+
+
+# 2.31 In this chapter we have covered some, but not all, methods of class list. Using the
+# following interactive session as an aid, explain in your own words what the list methods extend(), copy(), and clear() do.
+
+# The extend() method adds the specified list elements (or any iterable) to the end of the current list.
+list2 = [2, 3, 4]
+list2.extend([5, 6])
+print(list2)  # = [2, 3, 4, 5, 6]
+
+carList = ['BMW', 'Jeep']
+otherCars = ['Mazda', 'KIA']
+carList.extend(otherCars)
+print(carList)  # = ['BMW', 'Jeep', 'Mazda', 'KIA']
+
+
+# The copy() method returns a copy of the specified list.
+list3 = list2.copy()
+print(list3)  # = [2, 3, 4, 5, 6]
+
+cars = carList.copy()
+print(cars)  # = ['BMW', 'Jeep', 'Mazda', 'KIA']
+
+
+# The clear() method removes all the elements from a list.
+list2.clear()
+print(list2)  # = []
+
+# Still keeps any copy of original list even if it was cleared
+print(list3)  # = [2, 3, 4, 5, 6]
+
+carList.clear()
+print(carList)  # - []
+
+print(cars)  # = ['BMW', 'Jeep', 'Mazda', 'KIA']
