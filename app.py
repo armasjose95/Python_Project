@@ -1126,3 +1126,48 @@ last = input('Enter your last name: ')
 line1 = 'Hello ' + first + ' ' + last + '...'
 print(line1)  # = Hello Jose Armas...
 print('Welcome to the world of Python!')
+
+
+# The input() function will always treat whatever the user types as a string.
+
+h = input('Enter a value for x: ')  # we entered in 5
+
+# The Python interpreter treats the value entered as a string '5', not integer 5.
+h == 5  # = false
+h == '5'  # = true
+
+
+# Function eval()
+# If you expect the user to enter a value that is not a string, you need to explicitly ask Python
+# to evaluate what the user types as a Python expression using the eval() function.
+
+# The function eval() takes a string as input and evaluates the string as if it were a Python expression.
+
+eval('3')  # = 3
+eval('3 + 4')  # = 7
+eval('len([3,5,7,9])')  # = 4
+
+
+# The function eval() can be used together with the function input() when we expect the
+# user to type an expression (a number, a list, etc.) when requested.
+# All we need to do is wrap the eval() function around the input() function:
+# The effect is that whatever the user types will be evaluated as an expression.
+
+x = eval(input('Enter a value for x: '))  # enter 5
+
+x == 5  # = True
+x == '5'  # = False
+
+
+# Practice Problem 3.1
+# Implement a program that requests the current temperature in degrees Fahrenheit from the
+# user and prints the temperature in degrees Celsius using the formula
+
+# celsius = 5/9(fahrenheit − 32)
+
+
+# entered in 50
+fahr = eval(input('Enter the temperature in degrees Fahrenheit: '))
+
+cels = fractions.Fraction(5, 9) * (fahr - 32)
+print('The temperature in degrees Celsius is', cels)
