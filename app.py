@@ -1171,3 +1171,15 @@ fahr = eval(input('Enter the temperature in degrees Fahrenheit: '))
 
 cels = fractions.Fraction(5, 9) * (fahr - 32)
 print('The temperature in degrees Celsius is', cels)
+
+
+# 3.2 Execution Control Structures
+
+# If Statement-is used to implement conditional execution.
+
+
+temp = eval(input('Enter the current temperature: '))
+if temp > 86:
+    print('It is hot!')
+    print('Bring some water!')
+print('Goodbye')
