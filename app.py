@@ -1177,9 +1177,53 @@ print('The temperature in degrees Celsius is', cels)
 
 # If Statement-is used to implement conditional execution.
 
+# prints 2 statements only if > 86
+# print 'Goodbye!' before terminating, whether or not the temperature input by the user is > 86
 
 temp = eval(input('Enter the current temperature: '))
 if temp > 86:
     print('It is hot!')
-    print('Bring some water!')
+    print('Drink water!')
 print('Goodbye')
+
+
+# In general, the format of an if statement is:
+
+# The first line of an if statement consists of the if keyword, followed by Boolean expression
+# Below the first line and indented with respect to
+# the if keyword will be the block of code that is executed if condition evaluates to True.
+# Whether the indented code has been executed, the execution continues
+# with the Python statement <non-indented statement> directly below, and with the same
+# indentation as, the first line of the if statement.
+
+# if <condition>:
+#   <indented code block>
+# <non-indented statement>
+
+
+# Translate these conditional statements into Python if statements:
+# (a) If age is greater 62, print 'You can get your pension benefits'.
+age = eval(input('How old are you?: '))
+if age > 62:
+    print('You can get your pension benefits')
+
+
+# (b) If name is in list ['Musial', 'Aaraon', 'Williams', 'Gehrig', 'Ruth'], print 'One of the top 5 baseball players, ever!'.
+
+name = eval(input('Your name?: '))
+if name in ['Musial', 'Aaraon', 'Williams', 'Gehrig', 'Ruth']:
+    print('One of the top 5 baseball players, ever!')
+
+
+# (c) If hits is greater than 10 and shield is 0, print 'You are dead...'.
+
+hits = eval(input('How many hits do you have?: '))
+shield = eval(input('Your shield level?: '))
+if hits > 10 and shield == 0:
+    print('You are dead...')
+
+# (d) If at least one of the Boolean variables north, south, east, and west is True, print 'I can escape.'.
+
+direction = input('Which direction are you heading?: ')
+if direction in 'North' or 'South' or 'East' or 'West':
+    print('I can escape.')
