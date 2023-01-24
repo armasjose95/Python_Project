@@ -1210,7 +1210,7 @@ if age > 62:
 
 # (b) If name is in list ['Musial', 'Aaraon', 'Williams', 'Gehrig', 'Ruth'], print 'One of the top 5 baseball players, ever!'.
 
-name = eval(input('Your name?: '))
+name = input('Your name?: ')
 if name in ['Musial', 'Aaraon', 'Williams', 'Gehrig', 'Ruth']:
     print('One of the top 5 baseball players, ever!')
 
@@ -1227,3 +1227,62 @@ if hits > 10 and shield == 0:
 direction = input('Which direction are you heading?: ')
 if direction in 'North' or 'South' or 'East' or 'West':
     print('I can escape.')
+
+
+# Two-Way Decisions
+# We may need to perform one action when the condition is true and another if the condition is false.
+
+temp2 = eval(input('Enter the current temperature: '))
+
+if temp2 > 86:
+    print('It is hot!')
+    print('Drink water!')
+else:
+    print('Not too hot.')
+    print('Might need a jacket!')
+print('Goodbye.')
+
+
+# if <condition>:
+#   <indented code block 1>
+# else:
+#   <indented code block 2>
+# <non-indented statement>
+
+
+# Practice Problem 3.3
+# Translate these into Python if/else statements:
+# (a) If year is divisible by 4, print 'Could be a leap year.'; otherwise print 'Definitely not a leap year.'
+
+year = eval(input('What year is it?: '))
+if year % 4 == 0:
+    print('Could be a leap year.')
+else:
+    print('Definitely not a leap year.')
+
+
+# (b) If list ticket is equal to list lottery, print 'You won!'; else print 'Better luck next time...'
+ticket = [12, 1, 13, 14]
+lottery = [12, 1, 13, 14]
+
+if ticket == lottery:
+    print('You won!')
+else:
+    print('Better luck next time!')
+
+
+# Practice Problem 3.4
+# Implement a program that starts by asking the user to enter a login id (i.e., a string). The
+# program then checks whether the id entered by the user is in the list ['joe', 'sue',
+# 'hanna', 'sophie'] of valid users. Depending on the outcome, an appropriate message
+# should be printed. Regardless of the outcome, your function should print 'Done.' before
+# terminating.
+
+loginID = input('Please enter your login ID: ')
+logins = ['joe', 'sue', 'hanna', 'sophie']
+
+if loginID in logins:
+    print('You are in!')
+else:
+    print('User unknown')
+print('Done.')
