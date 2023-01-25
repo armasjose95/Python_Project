@@ -1286,3 +1286,69 @@ if loginID in logins:
 else:
     print('User unknown')
 print('Done.')
+
+
+# Iteration Structures
+# For Loop Statement
+# Can print every character in a string or every object in a list
+# char is a variable name.
+# The for loop statement will repeatedly assign characters of string name to variable char.
+
+myName = input('Enter a name: ')
+print('The name spelled out: ')
+
+for char in myName:
+    print(char)
+
+# =
+# J
+# o
+# s
+# e
+
+
+# The for loop can also be used to iterate over the items of a list.
+# The for loop executes the indented section print(animal) three times, once for each
+# value of animal; the value of animal is first 'fish', then 'cat', and finally 'dog',
+# animal is a variable name
+
+animals = ['fish', 'cat', 'dog']
+for animal in animals:
+    print(animal)
+
+
+# =
+# fish
+# cat
+# dog
+
+
+# In general, the for loop statement has this format:
+# for <variable> in <sequence>:
+#   <indented code block >
+# <non-indented code block>
+
+
+# Nesting Control Flow Structures
+
+phrase = input('Enter a phrase: ')
+
+for vowels in phrase:
+    if vowels in 'aeoiuAEIOU':
+        print(vowels)
+
+
+# Practice Problem 3.5
+# Implement a program that requests from the user a list of words (i.e., strings) and then prints
+# on the screen, one per line, all four-letter strings in the list.
+
+
+wordList = eval(input('Enter a word list: '))
+
+for fourLetterWords in wordList:
+    if len(fourLetterWords) == 4:
+        print(fourLetterWords)
+
+# =
+# stop
+# post
