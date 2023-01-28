@@ -1344,6 +1344,8 @@ for vowels in phrase:
 
 
 wordList = eval(input('Enter a word list: '))
+# Enter a word list: ['stop', 'desktop', 'top', 'post']
+
 
 for fourLetterWords in wordList:
     if len(fourLetterWords) == 4:
@@ -1352,3 +1354,128 @@ for fourLetterWords in wordList:
 # =
 # stop
 # post
+
+
+# Function Range
+# It is often necessary to iterate over a sequence of numbers in a given range, even if the list of numbers is not explicitly given.
+# range() can be used together with the for loop to iterate over a sequence of numbers in a given range.
+
+for i in range(5):
+    print(i)
+
+# =
+# 0
+# 1
+# 2
+# 3
+# 4
+
+
+# Practice Problem 3.6
+# Write the for loop that will print these sequences of numbers, one per line, in the interactive shell.
+# (a) Integers from 0 to 9 (i.e., 0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+for i in range(10):
+    print(i)
+
+
+# =
+# 0
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+
+# (b) Integers from 0 to 1 (i.e., 0, 1)
+
+for i in range(2):
+    print(i)
+
+
+# =
+# 0
+# 1
+
+# function call range(start,end)
+# If we would like the sequence to start at a nonzero number start and end before number end, we make the function call range(start,end).
+
+for i in range(2, 5):
+    print(i)
+
+# =
+# 2
+# 3
+# 4
+
+
+# function call range(start, end, step)
+# In order to generate sequences that use a step size other than 1, a third argument can be used.
+# The function call range(start, end, step) can be used to iterate over the sequence of
+# integers starting at start, using a step size of step and ending before end.
+
+for i in range(1, 14, 3):
+    print(i)
+
+# =
+# 0
+# 3
+# 6
+# 9
+# 12
+# The sequence printed by the for loop starts at 1, uses a step size of 3, and ends before 14. Therefore it will print 1, 4, 7, 10, and 13.
+
+
+# Write the for loop that will print the following sequences of numbers, one per line.
+# (a) Integers from 3 up to and including 12
+for i in range(3, 13):
+    print(i)
+
+# =
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+# 10
+# 11
+# 12
+
+# (b) Integers from 0 up to but not including 9, but with a step of 2 instead of the default of 1 (i.e., 0, 2, 4, 6, 8)
+for i in range(0, 10, 2):
+    print(i)
+
+# =
+# 0
+# 2
+# 4
+# 6
+# 8
+
+# (c) Integers from 0 up to but not including 24 with a step of 3
+for i in range(0, 24, 3):
+    print(i)
+
+# =
+# 0
+# 3
+# 6
+# 9
+# 12
+# 15
+# 18
+# 21
+
+# (d) Integers from 3 up to but not including 12 with a step of 5
+for i in range(3, 12, 5):
+    print(i)
+
+# =
+# 3
+# 8
