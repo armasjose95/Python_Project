@@ -1479,3 +1479,47 @@ for i in range(3, 12, 5):
 # =
 # 3
 # 8
+
+
+# def() function
+# After the function definition statement has been executed, function f() can be used.
+
+def f(x):
+    result = (x**2) + 1
+    return result
+
+
+f(9)
+# = 82
+
+
+def funkyFunc(x):
+    res = 3 * f(3) + 4
+    return res
+
+
+funkyFunc(3)
+# = 34
+
+
+# The Python function definition statement has this general format:
+
+# def <function name> (<0 or more variables>):
+#   <indented function body>
+
+
+# If a function is to return a value, then the return statement is used to specify the value to be returned.
+
+
+# Practice Problem 3.8
+# Define, directly in the interactive shell, function perimeter() that takes, as input,
+# the radius of a circle (a nonnegative number) and returns the perimeter of the circle. A sample usage is:
+# perimeter(1)
+# = 6.283185307179586
+
+
+def perimeter(radius):
+    return 2 * math.pi * radius
+
+
+perimeter(1)  # = 6.283185307179586
