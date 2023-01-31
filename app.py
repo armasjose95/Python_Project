@@ -1331,11 +1331,16 @@ for animal in animals:
 
 # Nesting Control Flow Structures
 
-phrase = input('Enter a phrase: ')
+phrase = input('Enter a phrase: ')  # Hello world
 
 for vowels in phrase:
     if vowels in 'aeoiuAEIOU':
         print(vowels)
+
+
+# e
+# o
+# o
 
 
 # Practice Problem 3.5
@@ -1523,3 +1528,58 @@ def perimeter(radius):
 
 
 perimeter(1)  # = 6.283185307179586
+
+
+# More than one argument?
+# we need to have a distinct variable name for every input argument.
+
+def squareSum(xAxis, yAxis):
+    return (xAxis**2) + (yAxis**2)
+
+
+squareSum(2, 2)
+# = 8
+
+
+# Practice Problem 3.9
+# Implement function average() that takes two numbers as input and returns the average of
+# the numbers. You should write your implementation in a module you will name average.py.
+# A sample usage is:
+# >>> average(1,3)
+# 2.0
+
+def average(firstNum, secondNum):
+    return (firstNum + secondNum) / 2
+
+
+average(1, 3)  # = 2
+
+
+# Practice Problem 3.10
+# Implement function noVowel() that takes a string s as input and returns True if no character
+# in s is a vowel, and False otherwise (i.e., some character in s is a vowel).
+
+def noVowel(s):
+    for vowels in s:
+        if vowels in 'aeiouAEIOU':
+            return False
+    return True
+
+
+noVowel('crypt')  # true
+noVowel('cwm')  # true
+noVowel('car')  # false
+
+
+# Practice Problem 3.11
+# Implement function allEven() that takes a list of integers and returns True if all integers in the list are even, and False otherwise.
+
+def allEven(numbers):
+    for evenIntegers in numbers:
+        if evenIntegers % 2 != 0:
+            return False
+    return True
+
+
+allEven([8, 0, -2, 4, -6, 10])  # true
+allEven([8, 0, -1, 4, -6, 10])  # false
