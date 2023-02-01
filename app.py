@@ -1365,8 +1365,8 @@ for fourLetterWords in wordList:
 # It is often necessary to iterate over a sequence of numbers in a given range, even if the list of numbers is not explicitly given.
 # range() can be used together with the for loop to iterate over a sequence of numbers in a given range.
 
-for i in range(5):
-    print(i)
+for igloo in range(5):
+    print(igloo)
 
 # =
 # 0
@@ -1513,7 +1513,7 @@ funkyFunc(3)
 #   <indented function body>
 
 
-# If a function is to return a value, then the return statement is used to specify the value to be returned.
+# *****    If a function is to return a value, then the return statement is used to specify the value to be returned.  ****
 
 
 # Practice Problem 3.8
@@ -1583,3 +1583,49 @@ def allEven(numbers):
 
 allEven([8, 0, -2, 4, -6, 10])  # true
 allEven([8, 0, -1, 4, -6, 10])  # false
+
+
+def hello(name):
+    print('Hello, ' + name + '!')
+
+
+hello('Jose')  # Hello, Jose!
+
+
+def f(x):
+    return (x**2 + 1)
+
+
+f(2)
+
+3 * f(2) + 1
+
+
+# Practice Problem 3.12
+# Write function negatives() that takes a list as input and prints, one per line, the negative
+# values in the list. The function should not return anything.
+
+def negatives(negList):
+    for negativeNums in negList:
+        if negativeNums < 0:
+            print(negativeNums)
+
+
+negatives([4, 0, -1, -3, 6, -9])
+
+
+# Function Definitions Are “Assignment” Statements
+
+question = input('Enter square or cube: ')
+
+if question == 'square':
+    def inputtedNum(number):
+        return number * number
+else:
+    def inputtedNum(number):
+        return number * number * number
+
+inputtedNum(3)  # = 27
+
+# First Define the Function, Then Use It
+# Python does not allow calling a function before it is defined, just as a variable cannot be used in an expression before it is assigned.
