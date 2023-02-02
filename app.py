@@ -1629,3 +1629,90 @@ inputtedNum(3)  # = 27
 
 # First Define the Function, Then Use It
 # Python does not allow calling a function before it is defined, just as a variable cannot be used in an expression before it is assigned.
+
+
+# Docstrings
+# a string that should describe what the function does and must be placed directly below the first line of a function definition.
+
+def f(x):
+    'returns x**2 +1'
+    res = x**2 + 1
+    return res
+
+
+f(5)  # = 26
+
+help(f)  # = returns x**2 +1
+
+
+def hello(name):
+    'a personalized name function'
+    print('Hello, ' + name + '!')
+
+
+hello('Jose Armas')  # = Hello, Jose Armas!
+
+help(hello)
+
+
+# Practice Problem 3.13
+# Add appropriate docstrings to functions average() and negatives() from Practice Problems 3.9 and 3.12.
+# Check your work using the help() documentation tool.
+
+def average(firstNum, secondNum):
+    'returns average of x and y'
+    return (firstNum + secondNum) / 2
+
+
+average(1, 3)  # = 2
+
+help(average)  # returns average of x and y
+
+
+def negatives(negList):
+    'Returns negative #s from function negativeNums inside function negList'
+    for negativeNums in negList:
+        if negativeNums < 0:
+            print(negativeNums)
+
+
+negatives([4, 0, -1, -3, 6, -9])
+
+# 'Returns negative #s from function negativeNums inside function negList'
+help(negatives)
+
+
+#Assignments and Mutability
+# We often have the situation when multiple variables refer to the same object.
+
+a = 3
+b = a
+print(b)  # = 3
+a = 6
+print(b)
+
+a = [3, 4, 5]
+b = a
+print(b)  # = [3, 4, 5]
+
+a[1] = 8
+print(a)
+print(b)  # = [3, 8, 5]
+
+c = [1, 2, 3]
+d = c
+
+c.append(17)
+print(c)  # = [1, 2, 3, 17]
+print(d)  # = [1, 2, 3, 17]
+
+
+# Practice Problem 3.14
+# Draw a diagram representing the state of names and objects after this execution:
+
+a = [5, 6, 7]
+b = a
+print(b)
+a = 3
+# = still is equal to [5, 6, 7] because we switched from a list to an int. Instead of modifying the list, so b doesn't change
+print(b)
