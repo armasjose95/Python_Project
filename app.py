@@ -1716,3 +1716,28 @@ print(b)
 a = 3
 # = still is equal to [5, 6, 7] because we switched from a list to an int. Instead of modifying the list, so b doesn't change
 print(b)
+
+
+# multiple assignment statement:
+e = 6
+g = 3
+
+e, g = g, e
+print(e)
+print(g)
+
+i = j = k = 0
+print(j)  # = 0
+print(i)  # = 0
+print(k)  # = 0
+
+
+# Practice Problem 3.15
+# Suppose a nonempty list team has been assigned. Write a Python statement or statements that swap the first and last value of the list.
+# then the resulting list should be:
+#['Sarah', 'Eleanor', 'Clare', 'Ava']
+
+womensTeam = ['Ava', 'Eleanor', 'Clare', 'Sarah']
+
+womensTeam[0], womensTeam[-1] = womensTeam[-1], womensTeam[0]
+print(womensTeam)  # = ['Sarah', 'Eleanor', 'Clare', 'Ava']
