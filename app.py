@@ -1608,7 +1608,7 @@ f(2)
 def negatives(negList):
     for negativeNums in negList:
         if negativeNums < 0:
-            print(negativeNums)
+            print(negativeNums)  # = [-1,-3,-9]
 
 
 negatives([4, 0, -1, -3, 6, -9])
@@ -1723,8 +1723,8 @@ e = 6
 g = 3
 
 e, g = g, e
-print(e)
-print(g)
+print(e)  # = 3
+print(g)  # = 6
 
 i = j = k = 0
 print(j)  # = 0
@@ -1741,3 +1741,53 @@ womensTeam = ['Ava', 'Eleanor', 'Clare', 'Sarah']
 
 womensTeam[0], womensTeam[-1] = womensTeam[-1], womensTeam[0]
 print(womensTeam)  # = ['Sarah', 'Eleanor', 'Clare', 'Ava']
+
+
+# Immutable Parameter Passing
+# Calling program-Functions are either called from within the interactive shell or by another program.
+# names-The input arguments in a function of objects created in the calling program.
+
+# We use the function g() to discuss the effect of passing a reference to an immutable object in a function call.
+
+
+def g(x):
+    x = 5
+
+
+a = 3
+
+g(a)
+
+
+# The function g() did not, and cannot, modify the value of a in the interactive shell.
+# when calling and executing a function, the function will not modify the value of any variable passed as a function argument
+# if the variable refers to an immutable object.
+
+
+# Mutable Parameter Passing
+def h(list):
+    list[0] = 5
+
+
+myList = [3, 6, 9, 12]
+
+
+h(myList)
+
+print(myList)  # = [5, 6, 9, 12]
+
+
+# Practice Problem 3.16
+# Implement function swapFL() that takes a list as input and swaps the first and last elements of the list.
+# You may assume the list will be nonempty. The function should not return anything.
+
+
+def swapFlour(applePie):
+    applePie[0], applePie[-1] = applePie[-1], applePie[0]
+
+
+ingredients = ['flour', 'sugar', 'butter', 'apples']
+
+swapFlour(ingredients)
+
+print(ingredients)  # = ['apples', 'sugar', 'butter', 'flour']
