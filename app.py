@@ -1791,3 +1791,71 @@ ingredients = ['flour', 'sugar', 'butter', 'apples']
 swapFlour(ingredients)
 
 print(ingredients)  # = ['apples', 'sugar', 'butter', 'flour']
+
+
+# Exercises
+# 3.17 Use the eval() function to evaluate these strings as Python expressions:
+# (a) '2 * 3 + 1'
+eval('2*3+1')  # = 7
+
+# (b) 'hello'
+eval(input('hello'))  # = hello
+
+# (c) "'hello' + ' ' + 'world!'"
+eval(input('hello' + ' ' + 'world!'))  # = hello world!
+
+# (d) "'ASCII'.count('I')"
+eval("'ASCII'.count('I')")  # = 2
+
+
+# (e) 'x = 5'
+eval(input('x=5'))  # =   x = 5
+
+
+# 3.18 Assume a, b, and c have been defined in the interactive shell as shown:
+# a, b, c = 3, 4, 5
+
+a = 3
+b = 4
+c = 5
+
+# Within the interactive shell, write if statements that print 'OK' if:
+# (a) a is less than b.
+if a < b:
+    print('Ok')  # = OK
+
+# (b) c is less than b.
+if c < b:
+    print('Ok')  # = .....(nothing printed)
+
+# (c) The sum of a and b is equal to c.
+if (a+b) == c:
+    print('Ok')  # = .....(nothing printed)
+# (d) The sum of the squares a and b is equal to c squared.
+if (a**2) + (b**2) == c**2:
+    print('OK')  # = OK
+
+
+# 3.19 Repeat the previous problem with the additional requirement that 'NOT OK' is printed if the condition is false.
+if a < b:
+    print('OK')
+else:
+    print('NOT OK')  # OK
+
+
+if c < b:
+    print('Ok')
+else:
+    print('NOT OK')  # OK
+
+
+if (a+b) == c:
+    print('Ok')
+else:
+    print('NOT OK')  # NOT OK
+
+
+if (a**2) + (b**2) == c**2:
+    print('OK')
+else:
+    print('NOT OK')  # OK
