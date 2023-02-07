@@ -1859,3 +1859,104 @@ if (a**2) + (b**2) == c**2:
     print('OK')
 else:
     print('NOT OK')  # OK
+
+
+# 3.20 Write a for loop that iterates over a list of strings months and prints the first three characters of every word.
+# If months is the list ['January', 'February', 'March'] then the following should be printed:
+# Jan
+# Feb
+# Mar
+
+months = ['January', 'February', 'March']
+
+for threeLetters in months:
+    print(threeLetters[:3])
+
+# =
+# Jan
+# Feb
+# Mar
+
+
+# 3.21 Write a for loop that iterates over a list of numbers lst and prints the even numbers in the list.
+# For example, if lst is [2, 3, 4, 5, 6, 7, 8, 9], then the numbers 2, 4, 6, and 8 should be printed.
+
+numbersList = [2, 3, 4, 5, 6, 7, 8, 9]
+
+for evenNumbers in numbersList:
+    if evenNumbers % 2 == 0:
+        print(evenNumbers)
+
+
+# =
+# 2
+# 4
+# 6
+# 8
+
+
+# 3.22 Write a for loop that iterates over a list of numbers lst and prints the numbers in the
+# list whose square is divisible by 8. For example, if lst is [2, 3, 4, 5, 6, 7, 8, 9],
+# then the numbers 4 and 8 should be printed.
+
+listOfNums = [2, 3, 4, 5, 6, 7, 8, 9]
+
+for NumsDivByFour in listOfNums:
+    if (NumsDivByFour ** 2) % 8 == 0:
+        print(NumsDivByFour)
+
+
+# =
+# 4
+# 8
+
+
+# 3.23 Write for loops that use the function range() and print the following sequences:
+# (a) 0 1
+for i in range(0, 2):
+    print(i)
+
+# =
+# 0
+# 1
+
+# (b) 0
+for i in range(0, 1):
+    print(i)
+
+# = 0
+
+# (c) 3 4 5 6
+for i in range(3, 7):
+    print(i)
+
+# =
+# 3
+# 4
+# 5
+# 6
+
+# (d) 1
+for i in range(1, 2):
+    print(i)
+
+# = 1
+
+# (e) 0 3
+for i in range(0, 4, 3):
+    print(i)
+
+# =
+# 0
+# 3
+
+# (f) 5 9 13 17 21
+for i in range(5, 22, 4):
+    print(i)
+
+# =
+# 5
+# 9
+# 13
+# 17
+# 21
