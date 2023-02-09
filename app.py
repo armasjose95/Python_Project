@@ -1960,3 +1960,51 @@ for i in range(5, 22, 4):
 # 13
 # 17
 # 21
+
+
+# 3.24 Implement a program that requests a list of words from the user and then prints each word in the list that is not 'secret'.
+#words: ['cia','secret','mi6','isi','secret']
+secret = eval(input('Enter list of words: '))
+
+for nonSecretWords in secret:
+    if nonSecretWords != 'secret':
+        print(nonSecretWords)
+
+
+# =
+# cia
+# mi6
+# isi
+
+
+# 3.25 Implement a program that requests a list of student names from the user and prints those names that start with letters A through M.
+# Enter list: ['Ellie', 'Steve', 'Sam', 'Owen', 'Gavin']
+
+studentNames = eval(input('Enter Student List: '))
+
+for studentsAToM in studentNames:
+    if studentsAToM[0] < 'N':
+        print(studentsAToM)
+
+
+# =
+# Ellie
+# Gavin
+
+
+# 3.26 Implement a program that requests a nonempty list from the user and prints on the screen a message giving the first and last element of the list.
+# Enter a list: [3, 5, 7, 9]
+
+numberList = eval(input('Enter a list: '))
+
+
+for firstAndLastNumbers in numberList:
+    if firstAndLastNumbers == numberList[0]:
+        print('The first list element is ' + str(numberList[0]))
+    if firstAndLastNumbers == numberList[-1]:
+        print('The last list element is ' + str(numberList[-1]))
+
+
+# =
+# The first list element is  3
+# The last list element is  9
