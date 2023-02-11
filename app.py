@@ -2008,3 +2008,47 @@ for firstAndLastNumbers in numberList:
 # =
 # The first list element is  3
 # The last list element is  9
+
+
+# 3.27 Implement a program that requests a positive integer n from the user and prints the first four multiples of n.
+# Enter n: 5 and should get 0,5,10,15
+
+
+nInteger = eval(input('Enter n: '))
+
+for i in range(0, 4):
+    'evaluates from 0 up to 4 and gives multiplies i from(0-3) by the nInteger which is 5'
+    print(i * nInteger)
+
+
+# =
+# 0
+# 5
+# 10
+# 15
+
+
+# 3.28 Implement a program that requests an integer n from the user and prints on the screen the squares of all numbers from 0 up to, but not including, n.
+# Enter n: 3 and should get 0,1,4
+
+integer = eval(input('Enter n: '))
+
+for i in range(0, integer):
+    'evaluates from 0 up to but not including integer and i is squared from (0-2)'
+    print(i ** 2)
+
+
+# =
+# 0
+# 1
+# 4
+
+
+# 3.29 Implement a program that requests a positive integer n and prints on the screen all the
+# positive divisors of n. Note: 0 is not a divisor of any integer, and n divides itself.
+# Enter n: 49 ex: 1,7,49
+
+aInteger = eval(input('Enter n: '))
+
+for i in range(1, aInteger):
+    print(aInteger % i == 0)
