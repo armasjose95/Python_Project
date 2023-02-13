@@ -2050,5 +2050,12 @@ for i in range(0, integer):
 
 aInteger = eval(input('Enter n: '))
 
-for i in range(1, aInteger):
-    print(aInteger % i == 0)
+for i in range(1, aInteger + 1):
+    if aInteger % i == 0:
+        print(i)
+
+
+# =
+# 1
+# 7
+# 49
