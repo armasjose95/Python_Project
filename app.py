@@ -1045,8 +1045,8 @@ secondString = 'Man'
 print(list(secondString))  # = ['M', 'a', 'n']
 
 anotherList = 'Spider Man'
-# List of Words =['Spider', 'Man']
 print(f'List of Words ={anotherList.split()}')
+# List of Words =['Spider', 'Man']
 
 secondList = 'Bat Man'
 print((secondList.split()))  # = ['Bat', 'Man']
@@ -2083,3 +2083,48 @@ if (firstNum + secondNum + thirdNum) / 3 == fourthNum:
 
 
 # = Equal
+
+
+# 3.31 Implement a program that requests the user to enter the x and y coordinates (each
+# between −10 and 10) of a dart and computes whether the dart has hit the dartboard, a circle
+# with center (0, 0) and radius 8. If so, string It is in! should be printed on the screen.
+
+# Enter x: 2.5
+# Enter y: 4
+# It is in!
+
+x = eval(input('Enter x coordinate between -10 and 10: '))
+y = eval(input('Enter x coordinate between -10 and 10: '))
+r = 10
+circleCenter = (0, 0)
+
+
+if -10 > x < 10
+
+
+r = 10
+(x, y) = (10, 10)
+landed = ((x-a)**2) + ((y - b)**2) < (r ** 2)
+print(landed)
+
+
+# 3.32 Write a program that requests a positive four-digit integer from the user and prints its
+# digits. You are not allowed to use the string data type operations to do this task. Your pro-
+# gram should simply read the input as an integer and process it as an integer, using standard
+# arithmetic operations (+, *, -, /, %, etc).
+
+# Enter n: 1234
+# 1
+# 2
+# 3
+# 4
+
+fourDigitInt = eval(input('Enter n(must be 4 digits): '))
+
+# = List of Characters =['S', 'p', 'i', 'd', 'e', 'r']
+
+for fourDigits in fourDigitInt:
+    if len(fourDigits) == 4
+    print(f'List of Characters ={list(fourDigitInt)}')
+
+print(f'List of Characters ={list(someString)}')
