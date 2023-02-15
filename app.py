@@ -2124,7 +2124,33 @@ fourDigitInt = eval(input('Enter n(must be 4 digits): '))
 # = List of Characters =['S', 'p', 'i', 'd', 'e', 'r']
 
 for fourDigits in fourDigitInt:
-    if len(fourDigits) == 4
-    print(f'List of Characters ={list(fourDigitInt)}')
+    if len(fourDigits) == 4:
+        print(f'List of Characters ={list(fourDigitInt)}')
 
 print(f'List of Characters ={list(someString)}')
+
+
+# 3.33 Implement function reverse_string() that takes as input a three-letter string and
+# returns the string with its characters reversed.
+# reverse_string('abc')
+# 'cba'
+# reverse_string('dna')
+# 'and'
+
+
+def reverse_string(letters):
+    letters[::-1]
+
+
+word = 'abc'
+reverse_string(word)
+print(word)
+
+
+def h(list):
+    list[0] = 5
+
+
+myList = [3, 6, 9, 12]
+h(myList)
+print(myList)  # = [5, 6, 9, 12]
