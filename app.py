@@ -2119,15 +2119,11 @@ print(landed)
 # 3
 # 4
 
-fourDigitInt = eval(input('Enter n(must be 4 digits): '))
+fourDigitInt = eval(input('Enter n: '))
 
-# = List of Characters =['S', 'p', 'i', 'd', 'e', 'r']
 
 for fourDigits in fourDigitInt:
-    if len(fourDigits) == 4:
-        print(f'List of Characters ={list(fourDigitInt)}')
-
-print(f'List of Characters ={list(someString)}')
+    print(fourDigitInt)
 
 
 # 3.33 Implement function reverse_string() that takes as input a three-letter string and
@@ -2138,19 +2134,30 @@ print(f'List of Characters ={list(someString)}')
 # 'and'
 
 
-def reverse_string(letters):
-    letters[::-1]
+def reverse_string(threeLettString):
+    return threeLettString[::-1]
 
 
-word = 'abc'
-reverse_string(word)
-print(word)
+reverse_string('abc')  # = 'cba'
+reverse_string('dna')  # = 'and'
 
 
-def h(list):
-    list[0] = 5
+# 3.34 Implement function pay() that takes as input two arguments: an hourly wage and the
+# number of hours an employee worked in the last week. Your function should compute and
+# return the employee’s pay. Any hours worked beyond 40 is overtime and should be paid at
+# 1.5 times the regular hourly wage.
+#pay(10, 35)
+# 350
+#pay(10, 45)
+# 475.0
 
 
-myList = [3, 6, 9, 12]
-h(myList)
-print(myList)  # = [5, 6, 9, 12]
+def pay(wage, hours):
+    if hours <= 40:
+        return wage * hours
+    else:
+        return (wage * hours) + ((hours - 40) * (wage * .5))
+
+
+pay(10, 35)  # = 350
+pay(10, 45)  # = 475.0
