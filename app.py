@@ -787,14 +787,11 @@ thorny = [flowers[0], flowers[1], flowers[2]]  # or
 thorny = flowers[0:3]
 print(thorny)  # = ['rose', 'bougainvillea', 'yucca']
 # (d) Assign to list poisonous the sublist consisting of just the last object of list flowers.
-poisonous = flowers[-1]
+poisonous = flowers[-1:]
 print(poisonous)  # = lilly of the valley
 # (e) Assign to list dangerous the concatenation of lists thorny and poisonous.
-dangerous = [thorny] + str(poisonous)
-print(dangerous)
-
-dangerous = str[thorny] + str(poisonous)
-print(dangerous)
+dangerous = thorny + poisonous
+print(dangerous)  # = ['rose', 'bougainvillea', 'yucca', 'lily of the valley']
 
 
 # 2.19 Start by assigning to variable answers a list containing an arbitrary sequence of strings 'Y' and 'N'. For example:
@@ -1983,7 +1980,7 @@ for nonSecretWords in secret:
 studentNames = eval(input('Enter Student List: '))
 
 for studentsAToM in studentNames:
-    if studentsAToM[0] < 'N':
+    if studentsAToM[0] < 'M':
         print(studentsAToM)
 
 
@@ -1996,6 +1993,11 @@ for studentsAToM in studentNames:
 # Enter a list: [3, 5, 7, 9]
 
 numberList = eval(input('Enter a list: '))
+
+print("The first list element is", numberList[0])
+print("The last list element is", numberList[-1])
+
+# or can solve
 
 
 for firstAndLastNumbers in numberList:
@@ -2199,3 +2201,82 @@ def reverse_int(num):
 
 
 reverse_int(123)
+
+
+# 3.37 Implement function points() that takes as input four numbers x1, y1, x2, y2 that
+# are the coordinates of two points (x1, y1) and (x2, y2) in the plane. Your function should compute:
+# • The slope of the line going through the points, unless the line is vertical
+# • The distance between the two points
+# Your function should print the computed slope and distance in the following format. If the
+# line is vertical, the value of the slope should be string 'infinity'. Note: Make sure you
+# convert the slope and distance values to a string before printing them.
+
+
+# using math.dist method
+
+def points(x1, y1, x2, y2):
+    firstPoint = (x1, y1)
+    secondPoint = (x2, y2)
+    if x1 != x2:
+        slope = (y2-y1)/(x2-x1)
+    else:
+        slope = 'infinity'
+        print('The slope is ' + str(slope) + ' and the distance is ' +
+              str((math.dist(firstPoint, secondPoint))))
+
+
+points(0, 0, 1, 1)
+# = The slope is 1.0 and the distance is 1.4142135623730951
+points(0, 0, 0, 1)
+# = The slope is infinity and the distance is 1.0
+
+
+# using math.sqrt method
+
+
+def points(x1, y1, x2, y2):
+    distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+    if x1 != x2:
+        slope = (y2 - y1) / (x2 - x1)
+    else:
+        slope = 'infinity'
+    print("The slope is " + str(slope) +
+          " and the distance is " + str(distance))
+
+
+points(0, 0, 1, 1)
+# = The slope is 1.0 and the distance is 1.4142135623730951
+points(0, 0, 0, 1)
+# = The slope is infinity and the distance is 1.0
+
+
+# 3.38 Implement function abbreviation() that takes a day of the week as input and returns
+# its two-letter abbreviation.
+# abbreviation('Tuesday')
+# 'Tu'
+
+def abbreviation(Day):
+    return Day[0:2]
+
+
+abbreviation('Tuesday')
+
+
+# 3.40 Implement function partition() that splits a list of soccer players into two groups.
+# More precisely, it takes a list of first names (strings) as input and prints the names of those
+# soccer players whose first name starts with a letter between and including A and M.
+#partition(['Eleanor', 'Evelyn', 'Sammy', 'Owen', 'Gavin'])
+
+
+def partition(soccer):
+    for soccerAtoM in soccer:
+        if soccerAtoM[0] < 'M':
+            print(soccerAtoM)
+
+
+partition(['Eleanor', 'Evelyn', 'Sammy', 'Owen', 'Gavin'])
+
+# =
+# Eleanor
+# Evelyn
+# Gavin
