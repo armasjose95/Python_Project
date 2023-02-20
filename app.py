@@ -2093,19 +2093,13 @@ if (firstNum + secondNum + thirdNum) / 3 == fourthNum:
 # Enter y: 4
 # It is in!
 
-x = eval(input('Enter x coordinate between -10 and 10: '))
-y = eval(input('Enter x coordinate between -10 and 10: '))
-r = 10
-circleCenter = (0, 0)
+x = eval(input('Enter x: '))
+y = eval(input('Enter y: '))
 
 
-if -10 > x < 10
-
-
-r = 10
-(x, y) = (10, 10)
-landed = ((x-a)**2) + ((y - b)**2) < (r ** 2)
-print(landed)
+r = 8
+if ((x-a)**2) + ((y - b)**2) < (r ** 2):
+    print('It is in!')  # = It is in!
 
 
 # 3.32 Write a program that requests a positive four-digit integer from the user and prints its
@@ -2122,8 +2116,13 @@ print(landed)
 fourDigitInt = eval(input('Enter n: '))
 
 
-for fourDigits in fourDigitInt:
-    print(fourDigitInt)
+x = 10
+while (fourDigitInt/(10 * x) != 0):
+    x = x * 10
+    while (fourDigitInt > 0):
+        print(int(fourDigitInt / x))
+        fourDigitInt = fourDigitInt % x
+        x = x / 10
 
 
 # 3.33 Implement function reverse_string() that takes as input a three-letter string and
@@ -2161,3 +2160,42 @@ def pay(wage, hours):
 
 pay(10, 35)  # = 350
 pay(10, 45)  # = 475.0
+
+
+# 3.35 The probability of getting n heads in a row when tossing a fair coin n times is 2−n.
+# Implement function prob() that takes a nonnegative integer n as input and returns the
+# probability of n heads in a row when tossing a fair coin n times.
+# prob(1)
+# 0.5
+# prob(2)
+# 0.25
+
+def prob(n):
+    return 2 ** -abs(n)
+
+
+prob(1)  # = 0.5
+prob(2)  # = 0.25
+
+
+# 3.36 Implement function reverse_int() that takes a three-digit integer as input and re-
+# turns the integer obtained by reversing its digits. For example, if the input is 123, your
+# function should return 321. You are not allowed to use the string data type operations to
+# do this task. Your program should simply read the input as an integer and process it as an
+# integer using operators such as // and %. You may assume that the input integer does not end with the 0 digit.
+# reverse_int(123)
+# 321
+# reverse_int(908)
+# 809
+
+
+def reverse_int(num):
+    rev = 0
+    for i in range(3):
+        rev *= 10
+        rev += num % 10
+        num //= 10
+        return rev
+
+
+reverse_int(123)
