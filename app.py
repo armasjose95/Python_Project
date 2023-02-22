@@ -2280,3 +2280,6 @@ partition(['Eleanor', 'Evelyn', 'Sammy', 'Owen', 'Gavin'])
 # Eleanor
 # Evelyn
 # Gavin
+
+
+def lastF(FirstName, LastName):
