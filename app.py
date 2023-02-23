@@ -2269,9 +2269,9 @@ abbreviation('Tuesday')
 
 
 def partition(soccer):
-    for soccerAtoM in soccer:
-        if soccerAtoM[0] < 'M':
-            print(soccerAtoM)
+    for soccerAToM in soccer:
+        if soccerAToM[0] >= 'A' and soccerAToM[0] <= 'M':
+            print(soccerAToM)
 
 
 partition(['Eleanor', 'Evelyn', 'Sammy', 'Owen', 'Gavin'])
@@ -2282,4 +2282,33 @@ partition(['Eleanor', 'Evelyn', 'Sammy', 'Owen', 'Gavin'])
 # Gavin
 
 
+# 3.41 Write function lastF() that takes as input two strings of the form 'FirstName' and
+# 'LastName', respectively, and returns a string of the form 'LastName, F.'. (Only the
+# initial should be output for the first name.)
+
+
 def lastF(FirstName, LastName):
+    return LastName + ',' + ' ' + FirstName[0] + '.'
+
+
+lastF('Albert', 'Camus')  # = 'Camus, A.'
+
+
+# Implement function avg() that takes as input a list that contains lists of numbers. Each
+# number list represents the grades a particular student received for a course. For example,
+# here is an input list for a class of four students: [[95, 92, 86, 87], [66, 54], [89, 72, 100], [33, 0, 0]]
+
+
+def avg(grades):
+    for studentGradeSets in grades:
+        print(sum(studentGradeSets) / len(studentGradeSets))
+
+
+avg([[95, 92, 86, 87], [66, 54], [89, 72, 100], [33, 0, 0]])
+
+
+# =
+# 90.0
+# 60.0
+# 87.0
+# 11.0
