@@ -2312,3 +2312,168 @@ avg([[95, 92, 86, 87], [66, 54], [89, 72, 100], [33, 0, 0]])
 # 60.0
 # 87.0
 # 11.0
+
+
+# If the text contains both type of quotes, then the escape sequence \' or \" is used to indicate
+# that a quote is not the string delimiter but is part of the string value. So, if we want to create
+# the string value: I'm "sick".
+
+
+fact = "I'm sick"
+print(fact)  # = I'm sick
+
+
+excuse = 'I\'m "sick"'
+excuse  # = 'I\'m "sick"'
+# need to use print function
+# the print() function will interpret any escape sequence in the string and omit the string delimiters:
+print(excuse)  # = I'm "sick"
+
+
+# If the string is to represent multiline text, we have two choices. One is to use triple quotes,
+
+
+poem = '''
+To make a prairie it takes a clover and one bee, 
+One clover, and a bee,
+And revery.
+The revery alone will do
+If bees are few.
+'''
+
+print(poem)
+
+# To make a prairie it takes a clover and one bee,
+# One clover, and a bee,
+# And revery.
+# The revery alone will do
+# f bees are few.
+
+
+# \n stands in for a new line character.
+
+poem2 = '\n To make a prairie it takes a clover and one bee, \n One clover, and a bee'
+
+print(poem2)
+
+# To make a prairie it takes a clover and one bee,
+# One clover, and a bee
+
+
+# Slicing Strings-1st number starts at and includes that index and ends before 2nd number in the slice
+
+s = 'hello'
+s[0]  # = 'h
+
+s[0:2]  # = 'he'
+
+s[3:4]  # = 'l'
+
+s[-3:-1]  # = 'll' starts at index -3 and ends before index -1
+
+s[-4:]
+
+
+# If the slice we want starts at the first character of a string, we can drop the first index:
+
+s[:3]  # = 'hel'
+s[:-3]  # = 'he' starts at 0, never starts at -1. Can't begin a slice w/ a smaller neg # 1st and bigger neg # 2nd
+
+# In order to obtain a slice that ends at the last character of a string, we must drop the second index:
+
+s[-3:]  # = 'llo'
+s[3:]  # = 'lo'
+
+
+# Practice Problem 4.1
+# Start by executing the assignment:
+t = '0123456789'
+# Now write expressions using string t and the indexing operator that evaluate to:
+# (a) '234'
+t[2:5]  # = '234'
+
+# (b) '78'
+t[7:9]  # = '78'
+
+# (c) '1234567'
+t[1:8]  # = '1234567'
+
+# (d) '0123'
+t[:4]  # = '0123'
+
+# (e) '789'
+t[7:]  # = '789'
+
+
+# Slicing Lists
+# A slice of a list is a list.
+# when the indexing operator is applied to a list with two or more arguments, it will return a list.
+
+pets = ['goldfish', 'cat', 'dog']
+
+pets[:2]  # = ['goldfish', 'cat']
+pets[-3:-1]  # = ['goldfish', 'cat']
+pets[1:]  # = ['cat', 'dog']
+
+
+# String Methods
+
+#method: find()
+# checks whether target is a substring of a variable. If so, it returns the
+# index (of the first character) of the first occurrence of string target; otherwise, it returns -1.
+
+
+message = '''This message is top secret and should not
+be divulged to anyone without top secret clearance '''
+
+message.find('top secret')  # = 16 index 16
+message.find('message')  # = 5
+
+
+#method: count()
+# with string input argument target, returns the number of times target appears as a substring of a variable.
+
+message.count('top secret')  # = 2
+message.count('message')  # = 1
+
+
+# method: replace(,)
+# takes two string inputs, old and new, and outputs a copy of string with every occurrence of substring old replaced by string new.
+
+message.replace('top', 'no')
+# ='This message is no secret and should not\nbe divulged to anyone without no secret clearance '
+
+# THIS IS A COPY ONLY.
+# Instead, a copy of message, with appropriate substring replacements, got returned.
+# Original string has not changed
+# This string cannot be used later on because we have not assigned it a variable name.
+
+print(message)
+# = This message is top secret and should not
+# be divulged to anyone without top secret clearance.
+
+
+# Typically, the replace() method would be used in an assignment statement
+
+
+public = message.replace('top', 'no')
+print(public)
+# = This message is no secret and should not
+# be divulged to anyone without no secret clearance
+
+
+# Method capitalize()
+
+message = 'top secret'
+message.capitalize()  # = 'Top secret' --copy
+print(message)  # = top secret
+
+
+capitalMessage = message.capitalize()
+print(capitalMessage)  # = Top secret
+
+
+#Method: upper()
+
+upperMessage = message.upper()
+print(upperMessage)  # = TOP SECRET
