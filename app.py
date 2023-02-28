@@ -2454,7 +2454,9 @@ print(message)
 
 
 # Typically, the replace() method would be used in an assignment statement
-
+#s.replace(old, new)
+# A copy of string s in which every occurrence of substring old, when string s is scanned from left to
+# right, is replaced by substring new
 
 public = message.replace('top', 'no')
 print(public)
@@ -2477,3 +2479,52 @@ print(capitalMessage)  # = Top secret
 
 upperMessage = message.upper()
 print(upperMessage)  # = TOP SECRET
+
+
+# Method Split()
+# called on a string in order to obtain a list of words in the string:
+# Can use the blank spaces in the string to create word substrings that are put into a list and returned.
+
+text = 'this is the text'.split()
+print(text)  # = ['this', 'is', 'the', 'text']
+
+
+# The method split() can also be called with a delimiter string as input: The delimiter string can be used in place of
+# the blank space to break up the string.
+
+x = '2;3;5;7;11;13'
+
+xx = x.split(';')
+print(xx)  # = ['2', '3', '5', '7', '11', '13']
+
+
+#Method: translate()
+# It is used to replace certain characters in a string with others based on a mapping of characters to characters.
+# Such a mapping is constructed using a special type of string method that is called not by a string object but
+# by the string class str itself:
+
+
+table = str.maketrans('abcdef', 'uvwxyz')
+
+'fad'.translate(table)  # = 'zux'
+
+'desktop'.translate(table)  # = 'xysktop'
+
+
+# 4.2
+# Assuming that variable forecast has been assigned string
+
+forecast = 'It will be a sunny day today'
+
+# write Python statements corresponding to these assignments:
+# (a) To variable count, the number of occurrences of string 'day' in string forecast.
+count = forecast.count('day')
+print(count)  # = 2
+
+# (b) To variable weather, the index where substring 'sunny' starts.
+weather = forecast.find('sunny')
+print(weather)  # = 13
+
+# (c) To variable change, a copy of forecast in which every occurrence of substring 'sunny' is replaced by 'cloudy'.
+change = forecast.replace('sunny', 'cloudy')
+print(change)  # = It will be a cloudy day today
