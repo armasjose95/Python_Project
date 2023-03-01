@@ -2528,3 +2528,36 @@ print(weather)  # = 13
 # (c) To variable change, a copy of forecast in which every occurrence of substring 'sunny' is replaced by 'cloudy'.
 change = forecast.replace('sunny', 'cloudy')
 print(change)  # = It will be a cloudy day today
+
+
+# Function print() can take an arbitrary number of input objects, not necessarily of the same type.
+# The values of the objects will be printed in the same line, and blank spaces (i.e., characters ' ') will be inserted between them:
+n = 5
+
+r = 5/3
+
+print(n, r)  # = 5 1.6666666666666667
+
+name = 'ida'
+print(n, r, name)  # = 5 1.6666666666666667 ida
+
+# If we want to insert semicolons between values instead of blank spaces, we can do that too. The print()
+# function takes an optional separation argument sep, in addition to the objects to be printed:
+
+print(n, r, name, sep=';')  # = 5;1.6666666666666667;ida
+
+print(n, r, name, sep=', ')  # = 5,1.6666666666666667,ida
+
+print(n, r, name, sep='\n')
+# 5
+# 1.6666666666666667
+# ida
+
+# 4.3
+# Write a statement that prints the values of variables last, first, and middle in one line, separated by a horizontal tab character.
+# the output should be: Smith John Paul
+last = 'Smith'
+first = 'John'
+middle = 'Paul'
+
+print(last, first, middle, sep='\t')  # = Smith   John    Paul
