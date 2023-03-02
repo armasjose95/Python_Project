@@ -2561,3 +2561,35 @@ first = 'John'
 middle = 'Paul'
 
 print(last, first, middle, sep='\t')  # = Smith   John    Paul
+
+
+for name in ['Joe', 'Sam', 'Tim', 'Ann']:
+    print(name)
+
+# Joe
+# Sam
+# Tim
+# Ann
+
+# end= print() function
+# is printed after all the arguments have been printed.
+# the default string '\n', the new line character, is printed instead if argument end= is not there.
+
+for name in ['Joe', 'Sam', 'Tim', 'Ann']:
+    print(name, end='! ')
+
+# Joe! Sam! Tim! Ann! >>>
+
+
+# 4.4
+# Write function even() that takes a positive integer n as input and prints on the screen all
+# numbers between, and including, 2 and n divisible by 2 or by 3, using this output format:
+
+def even(n):
+    for numbers in range(2, n+1):
+        if numbers % 2 == 0 or numbers % 3 == 0:
+            print(numbers, end=' , ')
+
+
+even(17)
+# = 2 , 3 , 4 , 6 , 8 , 9 , 10 , 12 , 14 , 15 , 16 , >>>
