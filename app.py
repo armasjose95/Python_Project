@@ -2608,6 +2608,58 @@ second = 33
 
 # Wednesday, March 10, 2010 at 11:45:33
 
+
+# Too tedious and error prone.
+
 print(weekday + ', ' + month + ' ' + str(day) + ', ' + str(year) +
       ' at ' + str(hour) + ':' + str(minute) + ':' + str(second))
 # = Wednesday, March 10, 2010 at 11:45:33
+
+
+# The format() string method is invoked on a string that represents the format of the output.
+# The arguments of the format() function are the objects to be printed.
+
+'{0}:{1}:{2}'.format(hour, minute, second)  # = '11:45:33'
+
+# The objects to be printed (hour, minute, and second) are arguments of the format() method.
+# The string invoking the format() function—that is, the string '{0}:{1}:{2}'— is the format string
+# All the characters outside the curly braces—that is, the two colons (':')—are going to be printed as is.
+# The curly braces {0}, {1}, and {2} are placeholders where the objects will be printed.
+
+
+# The default, when no explicit number is given inside the curly braces, is to assign the
+# placeholder (from left to right) from 1st-last argument of the format() function.
+
+'{}:{}:{}'.format(hour, minute, second)  # = '11:45:33'
+
+
+# = Wednesday, March 10, 2010 at 11:45:33
+
+
+print('{}, {} {}, {} at {}:{}:{}'.format(
+    weekday, month, day, year, hour, minute, second))
+
+
+# 4.5
+# Assume variables first, last, street, number, city, state, zipcode have already been assigned. Write a print statement that creates a mailing label:
+
+# John Doe
+# 123 Main Street
+# AnyCity, AS 09876
+
+
+first = 'John'
+last = 'Doe'
+street = 'Main Street'
+number = 123
+city = 'AnyCity'
+state = 'AS'
+zipcode = '09876'
+
+print('{} {} \n{} {} \n{}, {} {}'.format(
+    first, last, number, street, city, state, zipcode))
+
+
+# =John Doe
+# 123 Main Street
+# AnyCity, AS 09876
