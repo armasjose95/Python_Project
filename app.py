@@ -2593,3 +2593,21 @@ def even(n):
 
 even(17)
 # = 2 , 3 , 4 , 6 , 8 , 9 , 10 , 12 , 14 , 15 , 16 , >>>
+
+
+# String Method Format
+
+weekday = 'Wednesday'
+month = 'March'
+day = 10
+year = 2010
+hour = 11
+minute = 45
+second = 33
+
+
+# Wednesday, March 10, 2010 at 11:45:33
+
+print(weekday + ', ' + month + ' ' + str(day) + ', ' + str(year) +
+      ' at ' + str(hour) + ':' + str(minute) + ':' + str(second))
+# = Wednesday, March 10, 2010 at 11:45:33
