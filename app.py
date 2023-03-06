@@ -2663,3 +2663,69 @@ print('{} {} \n{} {} \n{}, {} {}'.format(
 # =John Doe
 # 123 Main Street
 # AnyCity, AS 09876
+
+
+# Lining Up Data in Columns
+
+for i in range(1, 13):
+    print(i, i**2, i**3, 2**i, sep='    ')
+
+
+# The problem is that a fixed-size separator pushes entries farther to the right as the number of digits in the entry increases.
+# =
+# 1    1    1    2
+# 2    4    8    4
+# 3    9    27    8
+# 4    16    64    16
+# 5    25    125    32
+# 6    36    216    64
+# 7    49    343    128
+# 8    64    512    256
+# 9    81    729    512
+# 10    100    1000    1024
+# 11    121    1331    2048
+# 12    144    1728    4096
+
+
+# We can specify the (minimum) field width with a decimal integer defining the number of character positions reserved for the value.
+
+'{0:3},{1:5}'.format(12, 354)
+# =
+#' 12,  354'
+
+# first # before : is the argument
+# Everything after the ':' specifies the formatting of the value.
+# In this case, 3 indicates that the width of the placeholder should be 3.
+# Since 12 is a two-digit number, an extra blank space is added in front.
+
+# When the field width is larger than the number of digits, the default is to right-justify—that is, push the number value to the right.
+# Strings are left-justified.
+
+first = 'Bill'
+last = 'Gates'
+'{:10}{:10}'.format(first, last)
+'Bill      Gates     '
+
+
+# Type Explanation
+# b Outputs the number in binary
+# c Outputs the Unicode character corresponding to the integer value
+# d Outputs the number in decimal notation (default)
+# o Outputs the number in base 8
+# x Outputs the number in base 16, using lowercase letters for the digits above 9
+# X Outputs the number in base 16, using uppercase letters for the digits above 9
+
+
+# The precision is a decimal number that specifies how many digits should be displayed
+# before and after the decimal point of a floating-point value.
+# It follows the field width and a period separates them.
+
+'{:8.4}'.format(1000/3)
+# = '   333.3'
+
+
+'{:10.6}'.format(1000/3)
+#'   333.333'
+
+# Before . is for how much width is for the placeholder
+# After . is for how many #'s you want
