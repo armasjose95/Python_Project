@@ -2724,8 +2724,90 @@ last = 'Gates'
 # = '   333.3'
 
 
-'{:10.6}'.format(1000/3)
-#'   333.333'
+'{:15.6}'.format(1000/3)
+# = '        333.333'
 
 # Before . is for how much width is for the placeholder
 # After . is for how many #'s you want
+
+
+# Type Explanation
+# b Outputs the number in binary
+# c Outputs the Unicode character corresponding to the integer value
+# d Outputs the number in decimal notation (default)
+# o Outputs the number in base 8
+# x Outputs the number in base 16, using lowercase letters for the digits above 9
+# X Outputs the number in base 16, using uppercase letters for the digits above 9
+
+
+n = 10
+
+'{:b}'.format(n)  # = '1010'
+'{:c}'.format(n)  # = '\n'
+'{:d}'.format(n)  # = '10'
+'{:x}'.format(n)  # = 'a'
+
+
+# f and e are options for floating-point values
+# reserves a minimum width of 6 with exactly two digits past the decimal point for a floating-point value represented as a fixed-point number.
+
+'{:6.2f}'.format(5/3)  # = '  1.67'
+
+
+def growthRates(n):
+    print('i i**2 i**3 2**i')
+    formatStr = '{0:2d} {1:6d} {2:6d} {3:6d}'
+    for i in range(1, n+1):
+        print(formatStr.format(i, i**2, i**3, 2**i))
+
+
+growthRates(12)
+
+
+# i i**2 i**3 2**i
+# 1      1      1      2
+# 2      4      8      4
+# 3      9     27      8
+# 4     16     64     16
+# 5     25    125     32
+# 6     36    216     64
+# 7     49    343    128
+# 8     64    512    256
+# 9     81    729    512
+# 10    100   1000   1024
+# 11    121   1331   2048
+# 12    144   1728   4096
+
+
+# 4.6
+# Implement function roster() that takes a list containing student information and prints
+# out a roster, as shown below. The student information, consisting of the student’s last name,
+# first name, class, and average course grade, will be stored in that order in a list. Therefore,
+# the input list is a list of lists. Make sure the roster printed out has 10 slots for every string
+# value and 8 for the grade, including 2 slots for the decimal part.
+
+
+students = []
+students.append(['DeMoines', 'Jim', 'Sophomore', 3.45])
+students.append(['Pierre', 'Sophie', 'Sophomore', 4.0])
+students.append(['Columbus', 'Maria', 'Senior', 2.5])
+students.append(['Phoenix', 'River', 'Junior', 2.45])
+students.append(['Olympis', 'Edgar', 'Junior', 3.99])
+
+
+def roster(students):
+    print('lastName firstName class GPA')
+    for student in students:
+        print('{0:10} {1:10} {2:10} {3:8.2}'.format(
+            student[0], student[1], student[2], student[3]))
+
+
+roster(students)
+
+
+# = lastName firstName class GPA
+# DeMoines   Jim        Sophomore       3.5
+# Pierre     Sophie     Sophomore       4.0
+# Columbus   Maria      Senior          2.5
+# Phoenix    River      Junior          2.5
+# Olympis    Edgar      Junior          4.0
