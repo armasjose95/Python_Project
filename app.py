@@ -1,3 +1,5 @@
+import time  # time module
+import time
 import fractions
 import math
 print('Hello World')
@@ -2796,7 +2798,8 @@ students.append(['Olympis', 'Edgar', 'Junior', 3.99])
 
 
 def roster(students):
-    print('lastName firstName class GPA')
+    print('this is the roster ')
+
     for student in students:
         print('{0:10} {1:10} {2:10} {3:8.2}'.format(
             student[0], student[1], student[2], student[3]))
@@ -2811,3 +2814,78 @@ roster(students)
 # Columbus   Maria      Senior          2.5
 # Phoenix    River      Junior          2.5
 # Olympis    Edgar      Junior          4.0
+
+
+# Getting and Formatting the Date and Time
+
+
+# time()
+# The time() function returns the time in seconds
+
+
+time.time()
+
+
+# You can check the epoch for your computer system using another function that returns
+# the time in a format very different from time():
+
+time.gmtime(0)
+# = time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=3, tm_yday=1, tm_isdst=0)
+
+
+# The type, time.struct_time, of the object returned by function gmtime() is a tuple-like type.
+
+
+# If no argument is given to the function gmtime(), it will return the current UTC time.
+time.gmtime()
+# = time.struct_time(tm_year=2023, tm_mon=3, tm_mday=9, tm_hour=3, tm_min=55, tm_sec=57, tm_wday=3, tm_yday=68, tm_isdst=0)
+
+
+# The related function localtime() returns the local time zone current time instead:
+time.localtime()
+# = time.struct_time(tm_year=2023, tm_mon=3, tm_mday=8, tm_hour=21, tm_min=58, tm_sec=23, tm_wday=2, tm_yday=67, tm_isdst=0)
+
+
+# Module time provides a formatting function strftime() that outputs time in the desired format.
+#   This function takes a format string and the time returned by gmtime() or localtime() and outputs the
+#   time in a format described by the format string.
+
+
+# Directive Output
+# %a Abbreviated weekday name
+# %A Full weekday name
+# %b Abbreviated month name
+# %B Full month name
+# %d The day of the month as a decimal number between 01 and 31
+# %H The hours as a number between 00 and 23
+# %I The hours as a number between 01 and 12
+# %M The minutes as a number between 00 and 59
+# %p AM or PM
+# %S Seconds as a number between 00 and 61
+# %y Year without century as a number between 00 and 99
+# %Y Year as a decimal number
+# %Z Time zone name
+
+
+time.strftime('%A %b/%d/%y %I:%M %p', time.localtime())
+# = 'Wednesday Mar/08/23 10:21 PM'
+
+
+# 4.7
+# Start by setting t to be the local time 1, 500, 000, 000 seconds from the start of January 1, 1970 UTC:
+t = time.localtime(1500000000)
+
+
+# Construct the next strings by using the string time format function strftime():
+# (a) 'Thursday, July 13 2017'
+
+time.strftime('%A, %B %d %Y', t)
+# = 'Thursday, July 13 2017'
+
+# (b) '09:40 PM Central Daylight Time on 07/13/2017'
+
+time.strftime('%I:%M %p Central Daylight Time on %m/%d/%Y', t)
+
+# (c) 'I will meet you on Thu July 13 at 09:40 PM.'
+
+time.strftime('I will meet you on %a %B %d at %I:%M %p.', t)
