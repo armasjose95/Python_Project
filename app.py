@@ -2889,3 +2889,25 @@ time.strftime('%I:%M %p Central Daylight Time on %m/%d/%Y', t)
 # (c) 'I will meet you on Thu July 13 at 09:40 PM.'
 
 time.strftime('I will meet you on %a %B %d at %I:%M %p.', t)
+
+
+# Files
+# is a sequence of bytes stored on a secondary memory device, such as a disk drive.
+
+# Text files like a text document or spreadsheet, an HTML file, or a Python module.
+# Such contain a sequence of characters that are encoded using some encoding (ASCII, utf-8, etc.).
+
+# binary files-they are just a sequence of bytes and there is no encoding like an executable application (like
+# python.exe), an image, or an audio file.
+
+# All files are managed by the file system.
+
+# File system-is the component of a computer system that organizes files and provides
+# ways to create, access, and modify files.
+
+
+# Opening and Closing a File
+# Processing a file consists of these three steps:
+# 1. Opening a file for reading or writing
+# 2. Reading from the file and/or writing to the file
+# 3. Closing the file
