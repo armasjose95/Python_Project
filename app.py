@@ -2911,3 +2911,26 @@ time.strftime('I will meet you on %a %B %d at %I:%M %p.', t)
 # 1. Opening a file for reading or writing
 # 2. Reading from the file and/or writing to the file
 # 3. Closing the file
+
+
+# The built-in function open() is used to open a file
+
+
+infile = open('README.MD', 'r')
+
+infile = open('README.md')
+
+infile.read(1)  # = 'T'
+# the cursor will move and point to the next character,
+infile.read(5)  # = 'he 3 '
+
+
+# The function readline() will read characters from the file up to the end of the line (i.e.,
+infile.readline()  # = 'lines in this file end with the new line character.\n'
+
+# Finally, we use the read() function without arguments to read the remainder of the file:
+infile.read()  # = '\nThere is a blank line above this line.\n'
+
+
+# To close the opened file that infile refers to, you just do:
+infile.close()
