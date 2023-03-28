@@ -2915,8 +2915,14 @@ time.strftime('I will meet you on %a %B %d at %I:%M %p.', t)
 
 # The built-in function open() is used to open a file
 
+# The function open() takes three string arguments: a file name and, optionally, a mode and an encoding;
+
+
+# The mode is a string that specifies how we will interact with the opened file.
 
 infile = open('README.MD', 'r')
+
+# If mode is missing, the default is r.
 
 infile = open('README.md')
 
@@ -2934,3 +2940,31 @@ infile.read()  # = '\nThere is a blank line above this line.\n'
 
 # To close the opened file that infile refers to, you just do:
 infile.close()
+
+
+# function numChars(), which takes the name of a file as input and returns the number of characters in the file. We use the read() function
+# to read the file content into a string:
+
+
+def numChars(fileName):
+    'returns the # of characters in the file filename'
+    infile = open(fileName, 'r')
+    content = infile.read()
+    infile.close
+
+    return len(content)
+
+
+numChars('README.MD')
+# = 98
+
+
+# 4.8
+# Write function stringCount() that takes two string inputs—a file name and a target string—
+# and returns the number of occurrences of the target string in the file.
+
+def stringCount(fileName, target):
+    infile = open(fileName)
+    content = infile.read()
+    infile.close
+    return content.count(target)
