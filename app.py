@@ -2968,3 +2968,49 @@ def stringCount(fileName, target):
     content = infile.read()
     infile.close
     return content.count(target)
+
+
+stringCount('README.MD', 'line')  # = 4
+
+
+def numWords(fileName):
+    'returns the number of words in file fileName'
+    infile = open(fileName, 'r')
+    content = infile.read()  # read the file into a string
+    infile.close()
+
+    wordList = content.split()  # split file into list of words
+    print(wordList)
+    return len(wordList)
+
+
+numWords('README.MD')
+
+# =
+# ['The', '3', 'lines', 'in', 'this', 'file', 'end', 'with', 'the', 'new', 'line', 'character.',
+#   'There', 'is', 'a', 'blank', 'line', 'above', 'this', 'line.']
+# 20
+
+# 4.9
+# Write function words() that takes one input argument—a file name—and returns the list
+# of actual words (without punctuation symbols !,.:;?) in the file.
+
+
+def words(fileName):
+    'returns the number of words in file fileName'
+    infile = open(fileName, 'r')
+    content = infile.read()  # read the file into a string
+    infile.close()
+
+    # or you can have 6 spaces in between('      ')the first 2 maketrans arguments must have equal length
+    wOutPuncSymbols = str.maketrans('!,.:;?', 6*' ')
+    content = content.translate(wOutPuncSymbols)
+    return content.split()
+
+
+words('README.MD')
+
+
+# =
+# ['The', '3', 'lines', 'in', 'this', 'file', 'end', 'with', 'the', 'new', 'line', 'character',
+# 'There', 'is', 'a', 'blank', 'line', 'above', 'this', 'line']
