@@ -3002,7 +3002,7 @@ def words(fileName):
     content = infile.read()  # read the file into a string
     infile.close()
 
-    # or you can have 6 spaces in between('      ')the first 2 maketrans arguments must have equal length
+    'or you can have 6 spaces in between('      ')the first 2 maketrans arguments must have equal length'
     wOutPuncSymbols = str.maketrans('!,.:;?', 6*' ')
     content = content.translate(wOutPuncSymbols)
     return content.split()
@@ -3014,3 +3014,55 @@ words('README.MD')
 # =
 # ['The', '3', 'lines', 'in', 'this', 'file', 'end', 'with', 'the', 'new', 'line', 'character',
 # 'There', 'is', 'a', 'blank', 'line', 'above', 'this', 'line']
+
+
+# Sometimes a text file needs to be processed line by line.
+
+def numLines(fileName):
+    'returns the number of lines in file fileName'
+    infile = open(fileName, 'r')   # open the file and read it
+    lineList = infile.readlines()  # into a list of lines
+    infile.close()
+
+    print(lineList)  # print list of lines
+    return len(lineList)
+
+
+numLines('README.MD')
+
+# =
+# ['The 3 lines in this file end with the new line character.\n',
+# '\n', 'There is a blank line above this line.\n']
+# 3
+
+
+# If the file is large, a better approach would be to process the file line by line; that way we avoid having the
+# whole file in main memory. Python supports iteration over lines of a file object.
+
+
+infile = open('README.MD')
+for lines in infile:
+    print(lines, end='')
+
+
+# In every iteration of the for loop, the variable line will refer to the next line of the file.
+
+# =
+# The 3 lines in this file end with the new line character.
+#
+# 3 There is a blank line above this line.
+
+
+# 4.10
+# Implement function myGrep() that takes as input two strings, a file name and a target string,
+# and prints every line of the file that contains the target string as a substring.
+
+def myGrep(fileName, target):
+    'prints every line of file fileName containing string target'
+    infile = open(fileName, 'r')
+    for line in infile:
+        if target in line:
+            print(line, end='')
+
+
+myGrep('README.MD', 'line')
