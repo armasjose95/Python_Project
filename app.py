@@ -3066,3 +3066,35 @@ def myGrep(fileName, target):
 
 
 myGrep('README.MD', 'line')
+
+
+# In order to write to a text file, the file must be opened for writing:
+
+outfile = open('test.txt', 'w')
+
+# If there is no file test.txt in the current working directory, the open() function will create it.
+# If a file text.txt exists, its content will be erased.
+# In both cases, the cursor will point to the beginning of the (empty) file.
+# (If we wanted to add more content to the (existing) file, we would use the mode 'a' instead of 'w'.)
+
+
+# Once a file is opened for writing, function write() is used to write strings to it.
+# It will write the string starting at the cursor position.
+
+
+# The value returned is the number of characters written/added to the file.
+
+outfile.write('T')
+# = 1
+
+outfile.write('his is the first line.')
+# = 22
+
+
+outfile.write(' Still the first line...\n')
+# = 25
+
+# New line?
+
+outfile.write('Now we are in the second line. \n')
+# = 32
