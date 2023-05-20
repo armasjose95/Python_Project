@@ -3098,3 +3098,16 @@ outfile.write(' Still the first line...\n')
 
 outfile.write('Now we are in the second line. \n')
 # = 32
+
+
+# To write something other than a string, it needs to be converted to a string first:
+outfile.write('Non sting value like '+str(5)+' must be converted first. \n')
+# 50
+
+# Here is where the string format() function is helpful. To illustrate the benefit of using
+# string formatting, we print an exact copy of the previous line using string formatting:
+
+outfile.write('Non string value like {} must be converted first. \n'.format(5))
+# 50
+
+outfile.close()
