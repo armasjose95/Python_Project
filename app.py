@@ -3110,4 +3110,155 @@ outfile.write('Non sting value like '+str(5)+' must be converted first. \n')
 outfile.write('Non string value like {} must be converted first. \n'.format(5))
 # 50
 
+
+# When a file is opened for writing, a buffer is created in memory. All writes to the file
+# are really writes to this buffer; nothing is written onto the disk, at least not just yet.
+# no file is created in the file system until the file and the writes are flushed.
+# The close() function will flush writes from the buffer to the file on disk before closing,
+# so it is critical not to forget to close the file. You can also flush the writes without
+# closing the file using the .flush() function:
+
+
 outfile.close()
+
+
+# 4.11
+# (3+4)
+# if x == 5:
+# print('hello')
+# lst=[4,5,6]
+# print(lst)
+# for i in range(0,100,10):
+# print(i)
+
+# 0
+# 10
+# 20
+# 30
+# 40
+# 50
+# 60
+# 70
+# 80
+# 90
+
+
+# Syntax errors are errors that are due to the incorrect format of a Python statement.
+# These errors occur while the statement or program is being translated to machine language and before it is being executed.
+
+
+# Built-In Exceptions
+# Errors occurs because the statement execution got into an invalid state.
+# When this happens, we say that the Python interpreter raises an exception.
+# What this means is that an object gets created, and this object contains all the information relevant to the error.
+
+
+# Users typically hit Ctrl - C to interrupt a program
+
+
+# 4.12 Start by running, in the interactive shell, this assignment statement:
+# >>> s = 'abcdefghijklmnopqrstuvwxyz'
+# Now write expressions using string s and the indexing operator that evaluate to 'bcd',
+# 'abc', 'defghijklmnopqrstuvwx', 'wxy', and 'wxyz'.
+
+s = 'abcdefghijklmnopqrstuvwxyz'
+
+s[1:4]  # = 'bcd'
+s[:3]  # = 'abc'
+s[3:24]  # = 'defghijklmnopqrstuvwx'
+s[22:25]  # = 'wxy'
+s[22:]  # = 'wxyz'
+
+
+# 4.13 Let string s be defined as:
+s = 'abcdefghijklmnopqrstuvwxyz'
+
+# Write Python Boolean expressions that correspond to these propositions:
+# (a) The slice consisting of the second and third character of s is 'bc'.
+
+s[1:3]  # = 'bc'
+
+# (b) The slice consisting of the first 14 characters of s is 'abcdefghijklmn'.
+
+s[:14]  # = 'abcdefghijklmn'
+
+# (c) The slice of s excluding the first 14 characters is 'opqrstuvwxyz'.
+
+s[14:]  # = 'opqrstuvwxyz'
+
+# (d) The slice of s excluding the first and last characters is 'bcdefghijklmnopqrstuvw'.
+s[1:23]  # = 'bcdefghijklmnopqrstuvw'
+
+
+# 4.14 Translate each part into a Python statement:
+# (a) Assign to variable log the next string, which happens to be a fragment of a log of a request
+# for a text file from a web server: 128.0.0.1 - - [12/Feb/2011:10:31:08 -0600] "GET /docs/test.txt HTTP/1.0"
+
+
+log = "128.0.0.1 - - [12/Feb/2011:10:31:08 -0600] "
+log += "GET /docs/test.txt HTTP/1.0"
+print(log)
+# = 128.0.0.1 - - [12/Feb/2011:10:31:08 -0600] GET /docs/test.txt HTTP/1.0
+
+
+# (b) Assign to variable address the substring of log that ends before the first blank space in log,
+# using the string method split() and the indexing operator.
+
+address = log.split()[0]
+print(address)
+# = 128.0.0.1
+
+
+# (c) Assign to variable date the splice of string log containing the date (12/Feb ... -6000), using the indexing operator on string log.
+
+date = log[15:41]
+print(date)
+
+# = 12/Feb/2011:10:31:08 -0600
+
+
+# 4.15 For each of the below string values of s, write the expression involving s and the string methods split() that evaluates
+# to list: ['10', '20', '30', '40', '50', '60']
+# (a) s = '10 20 30 40 50 60'
+
+s = '10 20 30 40 50 60'
+s.split()
+# = ['10', '20', '30', '40', '50', '60']
+
+# (b) s = '10,20,30,40,50,60'
+
+s = '10,20,30,40,50,60'
+s.split(',')
+# = ['10', '20', '30', '40', '50', '60']
+
+
+# (c) s = '10&20&30&40&50&60'
+
+s = '10&20&30&40&50&60'
+s.split('&')
+# = ['10', '20', '30', '40', '50', '60']
+
+# (d) s = '10 - 20 - 30 - 40 - 50 - 60'
+
+s = '10 - 20 - 30 - 40 - 50 - 60'
+s.split(' - ')
+# = ['10', '20', '30', '40', '50', '60']
+
+
+# 4.16 Implement a program that requests three words (strings) from the user. Your program
+# should print Boolean value True if the words were entered in dictionary order; otherwise nothing is printed.
+
+# Enter first word: bass
+# Enter second word: salmon
+# Enter third word: whitefish
+# True
+
+
+first = input("Enter first word: ")
+second = input("Enter second word: ")
+last = input("Enter third word: ")
+
+if first < second < last:
+    print("True")
+
+# = True
