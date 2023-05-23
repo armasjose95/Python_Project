@@ -1,4 +1,4 @@
-import time  # time module
+"""import time  # time module
 import time
 import fractions
 import math
@@ -3262,3 +3262,131 @@ if first < second < last:
     print("True")
 
 # = True
+
+
+
+#4.17 Translate each part into a Python statement using appropriate string methods:
+#(a) Assign to variable message the string 'The secret of this message is that it is secret.'
+
+message = 'The secret of this message is that it is secret.'
+print(message)
+
+#(b) Assign to variable length the length of string message, using operator len().
+
+length = len(message)
+print(length)
+# = 48
+
+#(c) Assign to variable count the number of times the substring 'secret' appears in string message, using string method count().
+
+count = message.count('secret')
+print(count) 
+# = 2
+
+#(d)Assign to variable censored a copy of string message with every occurrence of substring 'secret' replaced by 'xxxxxx', using string method replace().
+
+censored = message.replace('secret', 'xxxxxx')
+print(censored)
+# = The xxxxxx of this message is that it is xxxxxx.
+
+
+
+#4.18 Suppose variable s has been assigned in this way:
+
+s = '''It was the best of times, it was the worst of times; it
+was the age of wisdom, it was the age of foolishness; it was the
+epoch of belief, it was the epoch of incredulity; it was ... '''
+
+#(The beginning of A Tale of Two Cities by Charles Dickens.) Then do the following, in order:
+
+#(a) Write a sequence of statements that produce a copy of s, named newS, in which characters ., ,, ;, and \n have been replaced by blank spaces.
+
+newS = s.replace('.', ' ')
+newS = newS.replace(',', ' ')
+newS = newS.replace(';', ' ')
+print(newS)
+# = It was the best of times  it was the worst of times  it
+#was the age of wisdom  it was the age of foolishness  it was the
+#epoch of belief  it was the epoch of incredulity  it was  
+
+
+#(b) Remove leading and trailing blank spaces in newS (and name the new string newS).
+
+newS = newS.strip()
+#newS = newS.replace(' ', '') -- other way to solve this
+print(newS)
+
+#(c) Make all the characters in newS lowercase (and name the new string newS).
+
+newS = newS.lower()
+print(newS)
+
+#(d) Compute the number of occurrences in newS of string 'it was'.
+
+newS.count('it was')
+# = 6
+
+#(e) Change every occurrence of was to is (and name the new string newS).
+
+newS = newS.replace('was','is')
+print(newS)
+
+#(f) Split newS into a list of words and name the list listS.
+
+listS = newS.split()
+print(listS)
+
+# = ['it', 'is', 'the', 'best', 'of', 'times', 'it', 'is', 'the', 'worst', 'of', 'times', 'it', 'is', 'the', 'age', 'of', 'wisdom', 'it', 'is', 
+# 'the', 'age', 'of', 'foolishness', 'it', 'is', 'the', 'epoch', 'of', 'belief', 'it', 'is', 'the', 'epoch', 'of', 'incredulity', 'it', 'is']"""
+
+
+# 4.19 Write Python statements that print the next formatted outputs using the already assigned variables first, middle, and last:
+
+first = 'Marlena'
+last = 'Sigel'
+middle = 'Mae'
+
+
+# (a) Sigel, Marlena Mae
+
+
+# print(last, first, middle, sep='\t')  # = Smith   John    Paul
+
+print(last + "," + " " + first + " " + middle)
+# or the more proper way to write:
+
+print("{}, {} {}".format(last, first, middle))
+# = Sigel, Marlena Mae
+
+
+# (b) Sigel, Marlena M.
+
+print(last + "," + " " + first + " " + middle[0] + ".")
+# or the more proper way to write:
+
+print("{}, {} {}".format(last, first, middle[0]))
+# = Sigel, Marlena M
+
+# (c) Marlena M. Sigel
+
+print(first + " " + middle[0] + "." + " " + last)
+# or the more proper way to write:
+
+print("{} {}. {}".format(first, middle[0], last))
+# = Marlena M. Sigel
+
+# (d) M. M. Sigel
+
+print(first[0] + "." + " " + middle[0] + "." + " " + last)
+# or the more proper way to write:
+
+print("{}. {}. {}".format(first[0], middle[0], last))
+# = M. M. Sigel
+
+# (e) Sigel, M.
+
+print(last + "," + " " + first[0] + ".")
+# or the more proper way to write:
+
+print("{}, {}.".format(last, first[0]))
+# = Sigel, M.
