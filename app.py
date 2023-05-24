@@ -3339,7 +3339,7 @@ print(listS)
 # = ['it', 'is', 'the', 'best', 'of', 'times', 'it', 'is', 'the', 'worst', 'of', 'times', 'it', 'is', 'the', 'age', 'of', 'wisdom', 'it', 'is', 
 # 'the', 'age', 'of', 'foolishness', 'it', 'is', 'the', 'epoch', 'of', 'belief', 'it', 'is', 'the', 'epoch', 'of', 'incredulity', 'it', 'is']"""
 
-
+""" 
 # 4.19 Write Python statements that print the next formatted outputs using the already assigned variables first, middle, and last:
 
 first = 'Marlena'
@@ -3390,3 +3390,57 @@ print(last + "," + " " + first[0] + ".")
 
 print("{}, {}.".format(last, first[0]))
 # = Sigel, M.
+"""
+
+
+# 4.20 Given string values for the sender, recipient, and subject of an email, write a string
+# format expression that uses variables sender, recipient, and subject and that prints as shown here:
+# >>> sender = 'tim@abc.com'
+# >>> recipient = 'tom@xyz.org'
+# >>> subject = 'Hello!'
+# >>> print(???) #fill in
+#From: tim@abc.com
+#To: tom@xyz.org
+# Subject: Hello!
+
+sender = 'tim@abc.com'
+recipient = 'tom@xyz.org'
+subject = 'Hello!'
+
+print("From: {}\nTo: {}\nSubject: {}".format(sender, recipient, subject))
+
+# =
+#From: tim@abc.com
+#To: tom@xyz.org
+# Subject: Hello!
+
+
+# 4.22 Write a function month() that takes a number between 1 and 12 as input and returns
+# the three-character abbreviation of the corresponding month. Do this without using an if
+# statement, just string operations. Hint: Use a string to store the abbreviations in order.
+
+# >>> month(1)
+# 'Jan'
+# >>> month(11)
+# 'Nov'
+months = ['January', 'February', 'March', 'April', 'May', 'June',
+          'July', 'August', 'September', 'October', 'November', 'December']
+
+
+def month(months):
+    return month
+
+
+month(months[1])
+
+
+def month(num):
+    months = "JanFebMarAprMayJunJulAugSepOctNovDec"
+    return months[(3 * (num - 1)): (3 * num)]
+
+
+month(1)
+# = 'Jan'
+
+month(11)
+# =  'Nov'
