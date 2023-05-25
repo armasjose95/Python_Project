@@ -3391,7 +3391,7 @@ print(last + "," + " " + first[0] + ".")
 print("{}, {}.".format(last, first[0]))
 # = Sigel, M.
 """
-
+"""
 
 # 4.20 Given string values for the sender, recipient, and subject of an email, write a string
 # format expression that uses variables sender, recipient, and subject and that prints as shown here:
@@ -3423,15 +3423,7 @@ print("From: {}\nTo: {}\nSubject: {}".format(sender, recipient, subject))
 # 'Jan'
 # >>> month(11)
 # 'Nov'
-months = ['January', 'February', 'March', 'April', 'May', 'June',
-          'July', 'August', 'September', 'October', 'November', 'December']
 
-
-def month(months):
-    return month
-
-
-month(months[1])
 
 
 def month(num):
@@ -3444,3 +3436,51 @@ month(1)
 
 month(11)
 # =  'Nov'
+"""
+
+
+# 4.23 Write a function average() that takes no input but requests that the user enter a
+# sentence. Your function should return the average length of a word in the sentence.
+# >>> average()
+# Enter a sentence: A sample sentence
+# 5.0
+
+
+def average():
+    sentence = input('Enter a sentence: ').split()
+    return sum(len(word) for word in sentence) / len(sentence)
+
+
+average()
+# = 5
+
+
+# 4.24 Implement function cheer() that takes as input a team name (as a string) and prints a cheer as shown:
+# >>> cheer('Huskies')
+# How do you spell winner?
+# I know, I know!
+# H U S K I E S !
+# And that's how you spell winner!
+# Go Huskies!
+
+
+def cheer(team):
+    team = input('Enter a team name: ')
+    if team == 'Huskies':
+        print('How do you spell winner?\nI know, I know!\nH U S K I E S !\nAnd that\'s how you spell winner!\nGo Huskies!')
+
+
+cheer('Huskies')
+
+
+# or can be done this way
+
+def cheer(team_name):
+    print("How do you spell winner?")
+    print("I know, I know!")
+    print(" ".join(team_name.upper()) + " !")
+    print("And that's how you spell winner!")
+    print("Go {}!".format(team_name))
+
+
+cheer('Huskies')
