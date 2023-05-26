@@ -3463,7 +3463,7 @@ average()
 # And that's how you spell winner!
 # Go Huskies!
 
-
+"""
 def cheer(team):
     team = input('Enter a team name: ')
     if team == 'Huskies':
@@ -3484,3 +3484,85 @@ def cheer(team_name):
 
 
 cheer('Huskies')
+"""
+
+
+# 4.25 Write function vowelCount() that takes a string as input and counts and prints the number of occurrences of vowels in the string.
+# >>> vowelCount('Le Tour de France')
+# a, e, i, o, and u appear, respectively, 1, 3, 0, 1, 1 times.
+
+
+def vowelCount(text):
+    text = text.upper()
+    numA = text.count('A')
+    numE = text.count('E')
+    numI = text.count('I')
+    numO = text.count('O')
+    numU = text.count('U')
+    print('a, e, i, o, and u appear, respectively, {}, {}, {}, {}, {} times.'.format(
+        numA, numE, numI, numO, numU))
+
+
+vowelCount('Le Tour de France')
+# = a, e, i, o, and u appear, respectively, 1, 3, 0, 1, 1 times.
+
+
+# 4.26 The cryptography function crypto() takes as input a string (i.e., the name of a file in
+# the current directory). The function should print the file on the screen with this modification:
+# Every occurrence of string 'secret' in the file should be replaced with string 'xxxxxx'.
+
+# File: crypto.txt >>> crypto('crypto.txt')
+
+# I will tell you my xxxxxx. But first, I have to explain
+# why it is a xxxxxx.
+# And that is all I will tell you about my xxxxxx.
+
+
+def crypto(filename):
+    infile = open(filename, 'r')
+    content = infile.read()
+    content = content.replace('secret', 'xxxxxx')
+    infile.close()
+    print(content)
+
+
+crypto('crypto.txt')
+
+
+# 4.27 Write a function fcopy() that takes as input two file names (as strings) and copies the content of the first file into the second.
+# File: example.txt >>> fcopy('example.txt','output.txt')
+# >>> open('output.txt').read()
+# 'The 3 lines in this file end with the new line character.\n\n
+# There is a blank line above this line.\n'
+
+
+def fcopy(firstFile, SecondFile):
+    infile = open(firstFile, 'r')
+    content = infile.read()
+    firstFile == SecondFile
+    open('output.txt').read()
+    outfile.close()
+
+
+def fcopy(file1, file2):
+    infile = open(file1, 'r')
+    outfile = open(file2, 'w')
+    content = infile.read()
+    outfile.write(content)
+    infile.close()
+    outfile.close()
+
+
+fcopy('example.txt', 'output.txt')
+
+
+# 4.28 Implement function links() that takes as input the name of an HTML file (as a
+# string) and returns the number of hyperlinks in that file. To do this you will assume that
+# each hyperlink appears in an anchor tag. You also need to know that every anchor tag ends with the substring </a>.
+# Test your code on HTML file twolinks.html or any HTML file downloaded from the web into the folder where your program is.
+# >>> links('twolinks.html') File: twolinks.html
+# 2
+
+def links(htmlName):
+    infile = open(firstFile, 'r')
+    content = infile.read()
