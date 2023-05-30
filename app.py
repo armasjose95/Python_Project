@@ -3536,14 +3536,6 @@ crypto('crypto.txt')
 # There is a blank line above this line.\n'
 
 
-def fcopy(firstFile, SecondFile):
-    infile = open(firstFile, 'r')
-    content = infile.read()
-    firstFile == SecondFile
-    open('output.txt').read()
-    outfile.close()
-
-
 def fcopy(file1, file2):
     infile = open(file1, 'r')
     outfile = open(file2, 'w')
@@ -3563,6 +3555,32 @@ fcopy('example.txt', 'output.txt')
 # >>> links('twolinks.html') File: twolinks.html
 # 2
 
-def links(htmlName):
-    infile = open(firstFile, 'r')
+def links(htmlFile):
+    hyperlink = open(htmlFile, 'r')
+    content = hyperlink.read()
+    hyperlink.close()
+    return hyperlink.count("<\a>")
+
+
+links('twolinks.html')
+
+
+# 4.29 Write a function stats() that takes one input argument: the name of a text file. The
+# function should print, on the screen, the number of lines, words, and characters in the file;
+# your function should open the file only once.
+
+
+def stats(file):
+    infile = open(file, 'r')
     content = infile.read()
+    lines = content.count('\n') + 1
+    words = len(content.split())
+    characters = len(content)
+    infile.close
+
+    print(f"line count: {lines}")
+    print(f"word count: {words}")
+    print(f"character count: {characters}")
+
+
+stats('example.txt')
