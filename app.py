@@ -3584,3 +3584,29 @@ def stats(file):
 
 
 stats('example.txt')
+
+
+# Three-Way (and More!) Decisions
+# The most general format of the Python if statement is the multiway (three or more) decision control structure:
+# if <condition1>:
+#   <indented code block 1>
+# elif <condition2>:
+#   <indented code block 2>
+# elif <condition3>:
+#   <indented code block 3>
+# else: # there could be more elif statements
+#   <indented code block last>
+# <non-indented statement>
+
+
+def temperature(t):
+    'prints message based on temperature value t'
+    if t > 86:
+        print('It is hot!')
+    elif t > 32:
+        print('It is cool.')
+    else:  # t<=32
+        print('It is freezing!')
+
+
+temperature(90)
