@@ -3610,3 +3610,20 @@ def temperature(t):
 
 
 temperature(90)
+
+
+# 5.2 Implement function myBMI() that takes as input a person’s height (in inches) and weight
+# (in pounds) and computes the person’s Body Mass Index (BMI). The BMI formula is:
+# bmi = weight ∗ 703 / height^2
+
+def myBMI(height, weight):
+    bmi = (weight*703) / (height**2)
+    if bmi < 18.5:
+        print('Underweight')
+    elif bmi < 25:
+        print('Normal')
+    else:
+        print('Overweight')
+
+
+myBMI(68, 190)
