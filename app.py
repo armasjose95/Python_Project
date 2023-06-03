@@ -3438,7 +3438,7 @@ month(11)
 # =  'Nov'
 """
 
-
+"""
 # 4.23 Write a function average() that takes no input but requests that the user enter a
 # sentence. Your function should return the average length of a word in the sentence.
 # >>> average()
@@ -3464,6 +3464,8 @@ average()
 # Go Huskies!
 
 """
+"""
+
 def cheer(team):
     team = input('Enter a team name: ')
     if team == 'Huskies':
@@ -3485,7 +3487,7 @@ def cheer(team_name):
 
 cheer('Huskies')
 """
-
+"""
 
 # 4.25 Write function vowelCount() that takes a string as input and counts and prints the number of occurrences of vowels in the string.
 # >>> vowelCount('Le Tour de France')
@@ -3627,3 +3629,64 @@ def myBMI(height, weight):
 
 
 myBMI(68, 190)
+
+
+#Iteration loop pattern
+
+l = ['cat', 'dog', 'chicken']
+
+for animal in l:
+    print(animal)
+
+# =
+#cat
+#dog
+#chicken
+
+s = 'cupcake'
+
+for c in s:
+    if c in 'aeiou':
+        print(c)
+
+# = 
+#u
+#a
+#e
+
+#Iteration is over a list but over the lines of the file-like object infile.
+
+infile = open('test.txt', 'r')
+
+for line in infile:
+    print(line, end='')
+
+
+
+# Loop Pattern: Counter Loop
+
+for i in range(10):
+    print(i, end=' ')
+
+# = 0 1 2 3 4 5 6 7 8 9
+
+
+n = 10
+for i in range(n):
+    if i % 2 == 0:
+        print(i, end=' ')
+        
+# = 0 2 4 6 8 
+"""
+
+# 5.2
+# Write a function named powers() that takes a positive integer n as input and prints, on the screen, all the powers of 2 from 2^1 to 2^n
+
+
+def powers(n):
+    for i in range(1, n+1):
+        print(2**i, end=' ')
+
+
+powers(6)
+# = 2 4 8 16 32 64
