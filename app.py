@@ -3690,3 +3690,65 @@ def powers(n):
 
 powers(6)
 # = 2 4 8 16 32 64
+
+
+pets = ['cat', 'dog', 'fish', 'bird']
+
+# for animal in pets:
+#    print(animal)
+
+
+# Instead of iterating through the items of list pets, we could also iterate through the indexes of list pets and achieve the same result:
+
+
+for i in range(len(pets)):
+    print(pets[i])
+
+
+# See if a variable list is sorted in increasing fashion?
+
+lst = [4, 5, 6]
+
+for i in range(len(lst)):
+    if lst[i] >= lst[i + 1]:
+        return False
+
+
+def sorted(lst):
+    'returns True if sequence lst is increasing, false otherwise'
+    for i in range(0, len(lst) - 1):
+        if lst[i] > lst[i + 1]:
+            return False
+        return True
+
+
+sorted([1, 30])  # = true
+sorted([5, 1])  # = false
+
+
+# = 5.3
+# = Write function arithmetic() that takes a list of integers as input and returns True if they form an arithmetic sequence.
+# (A sequence of integers is an arithmetic sequence if the difference between consecutive items of the list is always the same.)
+
+def arithmetic(int):
+    for i in range(len(int)):
+        if int[(i + 2)] == int[(i + 1)]:
+            return False
+        return True
+
+
+def arithmetic(lst):
+    '''returns True if list lst contains an arithmetic sequence, False otherwise'''
+    if len(lst) < 2:  # a sequence of length < 2 is arithmetic
+        return True
+        # checking that difference between successive items is equal to the difference between the first two numbers
+    diff = lst[1] - lst[0]
+    for i in range(1, len(lst)-1):
+        if lst[i+1] - lst[i] != diff:
+            return False
+    return True
+
+
+arithmetic([3, 6, 9, 12, 15])  # true
+arithmetic([3, 6, 9, 11, 14])  # false
+arithmetic([3])  # true
