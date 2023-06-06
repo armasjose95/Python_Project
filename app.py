@@ -1426,11 +1426,11 @@ for i in range(1, 14, 3):
     print(i)
 
 # =
-# 0
-# 3
-# 6
-# 9
-# 12
+# 1
+# 4
+# 7
+# 10
+# 13
 # The sequence printed by the for loop starts at 1, uses a step size of 3, and ends before 14. Therefore it will print 1, 4, 7, 10, and 13.
 
 
@@ -3706,12 +3706,8 @@ for i in range(len(pets)):
 
 
 # See if a variable list is sorted in increasing fashion?
-
-lst = [4, 5, 6]
-
-for i in range(len(lst)):
-    if lst[i] >= lst[i + 1]:
-        return False
+# we do not need to compare the last list item with the “next item” in the list. What we need to do is shorten the range over which
+# the for loop iterates by 1.
 
 
 def sorted(lst):
@@ -3730,21 +3726,15 @@ sorted([5, 1])  # = false
 # = Write function arithmetic() that takes a list of integers as input and returns True if they form an arithmetic sequence.
 # (A sequence of integers is an arithmetic sequence if the difference between consecutive items of the list is always the same.)
 
-def arithmetic(int):
-    for i in range(len(int)):
-        if int[(i + 2)] == int[(i + 1)]:
-            return False
-        return True
 
-
-def arithmetic(lst):
+def arithmetic(sequence):
     '''returns True if list lst contains an arithmetic sequence, False otherwise'''
-    if len(lst) < 2:  # a sequence of length < 2 is arithmetic
+    if len(sequence) < 2:  # a sequence of length < 2 is arithmetic
         return True
         # checking that difference between successive items is equal to the difference between the first two numbers
-    diff = lst[1] - lst[0]
-    for i in range(1, len(lst)-1):
-        if lst[i+1] - lst[i] != diff:
+    diff = sequence[1] - sequence[0]
+    for i in range(1, len(sequence)):
+        if sequence[i] - sequence[i - 1] != diff:
             return False
     return True
 
@@ -3752,3 +3742,25 @@ def arithmetic(lst):
 arithmetic([3, 6, 9, 12, 15])  # true
 arithmetic([3, 6, 9, 11, 14])  # false
 arithmetic([3])  # true
+
+
+# Loop Pattern: Accumulator Loop
+# A common pattern in loops is to accumulate “something” in every iteration of the loop.
+
+numList = [3, 2, 7, -1, 9]
+mySum = 0               # initializing the accumulator
+for num in numList:
+    mySum = mySum + num  # adding to the accumulator
+
+
+mySum  # = 20            # the sum of numbers in numList
+
+
+# shortcut
+
+numList = [3, 2, 7, -1, 9]
+mySum = 0
+for num in numList:
+    mySum += num
+
+mySum  # = 20
