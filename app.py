@@ -3764,3 +3764,69 @@ for num in numList:
     mySum += num
 
 mySum  # = 20
+
+
+numList = [3, 2, 7, -1, 9]
+myProd = 1
+for num in numList:
+    myProd = myProd * num
+
+myProd  # = -378
+
+
+# 5.4
+# Implement function factorial() that takes as input a nonnegative integer and returns its
+# factorial. The factorial of a nonnegative integer n, denoted n!, is defined in this way:
+
+
+def factorial(n):
+    'returns n!'
+    res = 1
+    # start at 2 because 1* any # is just itself, no need to do the last multiplication
+    for i in range(2, n+1):
+        res *= i
+        'same as below'
+        #res = res * i
+    return res
+
+
+factorial(0)  # = 1
+factorial(3)  # = 6
+factorial(5)  # = 120
+
+
+# Write a function acronym() that takes a phrase (i.e., a string) as input and then returns the
+# acronym for that phrase. Note: The acronym should be all uppercase, even if the words in the phrase are not capitalized.
+
+# upper
+# [0]+[1]
+
+def acronym(string):
+    # add first letter
+    myAcr = string[0]
+    # iterate over string
+    for i in range(1, len(string)):
+        if string[i-1] == ' ':
+            # add letter next to space and capitalizes
+            myAcr = myAcr + string[i].upper()
+    #myAcr = myAcr.upper()
+    return myAcr
+
+
+acronym('Random access memory')  # ='RAM'
+
+# OR CAN BE DONE THIS WAY
+
+
+def acronym(phrase):
+    'returns the acronym of the input string phrase'
+    # splits phrase into a list of words
+    words = phrase.split()
+    # accumulate first character, as an uppercase, of every word
+    res = ''
+    for w in words:
+        res = res + w[0].upper()
+    return res
+
+
+acronym('Random access memory')
