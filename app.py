@@ -3692,6 +3692,14 @@ powers(6)
 # = 2 4 8 16 32 64
 
 
+def powers(n):
+    for i in range():
+        print(2**i, end=' ')
+
+
+powers(6)
+
+
 pets = ['cat', 'dog', 'fish', 'bird']
 
 # for animal in pets:
@@ -3830,3 +3838,63 @@ def acronym(phrase):
 
 
 acronym('Random access memory')
+
+
+# 5.6
+# Write function divisors() that takes a positive integer n as input and returns the list of all positive divisors of n.
+
+
+def divisors(n):
+    res = []
+    for i in range(1, n+1):
+        if n % i == 0:
+            res.append(i)
+    return res
+
+
+divisors(1)  # = 1
+divisors(6)  # = [1,2,6]
+divisors(11)  # = [1,11]
+
+
+# Loop Patterns: Nested Loop
+# a loop statement contained inside another loop statement.
+# A nested loop pattern may contain more than two nested loops.
+# Note that we needed to use a variable name in the outer for loop different from the variable name in the inner for loop (i).
+
+# Goal:
+# 0 1 2 3 4
+# 0 1 2 3 4
+# 0 1 2 3 4
+# 0 1 2 3 4
+# 0 1 2 3 4
+
+n = 5
+for i in range(n):
+    print(i, end=' ')
+
+# = 0 1 2 3 4
+
+
+for j in range(n):              # outer loop iterates 5 times
+    for i in range(n):          # inner loop prints 0 1 2 3 4
+        print(i, end=' ')
+
+# = 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4
+
+
+def nested(n):
+    'prints n lines each containing values 0 1 2 ... n-1'
+    for j in range(n):              # repeat n times:
+        for i in range(n):          # print 0, 1, ..., n-1
+            print(i, end=' ')
+        print()                     # move cursor to next line
+
+
+nested(5)
+# =
+# 0 1 2 3 4
+# 0 1 2 3 4
+# 0 1 2 3 4
+# 0 1 2 3 4
+# 0 1 2 3 4
