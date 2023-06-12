@@ -3898,3 +3898,38 @@ nested(5)
 # 0 1 2 3 4
 # 0 1 2 3 4
 # 0 1 2 3 4
+
+# 5.7
+# Write a function xmult() that takes two lists of integers as input and returns a list containing
+# all products of integers from the first list with the integers from the second list.
+
+
+def xmult(firList, secList):
+    res = []
+    for j in firList:
+        for i in secList:
+            res.append(j*i)
+    return res
+
+
+xmult([2], [1, 5])  # = [2, 10]
+xmult([2, 3], [1, 5])  # = [2, 10, 3, 15]
+xmult([3, 4, 1], [2, 0])  # = [6, 0, 8, 0, 2, 0]
+
+
+def nested2(n):
+    'prints n lines 0 1 2 ... j for j = 0, 1, ..., n-1'
+    for j in range(n):          # j = 0, 1, ..., n-1
+        for i in range(j+1):    # print 0 1 2 ... j
+            print(i, end=' ')
+        print()                 # move to next line
+
+
+nested2(5)
+
+# =
+# 0
+# 0 1
+# 0 1 2
+# 0 1 2 3
+# 0 1 2 3 4
