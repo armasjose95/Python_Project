@@ -3950,13 +3950,21 @@ nested2(5)
 
 #lst = [3, 1, 7, 4, 9, 2, 5]
 
-def bubbleSort(lst):
-    lst = [3, 1, 7, 4, 9, 2, 5]
-    for j in range(0, lst-1):
-        for i in range(lst):
-            if lst[i] - lst[i - 1] == diff:
-                return False
-        return True
+
+def bubbleSort(n):
+    for i in range(len(n)):
+        for j in range(0, len(n)-i-1):
+            if n[j] > n[j+1]:
+                temp = n[j]
+                n[j] = n[j+1]
+                n[j+1] = temp
+                swapped = True
+            if not swapped:
+                break
 
 
+lst = [3, 1, 7, 4, 9, 2, 5]
+
+bubbleSort(lst)
 lst
+# = [1, 2, 3, 4, 5, 7, 9]
