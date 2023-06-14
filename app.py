@@ -3899,6 +3899,13 @@ nested(5)
 # 0 1 2 3 4
 # 0 1 2 3 4
 
+i = 0
+for i in range(i, 11):
+    if i < 11:
+        i = i + 1
+    print(i, end=' ')
+
+
 # 5.7
 # Write a function xmult() that takes two lists of integers as input and returns a list containing
 # all products of integers from the first list with the integers from the second list.
@@ -3954,9 +3961,12 @@ nested2(5)
 def bubbleSort(n):
     for i in range(len(n)):
         for j in range(0, len(n)-i-1):
-            if n[j] > n[j+1]:
+            if n[j] > n[j+1]:   # need to switch the elements around
+                # create temporary variable to store 1st element that is larger than the 2nd compared element
                 temp = n[j]
+                # set 1st larger element being compared to the place of the next element being compared which is smaller
                 n[j] = n[j+1]
+                # 2nd element being compared is set to whatever is stored in temp
                 n[j+1] = temp
                 swapped = True
             if not swapped:
@@ -3964,7 +3974,24 @@ def bubbleSort(n):
 
 
 lst = [3, 1, 7, 4, 9, 2, 5]
-
 bubbleSort(lst)
 lst
 # = [1, 2, 3, 4, 5, 7, 9]
+
+
+def bubble(list_a):
+    for i in range(len(list_a)):
+        for j in range(0, len(list_a) - i - 1):
+            # comparing the 1st # against the # after it in the list, if 1st # in the list is bigger than the 2nd, it's false
+            if list_a[j] > list_a[j + 1]:
+                temporary = list_a[j]
+                list_a[j] = list_a[j+1]
+                list_a[j+1] = temporary
+                swappedElements = True
+            if not swappedElements:
+                break
+
+
+theList = [6, 4, 1, 3, 2, 5, 7, 8, 9, 7]
+bubble(theList)
+theList  # = [1, 2, 3, 4, 5, 6, 7, 7, 8, 9]
