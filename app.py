@@ -3677,7 +3677,7 @@ for i in range(n):
         print(i, end=' ')
         
 # = 0 2 4 6 8 
-"""
+
 
 # 5.2
 # Write a function named powers() that takes a positive integer n as input and prints, on the screen, all the powers of 2 from 2^1 to 2^n
@@ -3995,3 +3995,56 @@ def bubble(list_a):
 theList = [6, 4, 1, 3, 2, 5, 7, 8, 9, 7]
 bubble(theList)
 theList  # = [1, 2, 3, 4, 5, 6, 7, 7, 8, 9]
+"""
+
+
+# Two-Dimensional Lists
+
+t = [[4, 7, 2, 5], [5, 1, 9, 2], [8, 3, 6, 6]]
+
+t[0]  # = [4, 7, 2, 5]
+t[1]  # = [5, 1, 9, 2]
+t[2][0]  # = 8      the element in row 2, column 0
+t[0][0]  # = 4      the element in row 0, column 0
+t[1][2]  # = 9       the element in row 1, column 2
+
+# To assign a value to the entry in row i and column j, we simply use the assignment statement.
+# For example:
+
+t[2][3] = 7
+print(t)  # = [[4, 7, 2, 5], [5, 1, 9, 2], [8, 3, 6, 7]]
+
+
+# = Two-Dimensional Lists and the Nested Loop Pattern
+# Often it is nice to print the content of a two-dimensional list so it looks like a table.
+
+for rows in t:
+    print(rows)
+
+# =
+# [4, 7, 2, 5]
+# [5, 1, 9, 2]
+# [8, 3, 6, 7]
+
+# We use the nested loop pattern to implement this function.
+# The outer for loop is used to generate the rows,
+# while the inner for loop iterates over the items in a row and prints them:
+
+
+def print2D(t):
+    'prints values in 2D list t as a 2D table'
+    for rows in t:
+        for items in rows:          # print item followed by
+            print(items, end=' ')   # a blank space
+        print()                     # move to next line
+
+
+print2D(t)
+# =
+# 4 7 2 5
+# 5 1 9 2
+# 8 3 6 7
+
+# Suppose we need to develop function incr2D() that increments the value of every number in a two-dimensional list of numbers:
+# Clearly, the function incr2D() will need to execute:
+# t[i][j] += 1
