@@ -4048,3 +4048,50 @@ print2D(t)
 # Suppose we need to develop function incr2D() that increments the value of every number in a two-dimensional list of numbers:
 # Clearly, the function incr2D() will need to execute:
 # t[i][j] += 1
+
+
+def incr2d(t):
+    numRows = len(t)
+    numCols = len(t[0])
+    for i in range(numRows):
+        for j in range(numCols):
+            t[i][j] = t[i][j] + 1
+        print()
+
+
+t = [[4, 7, 2, 5], [5, 1, 9, 2], [8, 3, 6, 6]]
+incr2d(t)
+
+
+# 5.9
+# Write a function add2D() that takes two two-dimensional lists of same size (i.e., same number of rows and columns)
+# as input arguments and increments every entry in the first list with the value of the corresponding entry in the second list.
+
+t = [[4, 7, 2, 5], [5, 1, 9, 2], [8, 3, 6, 6]]
+s = [[0, 1, 2, 0], [0, 1, 1, 1], [0, 1, 0, 0]]
+
+
+def add2D(t, s):
+    nrows = len(t)                              # number of rows
+    ncols = len(t[0])                           # number of columns
+    'add2D increments every item t1[i][j] by t2[i][j]'
+    for i in range(nrows):                      # for every row index i
+        for j in range(ncols):                  # for every column index j
+            t[i][j] = t[i][j] + s[i][j]         # or t[i][j] += s[i][j]
+
+
+add2D(t, s)
+for row in t:
+    print(row)
+
+# or
+
+
+def add2D(t1, t2):
+    't1 and t2 are 2D lists with the same number of rows and same number of equal sized columns'
+    'add2D increments every item t1[i][j] by t2[i][j]'
+    nrows = len(t1)  # number of rows
+    ncols = len(t1[0])  # number of columns
+    for i in range(nrows):  # for every row index i
+        for j in range(ncols):  # for every column index j
+            t1[i][j] += t2[i][j]
