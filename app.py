@@ -4095,3 +4095,46 @@ def add2D(t1, t2):
     for i in range(nrows):  # for every row index i
         for j in range(ncols):  # for every column index j
             t1[i][j] += t2[i][j]
+
+
+# while Loops
+# perfect for situations in which we need to iterate but we do not know how many times.
+
+
+# while <condition>:
+#   <indented code block>
+# <non-indented statement>
+
+
+# compute the first multiple of 73 that is greater than 3,951.
+# The variable multiple needs to be initialized before the while loop. We
+goal = 3951
+multiple = 73
+while multiple <= goal:  # or <= 3951
+    multiple += 73
+
+multiple  # 4015
+
+# When the while loop condition evaluates to False, the execution of the loop stops. The
+# value of multiple is then greater than bound. Since the previous value of multiple was
+# not greater, it will have the value we want: the smallest multiple greater than bound.
+
+
+# 5.10
+# Write a function interest() that takes one input, a floating-point interest rate (e.g., 0.06
+# which corresponds to a 6% interest rate). Your function should compute and return how
+# long (in years) it will take for an investment to double in value. Note: The number of years
+# it takes for an investment to double does not depend on the value of the initial investment.
+# >>> interest(0.07) # = 11
+
+
+def interst(rate):
+    investment = 100
+    years = 0
+    while investment < 200:
+        years += 1
+        investment += investment * rate
+    return years
+
+
+interst(0.06)  # =12
