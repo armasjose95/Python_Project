@@ -4138,3 +4138,75 @@ def interst(rate):
 
 
 interst(0.06)  # =12
+
+
+def fibonacci(bound):
+    'returns the smallest Fibonacci number greater than bound '
+    previous = 1  # first Fibonacci number
+    current = 1  # second Fibonacci number
+    while current <= bound:
+        current  # becomes previous, and new current is computed
+        previous, current = current, previous+current
+        return current
+
+
+fibonacci([1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89])
+
+
+def factorial(n):
+    'returns n!'
+    res = 1
+    # start at 2 because 1* any # is just itself, no need to do the last multiplication
+    for i in range(2, n+1):
+        res *= i
+        'same as below'
+        #res = res * i
+    return res
+
+
+# factorial(0)  # = 1
+
+
+def approxE(error):
+    'returns approximation of e within error'
+    previous = 1
+    current = 2
+    i = 2
+    while current - previous > error:
+        previous = current
+        current = previous + 1/factorial(i)
+        i += 1
+    return current
+
+
+approxE(0.01)
+# = 2.7166666666666663
+approxE(0.000000001)
+# = 2.7182818284467594
+
+
+# Loop Pattern: Infinite Loop
+# The while loop can be used to create an infinite loop, which is a loop that runs “forever”:
+
+# while True:
+#   <indented code block>
+# Because True is always true, <indented code block> will get executed again and again.
+
+# Infinite loops are useful when the program is meant to provide a service indefinitely.
+# A web server (i.e., a program that serves web pages) is an example of a program that provides
+# a service. It repeatedly receives web page requests from your—and other people’s—web browser and sends back the requested web page.
+
+def hello2():
+    while True:
+        name = input('What is your name? ')
+        print('Hello {}'.format(name))
+
+
+hello2()
+
+# CTRL + C can interrupt the program
+
+
+def cities2():
+    '''returns the list of cities that are interactively entered
+    by the user; the empty string ends the interactive input '''
