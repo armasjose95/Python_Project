@@ -4207,6 +4207,35 @@ hello2()
 # CTRL + C can interrupt the program
 
 
+# Loop Pattern: Loop and a Half
+# A while loop should also be used when a program must repeatedly process some input
+# values until a flag is reached.
+# (A flag is an arbitrary value that is chosen to indicate the end of the input.)
+
+
+# In function cities(), there are two input() function calls: one before the while
+# loop statement and one inside the while loop code block. A way to eliminate one of those
+# “redundant” statements and make the code more intuitive is to use an infinite loop and an
+# if statement inside the body of the while loop. The if statement would test whether the user entered the flag value:
+
+
 def cities2():
     '''returns the list of cities that are interactively entered
     by the user; the empty string ends the interactive input '''
+    lst = []
+
+    while True:                         # forever repeat:
+        city = input('Enter city: ')    # ask user to enter city
+        if city == '':                  # if city is the flag value
+            return lst                  # return list
+        lst.append(city)                # append city to list
+
+
+cities2()
+
+# = ['Chicago', 'New York', 'Milwuakee', 'Boston', 'Los Angelas', 'San Diego', 'Dallas', 'Paris']
+
+# When executing function cities2(), the last iteration of the while loop is the one during
+# which the user enters the empty string. In this iteration, only “half” of the body of the for
+# loop is executed; the statement lst.append(city) is skipped. For this reason, the loop
+# pattern in cities2() is commonly referred to as the loop-and-a-half pattern.
