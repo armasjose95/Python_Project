@@ -4239,3 +4239,46 @@ cities2()
 # which the user enters the empty string. In this iteration, only “half” of the body of the for
 # loop is executed; the statement lst.append(city) is skipped. For this reason, the loop
 # pattern in cities2() is commonly referred to as the loop-and-a-half pattern.
+
+
+# break Statement
+# When it is executed, the current loop iteration is stopped and the loop is exited.
+# Execution then resumes with the statement that follows the loop statement.
+# If the break statement appears in the code block of a loop of a nested loop pattern, only the innermost loop containing the break is exited.
+
+
+def print2D2(table):
+    'prints values in 2D list t as a 2D table'
+    for rows in table:
+        for items in rows:          # print item followed by
+            print(items, end=' ')   # a blank space
+        print()                     # move to next line
+
+
+table = [[2, 3, 0, 6], [0, 3, 4, 5], [4, 5, 6, 0]]
+print2D2(table)
+# =
+# 2 3 0 6
+# 0 3 4 5
+# 4 5 6 0
+
+
+def before0(table):
+    'prints values in 2D list t as a 2D table'
+    for rows in table:
+        for items in rows:          # print item followed by
+            if items == 0:
+                break
+            print(items, end=' ')   # a blank space
+        print()
+
+
+before0(table)
+
+# =
+# 2 3
+
+# 4 5 6
+
+# The break statement does not affect the outer for loop, which will iterate through all the
+# rows of the table regardless of whether the break statement has been executed.
