@@ -4377,11 +4377,30 @@ mult3([3, 1, 6, 2, 3, 9, 7, 9, 5, 4, 5])
 
 
 def vowels(phrase):
-    indexes = []
-    for vowels in range(len(phrase)):
-        if vowels in 'aeiouAEIOU':
-            indexes.append(vowels)
-            print(phrase[vowels])
+    for i in range(0, len(phrase)):
+        if phrase[i] in 'aeiouAEIOU':
+            print(i)
 
 
 vowels('Hello WORLD')
+
+
+# =
+# 1
+# 4
+# 7
+# for loop running through indexes
+
+
+# 5.16 Implement function indexes() that takes as input a word (as a string) and a one-
+# character letter (as a string) and returns a list of indexes at which the letter occurs in the word.
+
+def indexes(phrase, letter):
+    indexes = []
+    for i in range(0, len(phrase)):
+        if letter[i] in phrase:
+            indexes.append(i)
+            return [i]
+
+
+indexes('mississippi', 's')
