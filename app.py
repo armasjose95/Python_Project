@@ -4264,12 +4264,13 @@ print2D2(table)
 
 
 def before0(table):
-    'prints values in 2D list t as a 2D table'
+    '''prints values in 2D list of numbers t as a 2D table;
+    3 only values in row up to first 0 are printed '''
     for rows in table:
-        for items in rows:          # print item followed by
-            if items == 0:
-                break
-            print(items, end=' ')   # a blank space
+        for items in rows:          # inner for loop
+            if items == 0:          # if items is 0
+                break               # terminate inner for loop
+            print(items, end=' ')   # otherwise print num
         print()
 
 
@@ -4277,8 +4278,94 @@ before0(table)
 
 # =
 # 2 3
-
+#
 # 4 5 6
 
 # The break statement does not affect the outer for loop, which will iterate through all the
 # rows of the table regardless of whether the break statement has been executed.
+
+
+# Continue Statement
+# The continue statement can be added to the code block of a loop, just like the break statement.
+# When the continue statement is executed, the current, innermost loop iteration
+# is stopped, and execution resumes with the next iteration of the current, innermost loop statement.
+# Unlike the break statement, the continue statement does not terminate the
+# innermost loop; it only terminates the current iteration of the innermost loop.
+
+
+def ignore0(table):
+    '''prints values in 2D list of numbers t as a 2D table;
+    3 only values in row up to first 0 are printed '''
+    for rows in table:
+        for items in rows:          # inner for loop
+            if items == 0:          # if items is 0
+                continue            # current inner loop iteration
+            print(items, end=' ')   # otherwise print items
+        print()
+
+
+ignore0(table)
+
+
+# =
+# 2 3 6
+# 3 4 5
+# 4 5 6
+
+
+# Pass Statement
+# In Python, every function definition def statement, if statement, or for or while loop statement must have a body
+# (i.e., a nonempty indented code block).
+# A syntax error while parsing the program would occur if the code block is missing.
+# In the rare occasion when the code in the blocks really doesn’t have to do anything, we still have to put some code in it.
+# For this reason Python provides the pass statement, which does nothing but is still a valid statement.
+# The pass statement is also useful when a code body has not yet been implemented.
+
+
+n = 3
+if n % 2 == 0:
+    pass        # do nothing for even number n
+else:
+    print(n)    # print n, only if n is an odd number
+
+# = 3
+
+
+# 5.12
+# Implement function test() that takes as input one integer and prints 'Negative', 'Zero', or 'Positive' depending on its value.
+
+def test(number):
+    if number > 1:
+        print('Positive')
+    elif number == 0:
+        print('Zero')
+    else:
+        print('Negative')
+
+
+test(-3)
+# Negative
+test(0)
+# = Zero
+test(3)
+# = Positve
+
+
+# 5.14
+# Write function mult3() that takes as input a list of integers and prints only the multiples of 3, one per line.
+
+def mult3(lst):
+    for num in lst:
+        if num % 3 == 0:
+            print(num)
+
+
+mult3([3, 1, 6, 2, 3, 9, 7, 9, 5, 4, 5])
+
+# =
+# 3
+# 6
+# 3
+# 9
+# 9
+# for loop running through num
