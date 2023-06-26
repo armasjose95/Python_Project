@@ -4369,3 +4369,19 @@ mult3([3, 1, 6, 2, 3, 9, 7, 9, 5, 4, 5])
 # 9
 # 9
 # for loop running through num
+
+
+# 5.15
+# Implement the function vowels() that takes as input a string and prints the indexes of all vowels in the string.
+# Hint: A vowel can be defined as any character in string 'aeiouAEIOU'
+
+
+def vowels(phrase):
+    indexes = []
+    for vowels in range(len(phrase)):
+        if vowels in 'aeiouAEIOU':
+            indexes.append(vowels)
+            print(phrase[vowels])
+
+
+vowels('Hello WORLD')
