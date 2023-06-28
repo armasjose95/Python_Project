@@ -4396,11 +4396,39 @@ vowels('Hello WORLD')
 # character letter (as a string) and returns a list of indexes at which the letter occurs in the word.
 
 def indexes(phrase, letter):
-    indexes = []
+    index = []
     for i in range(0, len(phrase)):
-        if letter[i] in phrase:
-            indexes.append(i)
-            return [i]
+        if phrase[i] == letter:
+            index.append(i)
+            index = index + phrase[i]
+            return index
 
 
 indexes('mississippi', 's')
+
+
+def indexes(phrase, letter):
+    return [index for index, match in enumerate(phrase) if match == letter]
+
+
+indexes('mississippi', 's')
+[2, 3, 5, 6]
+indexes('mississippi', 'i')
+[1, 4, 7, 10]
+indexes('mississippi', 'a')
+[]
+
+
+# 5.17
+# Write function doubles() that takes as input a list of integers and outputs the integers
+# in the list that are exactly twice the previous integer in the list, one per line.
+#doubles([3, 0, 1, 2, 3, 6, 2, 4, 5, 6, 5])
+
+
+def doubles(lst):
+    for i in range(0, lst + 1):
+        if lst[i] == (lst[i] + 1) * 2:
+            return lst[i]
+
+
+doubles([3, 0, 1, 2, 3, 6, 2, 4, 5, 6, 5])
