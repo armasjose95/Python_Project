@@ -4400,11 +4400,19 @@ def indexes(phrase, letter):
     for i in range(0, len(phrase)):
         if phrase[i] == letter:
             index.append(i)
-            index = index + phrase[i]
-            return index
+    return index
 
 
 indexes('mississippi', 's')
+# = [2, 3, 5, 6]
+indexes('mississippi', 'i')
+# = [1, 4, 7, 10]
+indexes('mississippi', 'a')
+# = []
+# for loop running through indexes
+
+
+# or
 
 
 def indexes(phrase, letter):
@@ -4412,11 +4420,11 @@ def indexes(phrase, letter):
 
 
 indexes('mississippi', 's')
-[2, 3, 5, 6]
+# = [2, 3, 5, 6]
 indexes('mississippi', 'i')
-[1, 4, 7, 10]
+# = [1, 4, 7, 10]
 indexes('mississippi', 'a')
-[]
+# = []
 
 
 # 5.17
@@ -4426,9 +4434,53 @@ indexes('mississippi', 'a')
 
 
 def doubles(lst):
-    for i in range(0, lst + 1):
-        if lst[i] == (lst[i] + 1) * 2:
-            return lst[i]
+    for i in range(0, len(lst)-1):
+        if lst[i] * 2 == lst[i + 1]:
+            print(lst[i + 1])
 
 
 doubles([3, 0, 1, 2, 3, 6, 2, 4, 5, 6, 5])
+# =
+# 2
+# 6
+# 4
+
+
+# 5.18
+# Implement function four_letter() that takes as input a list of words (i.e., strings) and returns the sublist of all four letter words in the list.
+
+
+def four_letter(lst):
+    result = []
+    for word in lst:
+        if len(word) == 4:
+            result.append(word)
+    return result
+
+
+four_letter(['dog', 'letter', 'stop', 'door', 'bus', 'dust'])
+# =
+# ['stop', 'door', 'dust']
+# for loop running through indexes
+
+
+# 5.19
+# Write a function inBoth() that takes two lists and returns True if there is an item that is common to both lists and False otherwise.
+
+def inBoth(lst1, lst2):
+    for i in lst2:
+        if i not in lst2:
+            return False
+    return True
+
+
+inBoth([3, 2, 5, 4, 7], [9, 0, 1, 3])
+
+# = True
+
+
+# 5.20
+# Write a function intersect() that takes two lists, each containing no duplicate values, and returns a list containing values that are present in both
+# lists (i.e., the intersection of the two input lists).
+
+def intersect(lst1, lst2):
