@@ -4084,6 +4084,12 @@ add2D(t, s)
 for row in t:
     print(row)
 
+
+# [4, 8, 4, 5]
+# [5, 2, 10, 3]
+# [8, 4, 6, 6]
+
+
 # or
 
 
@@ -4468,10 +4474,10 @@ four_letter(['dog', 'letter', 'stop', 'door', 'bus', 'dust'])
 # Write a function inBoth() that takes two lists and returns True if there is an item that is common to both lists and False otherwise.
 
 def inBoth(lst1, lst2):
-    for i in lst2:
-        if i not in lst2:
-            return False
-    return True
+    for i in lst1:
+        if i in lst2:
+            return True
+    return False
 
 
 inBoth([3, 2, 5, 4, 7], [9, 0, 1, 3])
@@ -4484,3 +4490,52 @@ inBoth([3, 2, 5, 4, 7], [9, 0, 1, 3])
 # lists (i.e., the intersection of the two input lists).
 
 def intersect(lst1, lst2):
+    duplicate = []
+    for i in lst1:
+        if i in lst2:
+            duplicate.append(i)
+    return duplicate
+
+
+intersect([3, 5, 1, 7, 9], [4, 2, 6, 3, 9])
+# =
+# [3, 9]
+# for loop running through items
+
+
+# 5.21
+# Implement the function pair() that takes as input two lists of integers and one integer n and prints the pairs of integers,
+# one from the first input list and the other from the second input list, that add up to n. Each pair should be printed.
+
+def pair(ls1, lst2, n):
+    for i in ls1:
+        for j in lst2:
+            if i + j == n:
+                print(i, j)
+
+
+pair([2, 3, 4], [5, 7, 9, 12], 9)
+
+# =
+# 2 7
+# 4 5
+# Exercise 21 - nested for loops running through items
+
+
+# 5.22
+# Implement the function pairSum() that takes as input a list of distinct integers lst
+# and an integer n, and prints the indexes of all pairs of values in lst that sum up to n.
+
+def pairSum(lst, n):
+    for i in range(0, len(lst)):
+        for j in range(i, len(lst)):
+            if lst[i] + lst[j] == n:
+                print(i, j)
+
+
+pairSum([7, 8, 5, 3, 4, 6], 11)
+
+# =
+# 0 4
+# 1 3
+# 2 5
