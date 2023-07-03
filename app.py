@@ -4539,3 +4539,75 @@ pairSum([7, 8, 5, 3, 4, 6], 11)
 # 0 4
 # 1 3
 # 2 5
+# Exercise 21 - nested for loops running through items
+
+
+# 5.23
+# Write function pay() that takes as input an hourly wage and the number of hours an employee worked in the last week.
+# The function should compute and return the employee’s pay.
+# Overtime work should be paid in this way: Any hours beyond 40 but less than or equal 60 should be paid at 1.5 times the regular hourly wage.
+# Any hours beyond 60 should be paid at 2 times the regular hourly wage.
+
+def pay(wage, hours):
+    if hours <= 40:
+        payment = wage * hours
+    elif hours <= 60:
+        payment = wage * 40
+        payment = payment + (hours - 40) * (wage * 1.5)
+        #payment += wage * (hours - 40) * 1.5
+    else:
+        payment = wage * 40
+        payment = payment + wage * 20 * 1.5
+        #payment += wage * 20 * 1.5
+        payment = payment + (hours - 60) * (wage * 2)
+        #payment += wage * (hours - 60) * 2
+    return payment
+
+
+pay(10, 35)
+# = 350
+pay(10, 45)
+# = 475.0
+pay(10, 61)
+# = 720.0
+
+
+# 5.24
+# Write function case() that takes a string as input and returns 'capitalized', 'not capitalized', or 'unknown', depending on whether the string starts
+# with an uppercase letter, lowercase letter, or something other than a letter in the English alphabet, respectively.
+
+def case(string):
+    if string[0] >= 'a' and string[0] <= 'z':
+        return 'not capitalized'
+    elif string[0] >= 'A' and string[0] <= 'Z':
+        return 'capitalized'
+    else:
+        return 'unknown'
+
+
+case('Android')
+# = 'capitalized'
+case('hello')
+# = 'not capitalized'
+case('3M')
+# = 'unknown'
+
+
+# 5.25
+# Implement function leap() that takes one input argument—a year—and returns True
+# if the year is a leap year and False otherwise. (A year is a leap year if it is divisible by 4 but
+# not by 100, unless it is divisible by 400 in which case it is a leap year. For example, 1700, 1800 and 1900 are not leap years but 1600 and 2000 are.)
+
+
+def leap(year):
+    if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+        return True
+    return False
+
+
+leap(2008)
+# = True
+leap(1900)
+# = False
+leap(2000)
+# = True
