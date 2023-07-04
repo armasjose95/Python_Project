@@ -4611,3 +4611,59 @@ leap(1900)
 # = False
 leap(2000)
 # = True
+
+
+# 5.26
+# Rock, Paper, Scissors is a two-player game in which each player chooses one of three
+# items. If both players choose the same item, the game is tied. Otherwise, the rules that determine the winner are:
+# (a) Rock always beats Scissors (Rock crushes Scissors)
+# (b) Scissors always beats Paper (Scissors cut Paper)
+# (c) Paper always beats Rock (Paper covers Rock)
+# Implement function rps() that takes the choice ('R', 'P', or 'S') of player 1 and the
+# choice of player 2, and returns −1 if player 1 wins, 1 if player 2 wins, or 0 if there is a tie.
+
+
+def rps(player1, player2):
+    if player1 == player2:
+        return 0
+    elif player1 == 'R' and player2 == 'S' or player1 == 'S' and player2 == 'P' or player1 == 'P' and player2 == 'R':
+        return -1
+    else:
+        return 1
+
+
+rps('R', 'P')   # = 1
+rps('R', 'S')   # = -1
+rps('S', 'S')   # = 0
+
+
+# 5.27
+# Write function letter2number() that takes as input a letter grade (A, B, C, D, F, possibly with a − or +)
+# and returns the corresponding number grade. The numeric values
+# for A, B, C, D, and F are 4, 3, 2, 1, 0. A + increases the number grade value by 0.3 and a − decreases it by 0.3.
+
+def letter2number(grade):
+    officialGrade = 0
+    if 'A' in grade:
+        officialGrade = 4
+    elif 'B' in grade:
+        officialGrade = 3
+    elif 'C' in grade:
+        officialGrade = 2
+    elif 'D' in grade:
+        officialGrade = 1.0
+    elif 'F' in grade:
+        officialGrade = 0
+    if '-' in grade:
+        officialGrade -= 0.3
+    if '+' in grade:
+        officialGrade += 0.3
+    return officialGrade
+
+
+letter2number('A-')
+# = 3.7
+letter2number('B+')
+# = 3.3
+letter2number('D')
+# = 1.0
