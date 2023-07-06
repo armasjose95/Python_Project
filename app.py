@@ -4667,3 +4667,23 @@ letter2number('B+')
 # = 3.3
 letter2number('D')
 # = 1.0
+
+
+# 5.28
+# Write function geometric() that takes a list of integers as input and returns True if
+# the integers in the list form a geometric sequence. A sequence a0, a1, a2, a3, a4, . . . , an−2, an − 1
+# is a geometric sequence if the ratios a1/a0, a2/a1, a3/a2, a4/a3, . . . , an−1/an−2 are all equal.
+
+def geometric(lst):
+    if len(lst) < 3:
+        return True
+    else:
+        for i in range(0, len(lst)-1):
+            if lst[i + 1] != lst[i] * 2:
+                return False
+        return True
+
+
+geometric([2, 4, 8, 16, 32, 64, 128, 256])      # = True
+geometric([1, 2, 4, 8])                         # = True
+geometric([2, 4, 6, 8])                         # = False
