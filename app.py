@@ -4687,3 +4687,119 @@ def geometric(lst):
 geometric([2, 4, 8, 16, 32, 64, 128, 256])      # = True
 geometric([1, 2, 4, 8])                         # = True
 geometric([2, 4, 6, 8])                         # = False
+
+
+# 5.29
+# Write function lastfirst() that takes one argument—a list of strings of the format
+# <LastName, FirstName>—and returns a list consisting two lists:
+# (a) A list of all the first names
+# (b) A list of all the last names
+
+def lastfirst(lst):
+    first, last = [], []
+    output_list = []
+    for i in lst:
+        lName, fName = i.split(', ')
+        first.append(fName)
+        last.append(lName)
+    output_list.append(first)
+    output_list.append(last)
+    return output_list
+
+
+lastfirst(['Gerber, Len', 'Fox, Kate', 'Dunn, Bob'])
+# = [['Len', 'Kate', 'Bob'], ['Gerber', 'Fox', 'Dunn']]
+
+
+# 5.30
+# Develop the function many() that takes as input the name of a file in the current
+# directory (as a string) and outputs the number of words of length 1, 2, 3, and 4. Test your function on file sample.txt.
+
+
+def many(filename):
+    infile = open(filename)
+    content = infile.read()
+    infile.close()
+
+    # Split content into a list of words
+    table = str.maketrans('.,?!', 4*' ')
+    content = content.translate(table)
+    content = content.split()
+
+    # Find the length of the longest word
+    max = 0
+    for word in content:
+        if len(word) > max:
+            max = len(word)
+
+    # Create list with corresponding
+    # number of items
+    length = []
+    for i in range(max):
+        length.append(0)
+
+    # Count words by length
+    for word in content:
+        length[len(word) - 1] += 1
+
+    # Print the messages
+    for i in range(len(length)):
+        if length[i] != 0:
+            print("Words of length {}: {}".format(
+                i + 1, length[i]
+            ))
+
+
+many('sample.txt')
+
+
+# 5.31
+# Write a function subsetSum() that takes as input a list of positive numbers and a
+# positive number target. Your function should return True if there are three numbers in
+# the list that add up to target. For example, if the input list is [5, 4, 10, 20, 15, 19]
+# and target is 38, then True should be returned since 4 + 15 + 19 = 38. However, if
+# the input list is the same but the target value is 10, then the returned value should be False
+# because 10 is not the sum of any three numbers in the given list.
+
+def subsetSum(lst, target):
+    for i in range(0, len(lst)):
+        for j in range(i + 1, len(lst)):
+            for k in range(j+1, len(lst)):
+                if lst[i] + lst[j] + lst[k] == target:
+                    return True
+    return False
+
+
+subsetSum([5, 4, 10, 20, 15, 19], 38)   # = True
+subsetSum([5, 4, 10, 20, 15, 19], 10)   # = False
+subsetSum([5, 4, 10, 20, 15, 19], 110)   # = False
+
+
+# 5.32
+# Implement function fib() that takes a nonnegative integer n as input and returns the nth Fibonacci number.
+
+def fib(n):
+    n1 = 1
+    n2 = 1
+    for i in range(n):
+        n2 = n1 + n2
+        n1 = n2 - n1
+        return n
+
+
+fib(0)
+fib(4)
+fib(8)
+
+
+def fibonacci(bound):
+    'returns the smallest Fibonacci number greater than bound '
+    previous = 1  # first Fibonacci number
+    current = 1  # second Fibonacci number
+    while current <= bound:
+        current  # becomes previous, and new current is computed
+        previous, current = current, previous+current
+        return current
+
+
+fibonacci([1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89])
