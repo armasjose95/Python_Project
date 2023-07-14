@@ -4792,14 +4792,19 @@ fib(4)
 fib(8)
 
 
-def fibonacci(bound):
-    'returns the smallest Fibonacci number greater than bound '
-    previous = 1  # first Fibonacci number
-    current = 1  # second Fibonacci number
-    while current <= bound:
-        current  # becomes previous, and new current is computed
-        previous, current = current, previous+current
-        return current
+# 5.33
+# Implement a function mystery() that takes as input a positive integer n and answers this question:
+# How many times can n be halved (using integer division) before reaching 1?
+# This value should returned.
+
+def mystery(n):
+    count = 0
+    while n > 1:
+        n //= 2  # or      n = n //2
+        count += 1
+    return count
 
 
-fibonacci([1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89])
+mystery(4)  # = 2
+mystery(11)  # = 3
+mystery(25)  # = 4
