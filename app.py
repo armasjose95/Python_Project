@@ -4808,3 +4808,65 @@ def mystery(n):
 mystery(4)  # = 2
 mystery(11)  # = 3
 mystery(25)  # = 4
+
+
+# 5.34
+# Write a function statement() that takes as input a list of floating-point numbers, with positive numbers
+# representing deposits to and negative numbers representing withdrawals  from a bank account. Your
+# function should return a list of two floating-point numbers; the first will be the sum of the deposits
+# and the second (a negative number) will be the sum of the withdrawals.
+
+def statement(lst):
+    deposits, withdrawls = 0, 0
+    for i in lst:
+        if i > 0:
+            deposits += i
+        else:
+            withdrawls += i
+    return [deposits, withdrawls]
+
+
+statement([30.95, -15.67, 45.56, -55.00, 43.78])
+# = [120.29, -70.67]
+
+
+# 5.35
+# Implement function pixels() that takes as input a
+# two-dimensional list of nonnegative integer entries (representing
+# the values of pixels of an image) and returns the number of
+# entries that are positive (i.e., the number of pixels that are not
+# dark). Your function should work on two-dimensional lists of any size.
+
+
+def pixels(lst):
+    counter = 0
+    for i in lst:
+        for j in i:
+            if j > 0:
+                counter += 1
+    return counter
+
+
+l = [[0, 156, 0, 0], [34, 0, 0, 0], [23, 123, 0, 34]]
+pixels(l)  # = 5
+
+l = [[123, 56, 255], [34, 0, 0], [23, 123, 0], [3, 0, 0]]
+pixels(l)  # = 7
+
+
+# 5.36 Implement function prime() that takes a positive integer as
+# input and returns True if it is a prime number and False otherwise.
+
+def prime(n):
+    for i in range(2, n//2):
+        if n % i == 0:
+            return False
+    return True
+
+
+prime(2)
+# = True
+prime(17)
+# = True
+prime(21)
+# = False
