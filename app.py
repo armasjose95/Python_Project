@@ -4870,3 +4870,85 @@ prime(17)
 # = True
 prime(21)
 # = False
+
+
+# 5.37
+# Write function mssl() (minimum sum sublist) that takes as input a list of integers.
+# It then computes and returns the sum of the maximum sum sublist of the input list. The
+# maximum sum sublist is a sublist (slice) of the input list whose sum of entries is largest.
+# The empty sublist is defined to have sum 0. For example, the maximum sum sublist of the list
+#[4, -2, -8, 5, -2, 7, 7, 2, -6, 5]
+# is [5, -2, 7, 7, 2] and the sum of its entries is 19.
+
+def mssl(lst):
+    max = 0
+    for i in range(len(lst)):
+        for j in range(i, len(lst) + 1):
+            if sum(lst[i: j]) > max:
+                max = sum(lst[i: j])
+    if max < 0:
+        max = 0
+    return max
+
+
+l = [4, -2, -8, 5, -2, 7, 7, 2, -6, 5]
+mssl(l)             # = 19
+mssl([3, 4, 5])       # = 12
+mssl([-2, -3, -5])    # = 0
+
+
+# 5.38
+# Write function collatz() that takes a positive integer x as input and prints the Collatz
+# sequence starting at x. A Collatz sequence is obtained by repeatedly applying this rule to the previous number x in the sequence:
+
+def collatz(x):
+    # We simply follow steps
+    # while we do not reach 1
+    while x != 1:
+        print(x)
+
+        # If n is odd
+        if x & 1:
+            x = 3 * x + 1
+
+        # If even
+        else:
+            x = x // 2
+
+    # Print 1 at the end
+    print(x)
+
+
+# Driver code
+collatz(10)
+
+
+# 10
+# 5
+# 16
+# 8
+# 4
+# 2
+# 1
+
+
+# 5.39
+# Write function exclamation() that takes as input a string and returns it with this modification:
+# Every vowel is replaced by four consecutive copies of itself and an exclamation mark (!) is added at the end.
+
+
+def exclamation(phrase):
+    word = ''
+    for letters in phrase:
+        if letters in 'aeiou':
+            word = word + 4 * letters
+        else:
+            word = word + letters
+    word = word + '!'
+    return word
+
+
+exclamation('argh')
+# = 'aaaargh!'
+exclamation('hello')
+# = 'heeeelloooo!'
