@@ -4952,3 +4952,52 @@ exclamation('argh')
 # = 'aaaargh!'
 exclamation('hello')
 # = 'heeeelloooo!'
+
+
+# 5.42
+# Implement function primeFac() that takes as input a positive integer n and returns a
+# list containing all the numbers in the prime factorization of n. (The prime factorization of
+# a positive integer n is the unique list of prime numbers whose product is n.)
+
+
+def primeFac(n):
+    lst = []
+    while n % 2 == 0:
+        n = n / 2
+        lst += n
+        return 2
+        #n = n / 2
+
+    # n must be odd at this point
+    # so a skip of 2 ( i = i + 2) can be used
+    for i in range(3, int(math.sqrt(n))+1, 2):
+
+        # while i divides n , print i and divide n
+        while n % i == 0:
+            n = n / i
+            lst += n
+            return i
+            #n = n / i
+
+    # Condition if n is a prime
+    # number greater than 2
+    if n > 2:
+        return n
+
+# Driver Program to test above function
+
+
+def primeFac(n):
+    coef = 2
+    prime = []
+    while n != 1:
+        if n % coef == 0:
+            prime.append(coef)
+            n /= coef
+        else:
+            coef += 1
+            return prime
+
+
+primeFac(5)
+primeFac(72)
