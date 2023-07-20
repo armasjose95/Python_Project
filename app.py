@@ -4961,33 +4961,6 @@ exclamation('hello')
 
 
 def primeFac(n):
-    lst = []
-    while n % 2 == 0:
-        n = n / 2
-        lst += n
-        return 2
-        #n = n / 2
-
-    # n must be odd at this point
-    # so a skip of 2 ( i = i + 2) can be used
-    for i in range(3, int(math.sqrt(n))+1, 2):
-
-        # while i divides n , print i and divide n
-        while n % i == 0:
-            n = n / i
-            lst += n
-            return i
-            #n = n / i
-
-    # Condition if n is a prime
-    # number greater than 2
-    if n > 2:
-        return n
-
-# Driver Program to test above function
-
-
-def primeFac(n):
     coef = 2
     prime = []
     while n != 1:
@@ -4996,8 +4969,26 @@ def primeFac(n):
             n /= coef
         else:
             coef += 1
-            return prime
+    return prime
 
 
 primeFac(5)
+# = [5]
 primeFac(72)
+# = [2, 2, 2, 3, 3]
+
+
+# 5.43
+# Implement function evenrow() that takes a two-dimensional list of integers and returns True if each row of the table sums up to an even number and False otherwise (i.e.,if some row sums up to an odd number).
+
+
+def evenrow(lst):
+    for sub_list in lst:
+        if sum(sub_list) % 2 != 0:
+            return False
+    return True
+
+
+evenrow([[1, 3], [2, 4], [0, 6]])               # = True
+evenrow([[1, 3, 2], [3, 4, 7], [0, 6, 2]])      # = True
+evenrow([[1, 3, 2], [3, 4, 7], [0, 5, 2]])      # = False
