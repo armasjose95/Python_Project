@@ -4992,3 +4992,68 @@ def evenrow(lst):
 evenrow([[1, 3], [2, 4], [0, 6]])               # = True
 evenrow([[1, 3, 2], [3, 4, 7], [0, 6, 2]])      # = True
 evenrow([[1, 3, 2], [3, 4, 7], [0, 5, 2]])      # = False
+
+
+# 5.44
+# A substitution cipher for the digits 0, 1, 2, 3, . . . , 9 substitutes each digit in 0, 1, 2,
+# 3, . . . , 9 with another digit in 0, 1, 2, 3, . . . , 9. It can be represented as a 10-digit string
+# specifying how each digit in 0, 1, 2, 3, . . . , 9 is substituted. For example, the 10-digit string
+# '3941068257' specifies a substitution cipher in which digit 0 is substituted with digit 3, 1
+# with 9, 2 with 4, and so on. To encrypt a nonnegative integer, substitute each of its digits with the digit specified by the encryption key.
+# Implement function cipher() that takes as input a 10-digit string key and a digit string
+# (i.e., the clear text to be encrypted) and returns the encryption of the clear text.
+
+
+def cipher(code, text):
+    table = str.maketrans('0123456789', code)
+    return text.translate(table)
+
+
+cipher('3941068257', '134')
+# = 910
+cipher('3941068257', '132')
+# = '914'
+cipher('3941068257', '111')
+# = '999'
+
+
+# 5.45
+# The function avgavg() takes as input a list whose items are lists of three numbers.
+# Each three-number list represents the three grades a particular student received for a course.
+# For example, here is an input list for a class of four students:
+# [[95,92,86], [66,75,54],[89, 72,100],[34,0,0]]
+# The function avgavg() should print, on the screen, two lines. The first line will contain a
+# list containing every student’s average grade. The second line will contain just one number:
+# the average class grade, defined as the average of all student average grades.
+
+studentAverage, classAverage
+
+
+def avgavg(gradesList):
+    studentAverages = []
+    for sublist in gradesList:
+        studentAverage = sum(sublist)/len(sublist)
+        studentAverages.append(studentAverage)
+        classAverage = sum(studentAverages)/len(studentAverages)
+    print([studentAverages])
+    print(classAverage)
+
+
+# or
+
+def avgavg(students):
+    studentAverages = []
+    for sublist in students:
+        studentAverages.append(sum(sublist) / len(sublist))
+    print(studentAverages)
+    print(sum(studentAverages) / len(studentAverages))
+
+
+avgavg([[95, 92, 86], [66, 75, 54], [89, 72, 100], [34, 0, 0]])
+# = [91.0],[65.0],[87.0],[11.333333333333334]
+# = 63.583333333333336
+
+
+age = (23, 19, 31)
+average_age = sum(age)/len(age)
+print(average_age)
