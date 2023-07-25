@@ -5057,3 +5057,26 @@ avgavg([[95, 92, 86], [66, 75, 54], [89, 72, 100], [34, 0, 0]])
 age = (23, 19, 31)
 average_age = sum(age)/len(age)
 print(average_age)
+
+
+# 5.46
+# An inversion in a sequence is a pair of entries that are out of order. For example, the
+# characters F and D form an inversion in string 'ABBFHDL' because F appears before D; so
+# do characters H and D. The total number of inversions in a sequence (i.e., the number of
+# pairs that are out of order) is a measure of how unsorted the sequence is. The total number
+# of inversions in 'ABBFHDL' is 2. Implement function inversions() that takes a sequence
+# (i.e., a string) of uppercase characters A through Z and returns the number of inversions in the sequence.
+
+# count
+def inversions(letters):
+    count = 0
+    for i in range(len(letters)):
+        for j in range(i, len(letters)):
+            if letters[i] > letters[j]:
+                count += 1
+    return count
+
+
+inversions('ABBFHDL')   # = 2
+inversions('ABCD')      # = 0
+inversions('DCBA')      # = 6
