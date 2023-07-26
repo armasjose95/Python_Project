@@ -5080,3 +5080,21 @@ def inversions(letters):
 inversions('ABBFHDL')   # = 2
 inversions('ABCD')      # = 0
 inversions('DCBA')      # = 6
+
+
+# 5.48
+# Let list1 and list2 be two lists of integers. We say that list1 is a sublist of list2
+# if the elements in list1 appear in list2 in the same order as they appear in list1, but
+# not necessarily consecutively. For example, if list1 is defined as
+# [15, 1, 100] and list2 is defined as [20, 15, 30, 50, 1, 100]
+# then list1 is a sublist of list2 because the numbers in list1 (15, 1, and 100) appear in
+# list2 in the same order. However, list [15, 50, 20] is not a sublist of list2
+# Implement function sublist() that takes as input lists list1 and list2 and returns True if list1 is a sublist of list2, and False otherwise.
+
+
+def sublist(list1, list2):
+    s
+
+
+sublist([15, 1, 100], [20, 15, 30, 50, 1, 100])
+sublist([15, 50, 20], [20, 15, 30, 50, 1, 100])
