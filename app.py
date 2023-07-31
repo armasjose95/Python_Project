@@ -5026,8 +5026,6 @@ cipher('3941068257', '111')
 # list containing every student’s average grade. The second line will contain just one number:
 # the average class grade, defined as the average of all student average grades.
 
-studentAverage, classAverage
-
 
 def avgavg(gradesList):
     studentAverages = []
@@ -5093,8 +5091,17 @@ inversions('DCBA')      # = 6
 
 
 def sublist(list1, list2):
-    s
+    # This variable will be used to keep track of the position we are checking in list1.
+    index = 0
+    # It uses a for loop to iterate over the indices of list2 using the range(len(list2)) function.
+    for i in range(len(list2)):
+        # Inside the loop, it checks if the element at list1[index] (the current element being checked in list1) is equal to the element at list2[i] (the #current element being checked in list2).
+        # If the elements are equal, it means we have found a match in list2 for the current element in list1. Therefore, the function increments the #index variable to move on to the next element in list1.
+        if list1[index] == list2[i]:
+            index += 1
+    # The loop continues to iterate over list2, and if all elements of list1 are found in list2 in the same order, the index variable will be equal to the #length of list1.
+    return index == len(list1)
 
 
-sublist([15, 1, 100], [20, 15, 30, 50, 1, 100])
-sublist([15, 50, 20], [20, 15, 30, 50, 1, 100])
+sublist([15, 1, 100], [20, 15, 30, 50, 1, 100])     # = True
+sublist([15, 50, 20], [20, 15, 30, 50, 1, 100])     # = False
