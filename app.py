@@ -5099,9 +5099,62 @@ def sublist(list1, list2):
         # If the elements are equal, it means we have found a match in list2 for the current element in list1. Therefore, the function increments the #index variable to move on to the next element in list1.
         if list1[index] == list2[i]:
             index += 1
-    # The loop continues to iterate over list2, and if all elements of list1 are found in list2 in the same order, the index variable will be equal to the #length of list1.
+    # The loop continues to iterate over list2, and if all elements of list1 are found in list2 in the same order, the index variable will be equal to the length of list1.
     return index == len(list1)
 
 
 sublist([15, 1, 100], [20, 15, 30, 50, 1, 100])     # = True
 sublist([15, 50, 20], [20, 15, 30, 50, 1, 100])     # = False
+
+
+# Chapter 6 Containers and Randomness
+
+# Dictionary-a container that stores items that are accessible using “user-specified” indexes.
+# built-in container type
+# Ddffers from a list in that an item in a dictionary is accessed using a
+# user-specified “index” rather than the index representing the items position in the container.
+
+
+# Dictionary Class Properties
+# The Python dictionary type, denoted dict, is a container type, just like list and str. A
+# dictionary contains (key, value) pairs. The general format of the expression that evaluates
+# to a dictionary object is:
+
+# {<key 1>:<value 1>, <key 2>:<value 2>, ..., <key i>:<value i>}
+
+
+# This expression defines a dictionary containing i key:value pairs.
+# The key and the value are both objects.
+# The key is the “index” that is used to access the value.
+
+
+# The (key, value) pairs in a dictionary expression are separated by commas and enclosed
+# in curly braces (as opposed to square brackets, [], used for lists.)
+# The key and value in each (key, value) pair are separated by a colon (:) with the key being to the left and the value to the right of the colon.
+# Keys can be of any type as long as the type is immutable.
+# So string and number objects can be keys, whereas objects of type list cannot.
+# The value can be of any type.
+# We often say that a key maps to its value or is the index of the value.
+# Because dictionaries can be viewed as a mapping from keys to values, they are often referred to as maps.
+
+
+employee = {
+    '864-20-9753': ['Anna', 'Karenina'],
+    '987-65-4321': ['Yu', 'Tsun'],
+    '100-01-0010': ['Hans', 'Castorp']}
+
+
+employee['987-65-4321']
+
+# = ['Yu', 'Tsun']
+
+
+days = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday'}
+
+
+# Values in the dictionary are accessed by key, not index (or offset).
+# To access value 'Wednesday' in dictionary days, we use key 'We' .
+
+days['We']
+
+# = 'Wednesday'
