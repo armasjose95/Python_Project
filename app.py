@@ -5158,3 +5158,73 @@ days = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday'}
 days['We']
 
 # = 'Wednesday'
+
+
+# The (key, value) pairs in the dictionary are not ordered, and no ordering assumption can be made.
+
+# days[2]->>>>> error!!
+
+d = {'b': 23, 'a': 34, 'c': 12}
+
+# we may not get the (key, value) pairs in the order in which they were defined:
+
+# Dictionaries are mutable, like lists. A dictionary can be modified to contain a new (key,value) pair:
+
+days['Fr'] = 'Friday'
+days
+# = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday', 'Fr': 'Friday'}
+
+
+# This implies that dictionaries have dynamic size.
+# The dictionary can also be modified so that an existing key refers to a new value:
+
+days['Fr'] = 'Fri-DAY!'
+days
+# = {'Fr': 'Fri-DAY!', 'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday'}
+
+
+# An empty dictionary can be defined using the default dict() constructor or simply as:
+d = {}
+print(d)  # = {}
+
+
+# 6.1
+# Write a function birthState() that takes as input the full name of a recent U.S. president
+# (as a string) and returns his birth state. You should use this dictionary to store the birth state for each recent president:
+
+def birthState(name):
+    presidentStates = {'Barack Hussein Obama II': 'Hawaii',
+                       'George Walker Bush': 'Connecticut',
+                       'William Jefferson Clinton': 'Arkansas',
+                       'George Herbert Walker Bush': 'Massachussetts',
+                       'Ronald Wilson Reagan': 'Illinois',
+                       'James Earl Carter, Jr': 'Georgia'}
+    return presidentStates[name]
+
+
+birthState('Ronald Wilson Reagan')
+
+# = 'Illinois'
+
+
+# Dictionary Operators
+# The indexing operator ([]) can be used to access a value using the key as the index, just like you can in a list
+
+
+days['Fr']  # = 'Fri-DAY!'
+
+# The indexing operator can also be used to change the value corresponding to a key or to add a new (key, value) pair to the dictionary:
+
+days['Sa'] = 'Sunday'
+print(days)
+# = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday', 'Fr': 'Fri-DAY!', 'Sa': 'Sunday'}
+
+# The length of a dictionary (i.e., the number of (key, value) pairs in it) can be obtained using the len function:
+
+len(days)  # = 6
+
+# The in and not in operators are used to check whether an object is a key in the dictionary:
+'Fr' in days    # = True
+'Su' in days    # = False
+'Su' not in days  # = True
+'Satu' in days  # = False
