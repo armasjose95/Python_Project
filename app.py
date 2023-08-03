@@ -5215,9 +5215,9 @@ days['Fr']  # = 'Fri-DAY!'
 
 # The indexing operator can also be used to change the value corresponding to a key or to add a new (key, value) pair to the dictionary:
 
-days['Sa'] = 'Sunday'
+days['Su'] = 'Sunday'
 print(days)
-# = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday', 'Fr': 'Fri-DAY!', 'Sa': 'Sunday'}
+# = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday', 'Fr': 'Fri-DAY!', 'Su': 'Sunday'}
 
 # The length of a dictionary (i.e., the number of (key, value) pairs in it) can be obtained using the len function:
 
@@ -5227,4 +5227,35 @@ len(days)  # = 6
 'Fr' in days    # = True
 'Su' in days    # = False
 'Su' not in days  # = True
-'Satu' in days  # = False
+'Sunday' in days  # = False
+
+
+# 6.2
+# Implement function rlookup() that provides the reverse lookup feature of a phone book.
+# Your function takes, as input, a dictionary representing a phone book. In the dictionary, phone numbers (keys) are mapped to individuals (values).
+# Your function should provide a simple user interface through which a user can enter a phone number and obtain the first
+# and last name of the individual assigned that number.
+
+rphonebook = {'(123)456-78-90': ['Anna', 'Karenina'],
+              '(901)234-56-78': ['Yu', 'Tsun'],
+              '(321)908-76-54': ['Hans', 'Castorp']}
+
+
+def rlookup(phonebook):
+    while True:
+        number = input('Enter phone number in the format (xxx)xxx-xx-xx: ')
+        if number in phonebook:
+            print(phonebook[number])
+        else:
+            print('This number is not in the phonebook')
+
+
+rlookup(rphonebook)
+
+
+# = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday', 'Fr': 'Fri-DAY!', 'Su': 'Sunday'}
+print(days)
+days.pop('Tu')  # 'Tuesday'
+days.pop('Fr')  # 'Fri-DAY!'
+# = {'Mo': 'Monday', 'We': 'Wednesday', 'Th': 'Thursday', 'Su': 'Sunday'}
+print(days)
