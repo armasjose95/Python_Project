@@ -5253,9 +5253,65 @@ def rlookup(phonebook):
 rlookup(rphonebook)
 
 
-# = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday', 'Fr': 'Fri-DAY!', 'Su': 'Sunday'}
 print(days)
+# = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday', 'Fr': 'Fri-DAY!', 'Su': 'Sunday'}
+
 days.pop('Tu')  # 'Tuesday'
 days.pop('Fr')  # 'Fri-DAY!'
 # = {'Mo': 'Monday', 'We': 'Wednesday', 'Th': 'Thursday', 'Su': 'Sunday'}
 print(days)
+
+
+# Update() Method:
+# Input argument dictionary of 2nd variable, all the (key, value) pairs of 2nd variable are added to 1st variable, possibly writing over (key, value)
+# pairs of 1st variable.
+# New (key, value) pairs wil be added to the first variable.
+# (key, value) pairs with the same key value replace the original (key, value) pairs.
+# Only one copy of (key, value) pair can be in the dictionary.
+
+
+favorites = {'Th': 'Thursday', 'Fr': 'Friday', 'Su': 'Sun'}
+days.update(favorites)
+# = {'Mo': 'Monday', 'We': 'Wednesday', 'Th': 'Thursday', 'Su': 'Sun', 'Fr': 'Friday'}
+print(days)
+
+
+days['Su'] = 'Sunday'
+# = {'Mo': 'Monday', 'We': 'Wednesday', 'Th': 'Thursday', 'Su': 'Sunday', 'Fr': 'Friday'}
+print(days)
+
+
+# Particularly useful dictionary methods are keys(), values(), and items():
+
+# The method keys() returns the keys of the dictionary:
+
+keys = days.keys()
+print(keys)     # = dict_keys(['Mo', 'We', 'Th', 'Su', 'Fr'])
+
+
+# The container object returned by method keys() is not a list. Let’s check its type:
+
+type(days.keys())  # = <class 'dict_keys'>
+
+
+# How is the object returned by the keys() method used?
+# It is typically used to iterate over the keys of the dictionary, for example:
+
+for key in days.keys():
+    print(key, end=' ')
+# = Mo We Th Su Fr
+
+for value in days.values():
+    print(value, end=' ')
+# = Monday Wednesday Thursday Sunday Friday
+
+
+# Items() Method
+# Returns a view of the (key, value) pairs in variable as tuple objects, one for each (key,value) pair:
+
+# = dict_items([('Mo', 'Monday'), ('We', 'Wednesday'), ('Th', 'Thursday'), ('Su', 'Sunday'), ('Fr', 'Friday')])
+days.items()
+
+for everything in days.items():
+    print(everything, end=' ')
+# = ('Mo', 'Monday') ('We', 'Wednesday') ('Th', 'Thursday') ('Su', 'Sunday') ('Fr', 'Friday')
