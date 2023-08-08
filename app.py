@@ -5312,6 +5312,96 @@ for value in days.values():
 # = dict_items([('Mo', 'Monday'), ('We', 'Wednesday'), ('Th', 'Thursday'), ('Su', 'Sunday'), ('Fr', 'Friday')])
 days.items()
 
+# This method is typically used to iterate over the (key, value) pairs of the dictionary:
+
 for everything in days.items():
     print(everything, end=' ')
 # = ('Mo', 'Monday') ('We', 'Wednesday') ('Th', 'Thursday') ('Su', 'Sunday') ('Fr', 'Friday')
+
+
+# View Objects
+# The objects returned by methods keys(), values(), and items() are referred to as view objects.
+# View objects provide a dynamic view of the dictionary’s keys, values, and (key, value) pairs, respectively.
+# What this means is that when the dictionary changes, the view reflects these changes.
+
+print(days)
+# = {'Mo': 'Monday', 'We': 'Wednesday', 'Th': 'Thursday', 'Su': 'Sunday', 'Fr': 'Friday'}
+
+keys = days.keys()
+print(keys)  # = dict_keys(['Mo', 'We', 'Th', 'Su', 'Fr'])
+
+# del(days['Mo'])
+# print(days)
+# = {'Fr': 'Friday', 'We': 'Wednesday', 'Th': 'Thursday', 'Sa': 'Saturday'}
+
+# print(keys)
+# = dict_keys(['Fr', 'We', 'Th', 'Sa'])
+
+
+# A Dictionary as a Substitute for the Multiway if Statement
+# TOO LONG!!!!
+
+def complete(abbreviation):
+    'returns day of the week corresponding to abbreviation '
+    if abbreviation == 'Mo':
+        return 'Monday'
+    elif abbreviation == 'Tu':
+        return 'Tuesday'
+    elif ...
+    ...
+    else:  # abbreviation must be Su
+        return 'Sunday'
+
+
+complete('Tu')
+# = 'Tuesday'
+
+
+def complete(abbreviation):
+    'returns day of the week corresponding to abbreviation '
+    days = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday',
+            'Th': 'Thursday', 'Fr': 'Friday', 'Sa': 'Saturday', 'Su': 'Sunday'}
+
+    return days[abbreviation]
+
+
+complete('Tu')
+# = 'Tuesday'
+
+
+def frequency(students):
+    'returns frequency of items in itemList'
+    students = ['Cindy', 'John', 'Cindy', 'Adam',
+                'Adam', 'Jimmy', 'Joan', 'Cindy', 'Joan']
+    counters = {}
+    for student in students:
+        if student in counters:
+            counters[student] += 1
+        else:
+            counters[student] = 1
+    return counters
+
+
+frequency(students)
+# = {'Cindy': 3, 'John': 1, 'Adam': 2, 'Jimmy': 1, 'Joan': 2}
+
+
+# 6.4
+# Implement function wordcount() that takes as input a text—as a string— and prints the frequency of each word in the text.
+# You may assume that the text has no punctuation and words are separated by blank spaces.
+
+
+def wordcount(text):
+    'returns frequency of items in itemList'
+    text = 'all animals are equal but some animals are more equal than others'
+    wordcounter = {}
+    for word in text:
+        if word in wordcounter:
+            print(word + 'appears' + 'time.')
+            wordcounter[word] += 1
+        else:
+            wordcounter[word] = 1
+    return wordcounter
+
+
+wordcount(text)
