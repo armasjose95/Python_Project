@@ -5393,15 +5393,38 @@ frequency(students)
 
 def wordcount(text):
     'returns frequency of items in itemList'
-    text = 'all animals are equal but some animals are more equal than others'
+    text = 'all animals are equal but some animals are more equal than others'.split()
     wordcounter = {}
     for word in text:
         if word in wordcounter:
-            print(word + 'appears' + 'time.')
-            wordcounter[word] += 1
+            res = {key: text(key)}
+            print(wordcounter)
         else:
-            wordcounter[word] = 1
-    return wordcounter
+            res = {key: text(key)}
+            print(wordcounter)
 
+
+wordcount(text)
+
+
+def wordCount(text):
+    'prints frequency of each word in text'
+    wordList = text.split()  # split text into list of words
+    counters = {}  # dictionary of counters
+
+    for word in wordList:
+        if word in counters:  # counter for word exists
+            counters[word] += 1
+        else:  # counter for word doesn't exist
+            counters[word] = 1
+
+    for word in counters:  # print word counts
+        if counters[word] == 1:
+            print('{:8} appears {} time.'.format(word, counters[word]))
+        else:
+            print('{:8} appears {} times.'.format(word, counters[word]))
+
+
+text = 'all animals are equal but some animals are more equal than others'
 
 wordcount(text)
