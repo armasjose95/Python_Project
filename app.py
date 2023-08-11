@@ -5391,22 +5391,6 @@ frequency(students)
 # You may assume that the text has no punctuation and words are separated by blank spaces.
 
 
-def wordcount(text):
-    'returns frequency of items in itemList'
-    text = 'all animals are equal but some animals are more equal than others'.split()
-    wordcounter = {}
-    for word in text:
-        if word in wordcounter:
-            res = {key: text(key)}
-            print(wordcounter)
-        else:
-            res = {key: text(key)}
-            print(wordcounter)
-
-
-wordcount(text)
-
-
 def wordCount(text):
     'prints frequency of each word in text'
     wordList = text.split()  # split text into list of words
@@ -5428,3 +5412,64 @@ def wordCount(text):
 text = 'all animals are equal but some animals are more equal than others'
 
 wordcount(text)
+
+
+# tuple Objects Can Be Dictionary Keys
+# Because tuple objects are immutable, they can be used as dictionary keys.
+
+
+phonebook = {('Anna', 'Kendrick'): '(123)-456-7890',
+             ('Yu', 'Tsun'): '(902)-109-0210',
+             ('Hans', 'Castro'): '(773)-202-1234'}
+
+# = {('Anna', 'Kendrick'): '(123)-456-7890', ('Yu', 'Tsun'): '(902)-109-0210', ('Hans', 'Castro'): '(773)-202-1234'}
+print(phonebook)
+
+phonebook[('Anna', 'Kendrick')]  # = '(123)-456-7890'
+
+
+# 6.5
+# Implement function lookup() that implements a phone book lookup application.
+# Your function takes, as input, a dictionary representing a phone book.
+# In the dictionary, tuples containing first and last names of individual (the keys) are mapped to strings containing phone numbers (the values).
+# Your function should provide a simple user interface through which a user can enter the first
+# and last name of an individual and obtain the phone number assigned to that individual.
+
+
+aphonebook = {('Anna', 'Karenina'): '(123)456-78-90',
+              ('Yu', 'Tsun'): '(901)234-56-78',
+              ('Hans', 'Castorp'): '(321)908-76-54'}
+
+
+def lookup(phonebook):
+    # phonebook = {('Anna','Karenina'):'(123)456-78-90',
+    #            ('Yu', 'Tsun'):'(901)234-56-78',
+    #            ('Hans', 'Castorp'):'(321)908-76-54'}
+    phonebook.keys()split()
+    while True:
+        fname = input('Enter the first name: ')
+        lname = input('Enter the last name: ')
+        if fname and lname in phonebook:
+            print(phonebook(fname)(lname))
+        else:
+            print('This name is not in the phonebook')
+
+
+lookup(phonebook)
+
+
+rphonebook = {'(123)456-78-90': ['Anna', 'Karenina'],
+              '(901)234-56-78': ['Yu', 'Tsun'],
+              '(321)908-76-54': ['Hans', 'Castorp']}
+
+
+def rlookup(phonebook):
+    while True:
+        number = input('Enter phone number in the format (xxx)xxx-xx-xx: ')
+        if number in phonebook:
+            print(phonebook[number])
+        else:
+            print('This number is not in the phonebook')
+
+
+rlookup(rphonebook)
