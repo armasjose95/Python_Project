@@ -5442,34 +5442,61 @@ aphonebook = {('Anna', 'Karenina'): '(123)456-78-90',
 
 
 def lookup(phonebook):
-    # phonebook = {('Anna','Karenina'):'(123)456-78-90',
-    #            ('Yu', 'Tsun'):'(901)234-56-78',
-    #            ('Hans', 'Castorp'):'(321)908-76-54'}
-    phonebook.keys()split()
+    '''implements interactive phone book service using the input
+    phonebook dictionary'''
+
     while True:
         fname = input('Enter the first name: ')
         lname = input('Enter the last name: ')
-        if fname and lname in phonebook:
-            print(phonebook(fname)(lname))
-        else:
+        person = (fname, lname)                 # construct the key
+        if person in phonebook:                 # if key is in dictionary
+            print(phonebook[person])
+        else:                                   # if key not in dictionary
             print('This name is not in the phonebook')
 
 
 lookup(phonebook)
 
 
-rphonebook = {'(123)456-78-90': ['Anna', 'Karenina'],
-              '(901)234-56-78': ['Yu', 'Tsun'],
-              '(321)908-76-54': ['Hans', 'Castorp']}
+# Sets
+# Built-in Python container type.
+# The set class has all the properties of a mathematical set. It is used to store an unordered collection of items, with no duplicate items allowed.
+# The items must be immutable objects.
+# The set type supports operators that implement the classical set operations: set membership, intersection, union, symmetric difference, and so on.
+# It is thus useful whenever a collection of items is modeled as a mathematical set.
+# It is also useful for duplicate removal.
+# A set is defined using the same notation that is used for mathematical sets: a sequence of items separated by commas and enclosed in curly braces: { }.
 
 
-def rlookup(phonebook):
-    while True:
-        number = input('Enter phone number in the format (xxx)xxx-xx-xx: ')
-        if number in phonebook:
-            print(phonebook[number])
-        else:
-            print('This number is not in the phonebook')
+phonebook1 = {'123-45-67', '234-56-78', '345-67-89'}
+print(phonebook1)       # = {'345-67-89', '234-56-78', '123-45-67'}
+type(phonebook1)        # = <class 'set'>
 
 
-rlookup(rphonebook)
+# If we had defined a set with duplicate items, they would be ignored:
+phonebook1 = {'123-45-67', '234-56-78', '345-67-89',
+              '123-45-67', '345-67-89'}
+
+print(phonebook1)       # = {'345-67-89', '234-56-78', '123-45-67'}
+
+
+# Using the set Constructor to Remove Duplicates
+# The fact that sets cannot have duplicates gives us the first great application for sets: removing duplicates from a list.
+ages = [23, 19, 18, 21, 18, 20, 21, 23, 22, 23, 19, 20]
+
+# To remove duplicates from this list, we can convert the list to a set, using the set constructor.
+# The set constructor will eliminate all duplicates because a set is not supposed to have them.
+# By converting the set back to a list, we get a list with no duplicates:
+
+ages = list(set(ages))
+print(ages)         # = [18, 19, 20, 21, 22, 23]
+
+# There is, however, one major caveat: The elements have been reordered.
+
+
+# Empty Sets
+# We have to use the set constructor explicitly when creating an empty set:
+
+phonebook2 = set()
+print(phonebook2)           # = set()
+type(phonebook2)            # = <class 'set'>
