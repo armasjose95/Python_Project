@@ -5500,3 +5500,72 @@ print(ages)         # = [18, 19, 20, 21, 22, 23]
 phonebook2 = set()
 print(phonebook2)           # = set()
 type(phonebook2)            # = <class 'set'>
+
+
+# set Operators
+# The set class supports operators that correspond to the usual mathematical set operations.
+# Some are operators that can also be used with list, string, and dictionary types.
+# In and not in operators are used to test set membership:
+
+
+phonebook1 = {'123-45-67', '234-56-78', '345-67-89'}
+'123-45-67' in phonebook1       # = True
+'456-78-90' in phonebook1       # = False
+'456-78-90' not in phonebook1   # = True
+
+# The len() operator returns the size of the set:
+len(phonebook1)                 # = 3
+
+
+# Comparison operators ==, !=, <, <=, >, and >= are supported as well, but their meaning is set-specific.
+# Two sets are “equal” if and only if they have the same elements:
+
+phonebook3 = {'345-67-89', '456-78-90'}
+phonebook1 == phonebook3        # = False
+phonebook1 != phonebook3        # = True
+
+
+# A set is “less than or equal to” another set if it is a subset of it.
+# A set is “less than another set” if it is a proper subset of it. So, for example:
+
+{'123-45-67', '345-67-89'} <= phonebook1            # = True
+
+
+# However, phonebook2 is not a proper subset of phonebook1:
+phonebook2 = {'123-45-67', '345-67-89'}
+phonebook1 < phonebook2     # = False
+
+
+# The mathematical set operations union, intersection, difference, and symmetric difference are implemented as set operators |, &, -, and ^, respectively
+# Each set operation takes two sets and returns a new set.
+
+
+# Union
+# The union of two sets contains all elements that are in either set:
+
+phonebook1 | phonebook3
+# = {'234-56-78', '123-45-67', '345-67-89', '456-78-90'}
+
+
+# Intersection
+# The intersection of two sets contains all elements that are in both sets:
+
+phonebook1 & phonebook3
+# = {'345-67-89'}
+
+
+# Difference
+# The difference between two sets contains all elements that are in the first set but not the second one:
+
+phonebook1 - phonebook3
+# = {'234-56-78', '123-45-67'}
+
+phonebook3 - phonebook1
+# = {'456-78-90'}
+
+
+# Symmetric difference
+# The symmetric difference of two sets contains all elements that are either in the first set or in the second set, but not both:
+
+phonebook1 ^ phonebook3
+# = {'234-56-78', '456-78-90', '123-45-67'}
