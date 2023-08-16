@@ -5569,3 +5569,53 @@ phonebook3 - phonebook1
 
 phonebook1 ^ phonebook3
 # = {'234-56-78', '456-78-90', '123-45-67'}
+
+
+# Set Methods
+# the set class supports a number of methods.
+
+
+# The set method add()
+# Used to add an item to a set:
+
+phonebook3.add('123-45-67')
+print(phonebook3)
+# = {'345-67-89', '456-78-90', '123-45-67'}
+
+
+# The set method remove()
+# Used to remove an item from a set:
+
+phonebook3.remove('123-45-67')
+print(phonebook3)
+# = {'345-67-89', '456-78-90'}
+
+
+# The set method clear()
+# Used to empty a set:
+
+phonebook3.clear()
+print(phonebook3)
+# = set()
+
+
+# 6.6
+# Implement function sync() that takes a list of phone books (where each phone book is a
+# set of phone numbers) as input and returns a phone book (as a set) containing the union of all the phone books.
+
+phonebook4 = {'234-56-78', '456-78-90'}
+phonebooks = [phonebook1, phonebook2, phonebook3, phonebook4]
+#phonebooks = set(phonebook1 | phonebook2 | phonebook3 | phonebook4)
+
+
+def sync(phonebooks):
+    'returns the union of sets in phonebooks'
+    #phonebooks = set(phonebook1 | phonebook2 | phonebook3 | phonebook4)
+    res = set()                         # initialize the accumulator
+    for phonebook in phonebooks:
+        res = res | phonebook           # accumulate phonebook into res
+    return res
+
+
+sync(phonebooks)
+# = {'234-56-78', '123-45-67', '345-67-89', '456-78-90'}
