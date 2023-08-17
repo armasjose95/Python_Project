@@ -5619,3 +5619,24 @@ def sync(phonebooks):
 
 sync(phonebooks)
 # = {'234-56-78', '123-45-67', '345-67-89', '456-78-90'}
+
+
+# Character Encodings
+# String objects are used to store text, that is, a sequence of characters. The characters could
+# be upper- and lowercase letters from the alphabet, digits, punctuation marks, and possibly symbols like the dollar sign ($).
+
+
+# ASCII
+# For many years, the standard encoding for characters in the English language was ASCII encoding.
+# You can explore the ASCII encodings using the Python function ord(), which returns the decimal ASCII code of a character:
+
+
+ord('a')        # = 97
+ord('dad')
+
+
+# The sequence of characters of a string value (such as 'dad') is encoded as a sequence of ASCII codes 100, 97, and 100. What is stored in memory is
+# exactly this sequence of codes.
+# Of course, each code is stored in binary. As ASCII decimal codes go from 0 to 127, they
+# can be encoded with seven bits;
+# because a byte (eight bits) is the smallest memory storage unit, each code is stored in one byte.
