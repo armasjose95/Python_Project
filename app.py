@@ -5629,14 +5629,24 @@ sync(phonebooks)
 # ASCII
 # For many years, the standard encoding for characters in the English language was ASCII encoding.
 # You can explore the ASCII encodings using the Python function ord(), which returns the decimal ASCII code of a character:
-
+# ASCII codes 0 through 32 and 127 include nonprintable characters, such as backspace (decimal code 8), horizontal tab
+# (decimal code 9), and line feed (decimal code 10).
 
 ord('a')        # = 97
 ord('dad')
 
 
-# The sequence of characters of a string value (such as 'dad') is encoded as a sequence of ASCII codes 100, 97, and 100. What is stored in memory is
-# exactly this sequence of codes.
-# Of course, each code is stored in binary. As ASCII decimal codes go from 0 to 127, they
-# can be encoded with seven bits;
+# The sequence of characters of a string value (such as 'dad') is encoded as a sequence of ASCII codes 100, 97, and 100.
+# What is stored in memory is exactly this sequence of codes.
+# Of course, each code is stored in binary.
+# As ASCII decimal codes go from 0 to 127, they can be encoded with seven bits;
 # because a byte (eight bits) is the smallest memory storage unit, each code is stored in one byte.
+
+# For example, the decimal ASCII code for lowercase a is 97, which corresponds to binary ASCII code 1100001.
+# So, in the ASCII encoding, character a is encoded in a single byte with the first bit being a 0 and the remaining bits being 1100001.
+# The resulting byte 01100001 can be described more succinctly using a two-digit hex number 0x61 (6 for the leftmost four bits, 0110, and 1 for the
+# rightmost 4 bits, 0001).
+# In fact, it it common to use hex ASCII codes (as a shorthand for ASCII binary codes).
+
+
+# The symbol &, for example, is encoded with decimal ASCII code 38, which corresponds to binary code 0100110 or hex code 0x26.
