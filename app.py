@@ -5650,3 +5650,27 @@ ord('dad')
 
 
 # The symbol &, for example, is encoded with decimal ASCII code 38, which corresponds to binary code 0100110 or hex code 0x26.
+
+
+# 6.7
+# Write a function encoding() that takes a string as input and prints the ASCII code—in decimal, hex, and binary notation—of every character in it.
+
+def encoding(word):
+    'prints ASCII codes of characters in S, one per line'
+    print('Char Decimal Hex Binary')  # print column headings
+    for letters in word:
+        ascii = ord(letters)
+        # print character and its code in decimal, hex, and binary
+        print(' {} {:7} {:4x} {:7b}'.format(letters, ascii, ascii, ascii))
+
+
+def encoding(text):
+    'prints ASCII codes of characters in S, one per line'
+    print('Char Decimal Hex Binary')  # print column headings
+    for c in text:
+        code = ord(c)  # compute ASCII code
+        # print character and its code in decimal, hex, and binary
+        print(' {} {:7} {:4x} {:7b}'.format(c, code, code, code))
+
+
+encoding('dad')
