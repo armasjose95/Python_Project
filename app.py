@@ -5674,3 +5674,33 @@ def encoding(text):
 
 
 encoding('dad')
+
+
+# chr()
+# The function chr() is the inverse of function ord(). It takes a numeric code and returns the character corresponding to it.
+
+
+ord('a')        # = 97
+chr(97)         # = 'a'
+
+
+# 6.8
+# Write function char(low, high) that prints the characters corresponding to ASCII decimal codes i for all values of i from low up to and including high.
+
+def char(low, high):
+    # prints the characters with ASCII codes in the range from low to high
+    for i in range(low, high + 1):
+        # print integer ASCII code and corresponding character
+        print('{} : {}'.format(i, chr(i)))
+
+
+char(62, 67)
+
+# We use a counter loop pattern to generate integers from low to high. The character corresponding to each integer is printed:
+
+# 62 : >
+# 63 : ?
+# 64 : @
+# 65 : A
+# 66 : B
+# 67 : C
