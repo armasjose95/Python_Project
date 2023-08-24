@@ -5704,3 +5704,138 @@ char(62, 67)
 # 65 : A
 # 66 : B
 # 67 : C
+
+
+# Loop through the items in the fruits list.
+
+
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+
+# apple
+# banana
+# cherry
+
+
+# In the loop, when the item value is "banana", jump directly to the next item.
+
+
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    if fruit == "banana":
+        continue
+    print(fruit)
+
+# apple
+# cherry
+
+
+# Use the range function to loop through a code set 6 times.
+
+for x in range(6):
+    print(x)
+
+# 0
+# 1
+# 2
+# 3
+# 4
+# 5
+
+
+# Exit the loop when x is "banana".
+
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    if fruit == "banana":
+        break
+    print(fruit)
+
+# apple
+
+
+# Create a function named my_function.
+# Execute a function named my_function.
+
+def my_function():
+    print("Hello from a function")
+
+
+my_function()
+
+# Hello from a function
+
+
+# Inside a function with two parameters, print the first parameter.
+
+
+def my_function(fname, lname):
+    print(fname)
+
+
+my_function('Jose', 'Armas')
+
+# Jose
+
+
+# Let the function return the x parameter + 5.
+
+def my_function(x):
+    return x + 5
+
+
+my_function(5)
+# = 10
+
+
+# If you do not know the number of arguments that will be passed into your function, there is a prefix you can add in the function definition, which prefix?
+
+def my_function(*kids):
+    print("The youngest child is " + kids[2])
+
+
+# If you do not know the number of keyword arguments that will be passed into your function, there is a prefix you can add in the function definition, which prefix?
+
+def my_function(**kid):
+    print("His last name is " + kid["lname"])
+
+
+# Create a lambda function that takes one parameter (a) and returns it.
+# A lambda function can take any number of arguments, but can only have one expression.
+
+
+def x(a): return a + 10
+
+
+print(x(5))
+
+
+# Create a class named MyClass:
+# A Class is like an object constructor, or a "blueprint" for creating objects.
+
+
+class myClass:
+    x = 5
+
+
+# Create an object of MyClass called p1:
+
+class myClass:
+    x = 5
+
+
+p1 = myClass()
+
+
+# Use the p1 object to print the value of x:
+
+class myClass:
+    x = 5
+
+
+p1 = myClass()
+print(p1.x)
+# = 5
