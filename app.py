@@ -4000,6 +4000,7 @@ theList  # = [1, 2, 3, 4, 5, 6, 7, 7, 8, 9]
 
 # Two-Dimensional Lists
 
+import myModule
 t = [[4, 7, 2, 5], [5, 1, 9, 2], [8, 3, 6, 6]]
 
 t[0]  # = [4, 7, 2, 5]
@@ -5839,3 +5840,40 @@ class myClass:
 p1 = myClass()
 print(p1.x)
 # = 5
+
+
+# What is the correct syntax to assign a "init" function to a class?
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+# What is the correct syntax to create a class named Student that will inherit properties and methods from a class named Person?
+
+class Student(Person):
+
+    # We have used the Student class to create an object named x.
+    # What is the correct syntax to execute the printname method of the object x?
+
+
+class Person:
+    def __init__(self, fname):
+        self.firstname = fname
+
+    def printname(self):
+        print(self.firstname)
+
+
+class Student(Person):
+    pass
+
+
+x = Student("Mike")
+x.printname()
+
+# = Mike
+
+
+# What is the correct syntax to import a module named "mymodule"?
