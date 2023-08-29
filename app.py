@@ -5877,3 +5877,209 @@ x.printname()
 
 
 # What is the correct syntax to import a module named "mymodule"?
+
+
+# Print i as long as i is less than 6
+
+def less(i):
+    if i < 6:
+        print(i)
+
+
+less(4)
+
+# = 4
+
+
+# The while loop requires relevant variables to be ready, in this example we need to define an indexing variable, i, which we set to 1.
+
+
+def less(i):
+    while i < 6:
+        print(i)
+        i += 1
+
+
+less(1)
+
+# 1
+# 2
+# 3
+# 4
+# 5
+
+
+# Stop the loop if i is 3.
+
+def less(i):
+    while i < 6:
+        print(i)
+        i += 1
+        if i == 3:
+            break
+
+
+less(1)
+
+# 1
+# 2
+
+
+# In the loop, when i is 3, jump directly to the next iteration.
+
+
+def less(i):
+    while i < 6:
+        print(i)
+        i += 1
+        if i == 3:
+            continue
+
+
+less(1)
+
+# 1
+# 2
+# 3
+# 4
+# 5
+
+
+# Print a message once the condition is false.
+
+
+def less(i):
+    while i < 6:
+        print(i)
+        i += 1
+    else:
+        print("i is no longer less than 6")
+
+
+less(1)
+
+
+# 1
+# 2
+# 3
+# 4
+# 5
+# i is no longer less than 6
+
+
+# Print "A is greater than B" if a is greater than b.
+a = 50
+b = 10
+if a > b:
+    print('A is greater than B')
+
+
+def number(a):
+    b = 10
+    if a > b:
+        print('A is greater than B')
+
+
+number(50)
+
+
+# Print "a is not equal to b" if a is not equal to b.
+
+a = 50
+b = 10
+if a != b:
+    print("a is not equal to b")
+
+
+def number(a):
+    b = 10
+    if a != b:
+        print('a is not equal to b')
+
+
+number(50)
+
+
+# Print "Yes" if a is equal to b, otherwise print "No".
+
+b = 10
+
+
+def number(a):
+    #b = 10
+    if a == b:
+        print('Yes')
+    else:
+        print("NO")
+
+
+number(50)
+
+
+# Print "1" if a is equal to b, print "2" if a is greater than b, otherwise print "3".
+
+
+def number(a):
+    b = 10
+    if a == b:
+        print('1')
+    elif a > b:
+        print('2')
+    else:
+        print("3")
+
+
+number(50)
+
+# 2
+
+
+# Print "True" if a is equal to b, and c is equal to d.
+
+d = 3
+
+
+def number(a):
+    b = 10
+    c = 3
+    if a == b and c == d:
+        print('True')
+    else:
+        print("False")
+
+
+number(50)
+
+# False
+
+
+# Print "True" if a is equal to b, or c is equal to d.
+
+d = 3
+
+
+def number(a):
+    b = 10
+    c = 3
+    if a == b or c == d:
+        print('True')
+    else:
+        print("False")
+
+
+number(50)
+
+# = True
+
+
+# Use the correct short hand syntax to write the following conditional expression in one line:
+
+if 5 > 2:
+    print("Yes")
+else:
+    print("No")
+
+
+print("Yes") if 5 > 2 else print("No")
+
+# Yes
