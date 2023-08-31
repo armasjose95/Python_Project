@@ -6153,3 +6153,166 @@ car = {
 car.clear()
 print(car)
 # = {}
+
+
+# Check if "apple" is present in the fruits set.
+
+fruits = {"apple", "banana", "cherry"}
+
+if 'apple' in fruits:
+    print('Yes, an apple is a fruit.')
+
+# = Yes, an apple is a fruit.
+
+
+# Use the add method to add "orange" to the fruits set.
+
+fruits.add('orange')
+print(fruits)
+
+# = {'cherry', 'banana', 'apple', 'orange'}
+
+
+# Use the correct method to add multiple items (more_fruits) to the fruits set.
+
+
+fruits = {"apple", "banana", "cherry"}
+more_fruits = ["orange", "mango", "grapes"]
+
+fruits.update(more_fruits)
+print(fruits)
+
+
+# = {'apple', 'mango', 'grapes', 'orange', 'banana', 'cherry'}
+
+
+# Use the remove method to remove "banana" from the fruits set.
+
+fruits = {'apple', 'mango', 'grapes', 'orange', 'banana', 'cherry'}
+fruits.remove('banana')
+print(fruits)
+
+
+# = {'apple', 'mango', 'grapes', 'orange', 'cherry'}
+
+
+# Use the discard method to remove "banana" from the fruits set.
+
+fruits = {"apple", "banana", "cherry"}
+fruits.discard('banana')
+
+
+# discard()
+# The discard() method removes the specified item from the set
+# This method is different from the remove() method, because the
+# remove() method will raise an error if the specified item does
+# not exist, and the discard() method will not.
+
+
+# Use the correct syntax to print the first item in the fruits tuple.
+
+fruits = ("apple", "banana", "cherry")
+print(fruits[0])
+
+# = apple
+
+
+# Use the correct syntax to print the number of items in the fruits tuple.
+
+fruits = ("apple", "banana", "cherry")
+print(len(fruits))
+
+
+# = 3
+
+
+# Use negative indexing to print the last item in the tuple.
+
+fruits = ("apple", "banana", "cherry")
+print(fruits[-1])
+
+# = cherry
+
+
+# Use a range of indexes to print the third, fourth, and fifth item in the tuple.
+
+fruits = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+
+
+print(fruits[2:5])
+
+# = ('cherry', 'orange', 'kiwi')
+
+
+# Use the correct syntax to print the first item and thrd item in the fruits tuple.
+
+fruits = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+
+print(fruits[0], fruits[2])
+
+
+# Print the second item in the fruits list.
+
+fruits = ["apple", "banana", "cherry"]
+print(fruits[1])
+
+# = banana
+
+
+# Change the value from "apple" to "kiwi", in the fruits list.
+
+fruits = ["apple", "banana", "cherry"]
+fruits[0] = 'kiwi'
+print(fruits)
+
+
+# = ['kiwi', 'banana', 'cherry']
+
+
+# Use the append method to add "orange" to the fruits list.
+
+fruits = ["apple", "banana", "cherry"]
+fruits.append('orange')
+print(fruits)
+#['apple', 'banana', 'cherry', 'orange']
+
+
+# Use the insert method to add "lemon" as the second item in the fruits list.
+
+fruits = ["apple", "banana", "cherry"]
+fruits.insert(1, 'lemon')
+print(fruits)
+
+
+# = ['apple', 'lemon', 'banana', 'cherry']
+
+
+# Use the remove method to remove "banana" from the fruits list.
+
+fruits = ["apple", "banana", "cherry"]
+fruits.remove('banana')
+print(fruits)
+
+
+# = ['apple', 'cherry']
+
+
+# Use negative indexing to print the last item in the list.
+
+fruits = ["apple", "banana", "cherry"]
+print(fruits[-1])
+# = cherry
+
+
+# Use a range of indexes to print the third, fourth, and fifth item in the list.
+
+fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(fruits[2:5])
+# = ['cherry', 'orange', 'kiwi']
+
+
+# Use the correct syntax to print the number of items in the list.
+
+fruits = ["apple", "banana", "cherry"]
+print(len(fruits))
+# = 3
