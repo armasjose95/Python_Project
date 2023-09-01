@@ -6316,3 +6316,90 @@ print(fruits[2:5])
 fruits = ["apple", "banana", "cherry"]
 print(len(fruits))
 # = 3
+
+
+# Use the len method to print the length of the string.
+
+x = "Hello World"
+print(len(x))
+# = 11
+
+
+# Get the first character of the string txt.
+
+txt = "Hello World"
+x = txt[0]
+print(x)
+# = H
+
+
+# Get the characters from index 2 to index 4 (llo).
+
+txt = "Hello World"
+x = txt[2:5]
+print(x)
+# = llo
+
+
+# Return the string without any whitespace at the beginning or the end.
+
+txt = " Hello World "
+x = txt.strip()
+print(x)
+
+
+# Convert the value of txt to upper case.
+
+txt = "Hello World"
+txt = txt.upper()
+print(txt)
+# = HELLO WORLD
+
+# Convert the value of txt to lower case.
+
+txt = "Hello World"
+txt = txt.lower()
+print(txt)
+# = hello world
+
+
+# Replace the character H with a J.
+
+txt = "Hello World"
+txt = txt.replace('H', 'J')
+print(txt)
+# = Jello World
+
+
+# Insert the correct syntax to add a placeholder for the age parameter.
+
+age = 36
+txt = "My name is John, and I am {}".format(age)
+print(txt.format(age))
+# = My name is John, and I am 36
+
+
+# Insert the correct syntax to convert x into a floating point number.
+
+x = 5
+x = float(x)
+print(x)
+# = 5.0
+
+
+# Insert the correct syntax to convert x into a integer.
+
+x = 5.0
+x = int(x)
+print(x)
+# = 5
+
+
+# Insert the correct syntax to convert x into a complex number.
+# The complex() function returns a complex number by specifying a real number and an imaginary number.
+
+
+x = 5
+x = complex(x)
+print(x)
+# = (5+0j)
