@@ -5157,6 +5157,8 @@ days = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday'}
 # To access value 'Wednesday' in dictionary days, we use key 'We' .
 
 days['We']
+# or
+print(days['We'])
 
 # = 'Wednesday'
 
@@ -6472,3 +6474,125 @@ if "model" in thisdict:
     print('Yes it is')
 
 # = Yes it is
+
+
+# Print all key names in the dictionary, one by one:
+
+thisdict = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+
+for x in thisdict:
+    print(x)
+
+
+# or
+# You can use the keys() method to return the keys of a dictionary:
+
+for x in thisdict.keys():
+    print(x)
+
+
+# brand
+# model
+# year
+
+
+# Print all values in the dictionary, one by one:
+
+for x in thisdict:
+    print(thisdict[x])
+
+
+# or
+# You can also use the values() method to return values of a dictionary:
+
+for x in thisdict.values():
+    print(x)
+
+
+# Ford
+# Mustang
+# 1964
+
+
+# Loop through both keys and values, by using the items() method:
+
+for x in thisdict.items():
+    print(x)
+
+# ('brand', 'Ford')
+# ('model', 'Mustang')
+# ('year', 1964)
+
+
+# or preferred way
+
+for x, y in thisdict.items():
+    print(x, y)
+
+# brand Ford
+# model Mustang
+# year 1964
+
+
+# Create a dictionary that contain three dictionaries:
+
+myfamily = {
+    "child1": {
+        "name": "Rosa",
+        "kids": 3
+    },
+    "child2": {
+        "name": "Teresa",
+        "kids": 2
+    },
+    "child3": {
+        "name": "Isabel",
+        "kids": 0
+    }
+}
+
+print(myfamily)
+
+# = {'child1': {'name': 'Rosa', 'kids': 3}, 'child2': {'name': 'Teresa', 'kids': 2}, 'child3': {'name': 'Isabel', 'kids': 0}}
+
+
+# Create three dictionaries, then create one dictionary that will contain the other three dictionaries:
+
+
+child1 = {
+    "name": "Rosa",
+    "kids": 3
+}
+child2 = {
+    "name": "Teresa",
+    "kids": 2
+}
+child3 = {
+    "name": "Isabel",
+    "kids": 0
+}
+
+
+myfamily2 = {
+    "child1": child1,
+    'child2': child2,
+    "child3": child3
+}
+
+print(myfamily2)
+
+
+# = {'child1': {'name': 'Rosa', 'kids': 3}, 'child2': {'name': 'Teresa', 'kids': 2}, 'child3': {'name': 'Isabel', 'kids': 0}}
+
+
+print(myfamily["child2"])
+# =  {'name': 'Teresa', 'kids': 2}
+
+# To access items from a nested dictionary, you use the name of the dictionaries, starting with the outer dictionary:
+
+print(myfamily["child2"]['name'])
+# = Teresa
