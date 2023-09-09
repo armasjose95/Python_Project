@@ -6596,3 +6596,26 @@ print(myfamily["child2"])
 
 print(myfamily["child2"]['name'])
 # = Teresa
+
+
+# Print First 10 natural numbers using while loop
+
+
+def loops(i):
+    while i <= 10:
+        print(i)
+        i += 1
+
+
+loops(1)
+
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+# 10
