@@ -6619,3 +6619,49 @@ loops(1)
 # 8
 # 9
 # 10
+
+
+# Write a program to print the following number pattern using a loop.
+
+# 1
+# 1 2
+# 1 2 3
+# 1 2 3 4
+# 1 2 3 4 5
+
+
+def loops(rows):
+    for i in range(1, rows + 1):
+        for j in range(1, i+1):
+            print(j, end=' ')
+        print(' ')
+
+
+loops(5)
+
+# Decide the row count, i.e., 5, because the pattern contains five rows
+# Run outer for loop 5 times using for loop and range() function
+# Run inner for loop i+1 times using for loop and range() function
+# In the first iteration of the outer loop, the inner loop will execute 1 time
+# In the second iteration of the outer loop, the inner loop will execute 2 time
+# In the third iteration of the outer loop, the inner loop will execute 3 times, and so on till row 5
+# print the value of j in each iteration of inner loop (j is the the inner loop iterator variable)
+# Display an empty line at the end of each iteration of the outer loop (empty line after each row)
+
+
+# Write a program to accept a number from a user and calculate the sum of all numbers from 1 to a given number
+# For example, if the user entered 10 the output should be 55 (1+2+3+4+5+6+7+8+9+10)
+
+
+def input(num):
+    s = 0
+    for i in num:
+        s = i + 1
+        print(sum)
+
+
+input('Enter number: ')
+s = 0
+for s in range(10):
+    s += 1
+    print(s)
