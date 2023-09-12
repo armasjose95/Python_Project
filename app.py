@@ -6653,15 +6653,42 @@ loops(5)
 # For example, if the user entered 10 the output should be 55 (1+2+3+4+5+6+7+8+9+10)
 
 
-def input(num):
+def example(num):
     s = 0
-    for i in num:
-        s = i + 1
-        print(sum)
+    for i in range(1, num+1, 1):
+        s += 1
+    print('\n')
+    print("Sum is: ", s)
 
 
-input('Enter number: ')
-s = 0
-for s in range(10):
-    s += 1
-    print(s)
+example(int(input("Enter number: ")))
+
+
+# Sum is:  55
+
+
+# Write a program to print multiplication table of a given number
+# ex #2
+
+
+def multable(digits):
+    num = 2
+    counter = 0
+    for i in range(1, digits + 1):
+        counter = num * i
+        print(counter)
+
+
+multable(10)
+
+
+# 2
+# 4
+# 6
+# 8
+# 10
+# 12
+# 14
+# 16
+# 18
+# 20
