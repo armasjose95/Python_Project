@@ -6721,13 +6721,20 @@ lst([12, 75, 150, 180, 145, 525, 50])
 # For example, the number is 75869, so the output should be 5. len()
 
 def digits(number):
-    for i in range(len(number)):
-        print((i))
+    counter = 0
+    while number != 0:
+        number = number // 10
+        counter += 1
+    print(counter)
 
 
 digits(75869)
 
+# = 5
 
-number = 75869
-for i in range(len(number)):
-    print(i)
+
+def digits(number):
+    print(len(str(number)))
+
+
+digits(75869)
