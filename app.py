@@ -6862,3 +6862,30 @@ else:
 #41
 #43
 #47
+
+
+
+#the Internet is a global network that connects computers around the world. 
+# It allows programs running on two computers to send messages to each other. Typically, the communication occurs because one of the programs is 
+# requesting a resource (a file, say) from the other. The program that is the provider of the resource is referred to as a server. 
+# (The computer hosting the server program is often referred to as a server too.) The program requesting the resource is referred to as a client.
+
+#The WWW contains a vast collection of web pages, documents, multimedia, and other resources. 
+# These resources are stored on computers connected to the Internet that run a server program called a web server. 
+# Web pages, in particular, are a critical resource on the web as they contain hyperlinks to resources on the web.
+
+#A program that requests a resource from a web server is called a web client. 
+# The web server receives the request and sends the requested resource (if if exists) back to the client.
+
+
+#In order to request a resource on the web, there must be a way to identify it. 
+# In other words, every resource on the web must have a unique name. 
+# Furthermore, there must be a way to locate the resource (i.e., find out which computer on the Internet hosts the resource).
+# Therefore, the web must have a naming and locator scheme that allows a web client to identify and locate resources.
+
+#The client and server programs must communicate using an agreed-upon protocol that specifies precisely how
+# the web client and the web server are supposed to format the request message and the reply message, respectively.
+
+#In order to specify the format of a web page and incorporate hyperlinks into it, there needs to be a language that supports formatting 
+# instructions and hyperlink definitions.
+#These three components are called—the naming scheme, the protocol, and the web publishing language.
