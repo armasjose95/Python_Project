@@ -6889,3 +6889,19 @@ else:
 #In order to specify the format of a web page and incorporate hyperlinks into it, there needs to be a language that supports formatting 
 # instructions and hyperlink definitions.
 #These three components are called—the naming scheme, the protocol, and the web publishing language.
+
+
+#Naming Scheme: Uniform Resource Locator
+# In order to identify and access a resource on the web, each resource must have a unique identifier. 
+# The identifier is called the Uniform Resource Locator (URL). The URL not only uniquely identifies a resource but also specifies how to access it, 
+# just as a person’s address can be used to find the person. 
+# For example, the mission statement of the W3C is hosted on the consortium’s web site, and its URL is the string
+
+
+#http:// www.w3.org/Consortium/mission.html
+
+#scheme       host       path
+
+#The scheme specifies how to access the resource.
+#The host (www.w3c.org) specifies the name of the server hosting the document, which is unique to each server.
+#The path is the relative pathname of the document relative to a special directory at the server called the web server root directory.
