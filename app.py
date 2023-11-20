@@ -6905,3 +6905,23 @@ else:
 #The scheme specifies how to access the resource.
 #The host (www.w3c.org) specifies the name of the server hosting the document, which is unique to each server.
 #The path is the relative pathname of the document relative to a special directory at the server called the web server root directory.
+
+
+#Note that the HTTP protocol is just one of many schemes that a URL may specify. 
+# Other schemes include the HTTPS protocol, which is the secure (i.e., encrypted) version of HTTP.
+#ex. https://webmail.cdm.depaul.edu/
+
+# The FTP protocol, which is the standard protocol for transferring files over the Internet:
+#ex. ftp://ftp.server.net/ 
+
+
+
+#Protocol: HyperText Transfer Protocol
+# A web server is a computer program that serves web resources it hosts upon request. 
+# A web client is a computer program that makes such a request (e.g., your browser). 
+# The client makes the request by first opening a network connection to the server (not unlike opening a file for reading and/or writing) 
+# and then sending a request message to the server through the network connection (equivalent to writing to a file). 
+# If the requested content is hosted at the server, the client will eventually receive—from the server and through the network 
+# connection—a response message that contains the requested content (equivalent to reading from a file).
+# Once the network connection is established, the communication schedule between the 
+# client and the server as well as the precise format of the request and response messages is specified by the HyperText Transfer Protocol (HTTP).
