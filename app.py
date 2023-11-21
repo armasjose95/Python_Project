@@ -6923,5 +6923,31 @@ else:
 # and then sending a request message to the server through the network connection (equivalent to writing to a file). 
 # If the requested content is hosted at the server, the client will eventually receive—from the server and through the network 
 # connection—a response message that contains the requested content (equivalent to reading from a file).
+
 # Once the network connection is established, the communication schedule between the 
 # client and the server as well as the precise format of the request and response messages is specified by the HyperText Transfer Protocol (HTTP).
+
+
+#Suppose, for example, that you use your web browser to download the W3C mission statement with URL:
+# http://www.w3.org/Consortium/mission.html
+
+# The request message your web browser will send to the host www.w3.org will start with this line:
+# GET /Consortium/mission.html HTTP/1.1
+
+
+#The first line of the request message is referred to as the request line. 
+# The request line must start with one of the HTTP methods. 
+# The method GET is one of the HTTP methods and is the usual way that a resource is requested. 
+# Following it is the path embedded in the resource’s URL; this path specifies the identity and location of the requested resource relative 
+# to the web server’s root directory. 
+# The version of the HTTP protocol used ends the request line.
+
+#ex.
+# Host: www.w3.org
+# User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; ...
+# Accept: text/html,application/xhtml+xml,application/xml;...
+# Accept-Language: en-us,en;q=0.5
+
+
+#The request header fields give the client a way to provide more information about the request
+# to the server, including the character encoding and the languages (such as English) that the browser accepts, caching information, and so on.
