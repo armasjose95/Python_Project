@@ -6951,3 +6951,21 @@ else:
 
 #The request header fields give the client a way to provide more information about the request
 # to the server, including the character encoding and the languages (such as English) that the browser accepts, caching information, and so on.
+
+#When the web server receives this request, it uses the path that appears in the request line to find the requested document. 
+# If successful, it creates a reply message that contains the requested resource.
+
+#The first few lines of the reply message are something like:
+# HTTP/1.1 200 OK
+# Date: Mon, 28 Feb 2011 18:44:55 GMT
+# Server: Apache/2
+# Last-Modified: Fri, 25 Feb 2011 04:22:57 GMT
+# ...
+
+#The first line of this message, called the response line, indicates that the request was successful; 
+# if it were not, an error message would appear. The remaining lines, called the response header fields, 
+# provide additional information to the client, such as the exact time when the server serviced the request, 
+# the time when the requested resource was last modified, the “brand” of the server program, the character encoding of the requested resource, and others.
+
+#A web page source file is written using a publishing language called the HyperText Markup Language (HTML).
+# This language is used to define the headings, lists, images, and hyperlinks of a web page and incorporate video and other multimedia into it.
