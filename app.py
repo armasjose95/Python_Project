@@ -6969,3 +6969,19 @@ else:
 
 #A web page source file is written using a publishing language called the HyperText Markup Language (HTML).
 # This language is used to define the headings, lists, images, and hyperlinks of a web page and incorporate video and other multimedia into it.
+
+
+#Python WWW API
+
+#Module urllib.request
+#A browser is just one type of web client, however; any program can act as a web client and access and download resources on the web.
+#In Python, the Standard Library module urllib.request gives developers this capability. 
+# The module contains functions and classes that allow Python programs to open and read resources on the web in a way 
+# similar to how files are opened and read.
+
+
+#The function urlopen() in module urlib.request is similar to the built-in function open() that is used to open (local) files. 
+# There are three differences however:
+# 1. urlopen() takes as input a URL rather than a local file pathname.
+# 2. It results in an HTTP request being sent to the web server hosting the content.
+# 3. It returns a complete HTTP response.
