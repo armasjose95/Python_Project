@@ -3996,7 +3996,7 @@ theList = [6, 4, 1, 3, 2, 5, 7, 8, 9, 7]
 bubble(theList)
 theList  # = [1, 2, 3, 4, 5, 6, 7, 7, 8, 9]
 """
-
+"""
 
 # Two-Dimensional Lists
 
@@ -6985,3 +6985,44 @@ else:
 # 1. urlopen() takes as input a URL rather than a local file pathname.
 # 2. It results in an HTTP request being sent to the web server hosting the content.
 # 3. It returns a complete HTTP response.
+
+"""
+from urllib.request import urlopen
+
+response = urlopen("http://www.w3c.org/Consortium/facts.html")
+type(response)
+
+# = <class 'http.client.HTTPResponse'>
+
+"""
+The object returned by function urlopen() is of type HTTPResponse, which is a type defined in Standard Library module http.client. 
+Objects of this type encapsulate the HTTP response from the server. 
+The HTTP response includes the requested resource but also additional information. 
+For example, the HTTPResponse method geturl() returns the URL of the requested resource:
+"""
+
+response.geturl()
+# = 'https://www.w3.org/about/history/'
+
+
+# To obtain all the HTTP response header fields, you can use method getheaders():
+
+for field in response.getheaders():
+    print(field)
+
+"""
+=
+('Date', 'Wed, 29 Nov 2023 03:03:57 GMT')
+('Content-Type', 'text/html; charset=UTF-8')
+('Transfer-Encoding', 'chunked')
+.....
+"""
+
+
+"""
+The HTTPResponse object returned by urlopen contains the requested resource. 
+The HTTPResponse class is said to be a filelike class because it supports methods read(), readline(), and readlines(), the same methods 
+supported by the types of objects returned by the file-opening function open(). 
+All these methods retrieve the content of the requested resource. 
+For example, let’s use the method read(): 
+"""
