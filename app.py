@@ -7026,3 +7026,34 @@ supported by the types of objects returned by the file-opening function open().
 All these methods retrieve the content of the requested resource. 
 For example, let’s use the method read(): 
 """
+
+
+html = response.read()
+type(html)
+# = <class 'bytes'>
+
+
+""" 
+The method read() will return the content of the resource.
+If the file is an HTML document, for example, then its content is returned. 
+Note, however, that method read() returns an object of type bytes. 
+This is because resources opened by urlopen() could very well be audio or video files (i.e., binary files). 
+The default behavior for urlopen() is to assume that the resource is a binary file and, when this file is read, a sequence of bytes is returned.
+
+If the resource happens to be an HTML file (i.e., a text file), it makes sense to decode the
+sequence of bytes into the Unicode characters they represent.
+"""
+
+html = html.decode()
+print(html)
+
+
+""" 
+Decoding an HTML document into a Unicode string makes sense because an HTML document is a text file. 
+Once decoded into a string, we can use string operators and methods to process the document. 
+For example, we can now find out the number of times string 'Web' appears in (the source file of) web page:
+http://www.w3c.org/Consortium/facts.html
+"""
+
+html.count("Web")
+# = 31
