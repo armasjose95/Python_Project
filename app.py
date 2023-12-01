@@ -7057,3 +7057,46 @@ http://www.w3c.org/Consortium/facts.html
 
 html.count("Web")
 # = 31
+
+
+# Write a function that takes a URL of a web page as input and returns the content of the web page source file as a string:
+
+from urllib.request import urlopen
+
+
+def getSource(url):
+    "returns the content of resource specified by url as a string"
+    response = urlopen(url)
+    html = response.read()
+    return html.decode()
+
+
+getSource("https://www.google.com/")
+
+
+# Write method news() that takes a URL of a news web site and a list of news topics (i.e.,strings)
+# and computes the number of occurrences of each topic in the news.
+
+
+from urllib.request import urlopen
+
+
+def news(url, topics):
+    # counts in resource with URL url the frequency of each topic in list topics
+    # download and decode resource to obtain all lowercase content
+    response = urlopen(url)
+    html = response.read()
+    content = html.decode().lower()
+
+    for topic in topics:  # find frequency of topic in content
+        n = content.count(topic)
+        print("{} appears {} times".format(topic, n))
+
+
+news("http://bbc.co.uk", ["economy", "climate", "education"])
+
+
+# =
+# economy appears 0 times
+# climate appears 2 times
+# education appears 0 times
