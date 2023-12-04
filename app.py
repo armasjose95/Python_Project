@@ -7103,3 +7103,23 @@ news("http://bbc.co.uk", ["economy", "climate", "education"])
 # economy appears 0 times
 # climate appears 2 times
 # education appears 0 times
+
+
+""" 
+The process of analyzing a document in order to break it into components and obtain
+its structure is called parsing.
+The Python Standard Library module html.parser provides a class, HTMLParser, that
+parses HTML files. When it is fed an HTML file, it will process it from beginning to end, find
+all the start tags, end tags, text data, and other components of the source file, and “process”
+each one of them.
+
+The HMLPParser class supports method feed() that takes, as input, the content of an
+HTML source file, in string form. Therefore, to parse file w3c.html, we first need to read
+it into a string and then feed it to the parser:
+"""
+
+
+infile = open("w3c.html")
+content = infile.read()
+infile.close()
+from html.parser import HTMLParser
