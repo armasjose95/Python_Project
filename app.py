@@ -7045,7 +7045,9 @@ sequence of bytes into the Unicode characters they represent.
 """
 
 html = html.decode()
-print(html)
+type(html)
+# = <class 'str'>
+print(html)  # prints entire html of the web page
 
 
 """ 
@@ -7068,7 +7070,7 @@ def getSource(url):
     "returns the content of resource specified by url as a string"
     response = urlopen(url)
     html = response.read()
-    return html.decode()
+    return html.decode()  # returns entire html of the web page
 
 
 getSource("https://www.google.com/")
@@ -7097,6 +7099,7 @@ news("http://bbc.co.uk", ["economy", "climate", "education"])
 
 
 # =
+
 # economy appears 0 times
 # climate appears 2 times
 # education appears 0 times
