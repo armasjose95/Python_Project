@@ -7123,3 +7123,24 @@ infile = open("w3c.html")
 content = infile.read()
 infile.close()
 from html.parser import HTMLParser
+
+parser = HTMLParser()
+parser.feed(content)
+
+
+""" 
+When the last line is executed (i.e., when string content is fed to parser), this happens behind the scenes: 
+The parser divides the string content into tokens that correspond to
+HTML start tags, end tags, text data, and other HTML components, and then handles the
+tokens in the order in which they appear in the source file. What this means is that for each token, an appropriate handler method is invoked. 
+The handlers are methods of class HTMLParser.
+
+Some HTMLParser handlers.
+These methods do nothing when invoked; they need to be overridden to produce the desired behavior.
+
+Token                                   Handler                                 Explanation
+<tag attrs>                             handle_starttag(tag, attrs)             Start tag handler
+</tag>                                  handle_endtag(tag)                      End tag handler
+data                                    handle_data(data)                       Arbitrary text data handler
+
+"""
