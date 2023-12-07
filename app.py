@@ -7143,4 +7143,41 @@ Token                                   Handler                                 
 </tag>                                  handle_endtag(tag)                      End tag handler
 data                                    handle_data(data)                       Arbitrary text data handler
 
+
+
+When the parser encounters a start tag token, handler method handle_starttag() is invoked; 
+if the parser encounters a text data token, handler method handle_data() is invoked. 
+Method handle_starttag() takes, as input, the start tag element name and a list containing the tag’s attributes 
+(or None if the tag contains no attributes). 
+Each attribute is represented by a tuple storing the name and value of the attribute. 
+Method handle_data() takes just the text token as input.
 """
+
+
+"""
+What do the HTMLParser class handler methods (like handle_starttag()) really do?
+Well, nothing. The handler methods of class HTMLParser are implemented to do nothing when called. 
+That is why nothing interesting happened when we executed:
+
+The HTMLParser class handler methods are really meant to be overridden by user-defined handlers that implement the behavior desired by the programmer. 
+In other words, class HTMLParser is not supposed to be used directly but rather as a super class from which
+the developer derives a parser that exhibits the parsing behavior desired by the programmer.
+"""
+
+
+parser.feed(content)
+
+
+# Develop a parser that prints the URL value of the href attribute contained in every anchor start tag of the fed HTML file.
+
+from html.parser import HTMLParser
+
+
+class LinkParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        "print value of href attribute if any"
+        if tag == "a":  # if an anchor tag appears
+            # search for href attribute and print its value
+            for attr in attrs:
+                if attr[0] == "href":
+                    print(attrs[1])
