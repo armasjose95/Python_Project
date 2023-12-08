@@ -7180,4 +7180,18 @@ class LinkParser(HTMLParser):
             # search for href attribute and print its value
             for attr in attrs:
                 if attr[0] == "href":
-                    print(attrs[1])
+                    print(attr[1])
+
+
+# In the next code, we feed the file to our parser and obtain the three URLs:
+
+infile = open("links.html")
+content = infile.read()
+infile.close()
+linkparser = LinkParser()
+linkparser.feed(content)
+
+# =
+# http://www.google.com
+# test.html
+# mailto:me@example.net
