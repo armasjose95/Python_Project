@@ -7195,3 +7195,30 @@ linkparser.feed(content)
 # http://www.google.com
 # test.html
 # mailto:me@example.net
+
+
+""" 
+Print the names of the start and end tags in the order that they appear in the document, and
+with an indentation that is proportional to the element’s depth in the tree structure of the
+document.
+
+
+"""
+from html.parser import HTMLParser
+
+
+class myHTMLParser:
+    def handle_starttag(self, tag, attrs):
+        for attr in attrs:
+            print(attrs[0:])
+
+    def handle_endtag(tag):
+        for aTag in tag:
+            print(aTag[0:])
+
+
+infile = open("w3c.html")
+content = infile.read()
+infile.close()
+myparser = MyHTMLParser()
+myparser.feed(content)
