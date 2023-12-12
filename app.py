@@ -7207,10 +7207,14 @@ document.
 from html.parser import HTMLParser
 
 
-class myHTMLParser:
+class myHTMLParser(HTMLParser):
+    def __init__(self):
+        HTMLParser.__init__(self)
+        self.indent = 0
+
     def handle_starttag(self, tag, attrs):
-        for attr in attrs:
-            print(attrs[0:])
+        for stag in tag:
+            print(stag[0:])
 
     def handle_endtag(tag):
         for aTag in tag:
