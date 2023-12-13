@@ -7202,23 +7202,37 @@ Print the names of the start and end tags in the order that they appear in the d
 with an indentation that is proportional to the element’s depth in the tree structure of the
 document.
 
+self = this instance of the class
 
 """
 from html.parser import HTMLParser
 
 
 class myHTMLParser(HTMLParser):
+    "HTML doc parser that prints tags indented by depth"
+
     def __init__(self):
+        "initializes the parser and the initial indentation"
         HTMLParser.__init__(self)
-        self.indent = 0
+        self.indent = 0  # initial indentation value
 
     def handle_starttag(self, tag, attrs):
-        for stag in tag:
-            print(stag[0:])
+        """prints start tag with an indentation proportional
+        12 to the depth of the tag's element in the document
+        The indentation is an integer value that is incremented with every start tag token
+        """
+        if tag in {"br", "p"}:
+            print("{}{} start".format(self.indent * "", tag))
+            self.indent += 4
 
-    def handle_endtag(tag):
-        for aTag in tag:
-            print(aTag[0:])
+    def handle_endtag(self, tag):
+        """prints start tag with an indentation proportional
+        12 to the depth of the tag's element in the document
+        The indentation is an integer value that is decremented with every end tag token
+        """
+        if tag not in {"br", "p"}:
+            self.indent -= 4
+            print("{}{} end".format(self.indent * "", tag))
 
 
 infile = open("w3c.html")
