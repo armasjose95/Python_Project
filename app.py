@@ -7208,7 +7208,7 @@ self = this instance of the class
 from html.parser import HTMLParser
 
 
-class myHTMLParser(HTMLParser):
+class MyHTMLParser(HTMLParser):
     "HTML doc parser that prints tags indented by depth"
 
     def __init__(self):
@@ -7240,3 +7240,34 @@ content = infile.read()
 infile.close()
 myparser = MyHTMLParser()
 myparser.feed(content)
+
+
+"""
+create a class object and assign it a name "Tweet"
+like a factory providing default behavior and able to create objects in its image
+it does so whenever we execute the class name "Tweet", followed by a pair of parenthesis(calling the class)
+The objects created in this way are known as instance objects
+Instance objects start with a lowercase character & class objects to begin with an uppercase character
+instance objects inherits any class attributes and get their own namespace
+"""
+
+
+# empty body
+class Tweet:
+    pass
+
+
+a = Tweet()
+
+a.message = "25 wings."
+
+""" 
+if you want to access any attributes of that instance, for ex message, you can't just write message,
+you need to write the instance name(a for ex) and then a dot and then the instance(message)
+delineates the attributes that belong to the instance(ex. a) and those that belong elsewhere
+i've assigned a string to the instance attribute message and I access it the same way as we assigned to it
+"""
+
+
+print(a.message)
+# = 25 wings.
