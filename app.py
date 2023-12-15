@@ -7271,3 +7271,42 @@ i've assigned a string to the instance attribute message and I access it the sam
 
 print(a.message)
 # = 25 wings.
+
+
+""" 
+We get an attrribute error because it's as if the class object is a factory that provides default behavior and 
+when we create instance objects, we're getting concrete items that we can change and any changes that we make 
+are not then propagated back up to the factory.
+they stay with the instance and die with the instance
+"""
+
+
+print(Tweet.message)
+# = attribute error
+
+
+# We can create as many of these instance objects as we like
+
+b = Tweet()
+# another instance object assigned to 'b'
+b.message = "A different message"
+
+
+# demonstrate that 2 message attributes are different but exist at the same time and are accessed through their respective namespace
+print(a.message)
+# 25 wings.
+print(b.message)
+# A different message
+
+"""
+Methods that begin with double underscores(ex. __) and end in double underscores are special hooks in Python
+Known as Dunder Method 
+Method is called automatically at certain times
+Classes can override most of them
+
+
+init method
+whenever we call class objects, the instance object is first created with the dunder method and then
+any attributes are initialzed with the dunder init method
+Dunder init method is best known as the initializer method, although mostly referred 
+"""
