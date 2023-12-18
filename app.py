@@ -7244,8 +7244,8 @@ myparser.feed(content)
 
 """
 create a class object and assign it a name "Tweet"
-like a factory providing default behavior and able to create objects in its image
-it does so whenever we execute the class name "Tweet", followed by a pair of parenthesis(calling the class)
+A Class object is like a factory providing default behavior and it's able to create objects in its image
+You can create instance objects by executing the class name for ex.("Tweet"), followed by a pair of parenthesis(calling the class)
 The objects created in this way are known as instance objects
 Instance objects start with a lowercase character & class objects to begin with an uppercase character
 instance objects inherits any class attributes and get their own namespace
@@ -7275,14 +7275,14 @@ print(a.message)
 
 """ 
 We get an attrribute error because it's as if the class object is a factory that provides default behavior and 
-when we create instance objects, we're getting concrete items that we can change and any changes that we make 
+when we create instance objects, we're getting items that we can change and any changes that we make 
 are not then propagated back up to the factory.
 they stay with the instance and die with the instance
 """
 
 
 print(Tweet.message)
-# = attribute error
+# = attribute error, Tweet class object was never modifed, only it's instance objects
 
 
 # We can create as many of these instance objects as we like
@@ -7308,5 +7308,49 @@ Classes can override most of them
 init method
 whenever we call class objects, the instance object is first created with the dunder method and then
 any attributes are initialzed with the dunder init method
-Dunder init method is best known as the initializer method, although mostly referred 
+Dunder init method is best known as the initializer method, although mostly referred as the constructor method
+Called automatically whenever an instance is created
 """
+
+
+""" 
+Overridden the dunder init method and have it print hi
+Defining dunder init without any parameters is not what you normally see
+normally see self as the first parameter
+"""
+
+
+class Tweet:
+    def __init__(self):
+        print("Hi")
+
+
+a = Tweet()
+# = 'Hi'
+
+"""
+Whenever the class object is called the instance is always passed as the first argument
+init method is there to perform any initialization & make assignments to instance attributes
+Self in a class definition always refers to the particular instance
+Any other argumets that we pass in, will take up positions 2,3,4,etc
+"""
+
+
+class Tweet:
+    def __init__(self, message):
+        self.x = message
+
+
+a = Tweet("An instance")
+print(a.x)
+# = An instance
+
+
+""" 
+Created a seperate instance of the same class & passed in a diff. string
+both instances coexists
+"""
+
+b = Tweet("Another instance of Tweet")
+print(b.x)
+# = Another instance of Tweet
