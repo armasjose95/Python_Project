@@ -7354,3 +7354,17 @@ both instances coexists
 b = Tweet("Another instance of Tweet")
 print(b.x)
 # = Another instance of Tweet
+
+
+""" 
+Module urllib.parse
+What if we are only interested in collecting the URLs that correspond to HTTP hy-
+perlinks (i.e., URLs whose scheme is the HTTP protocol)?
+
+"""
+
+
+rsrce = urlopen("https://www.w3.org/mission/")
+content = rsrce.read().decode()
+linkparser = LinkParser()
+linkparser.feed(content)
