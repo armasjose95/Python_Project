@@ -7360,11 +7360,25 @@ print(b.x)
 Module urllib.parse
 What if we are only interested in collecting the URLs that correspond to HTTP hy-
 perlinks (i.e., URLs whose scheme is the HTTP protocol)?
-
+Note that we cannot just say “collect those URLs that start with string http” because then we would miss the relative
+URLs, such as /Consortium/contact.html.
+What we need is a way to construct an absolute URL from a relative URL (like /Consortium/contact.html) and the URL of the
+web page containing it (http://www.w3.org/Consortium/mission.html).
+The Python Standard Library module urllib.parse provides a few methods that operate on URLs, 
+including one that does exactly what we want, method urljoin().
 """
 
+from urllib.request import urlopen
 
 rsrce = urlopen("https://www.w3.org/mission/")
 content = rsrce.read().decode()
 linkparser = LinkParser()
 linkparser.feed(content)
+
+
+from urllib.parse import urljoin
+
+url = "https://www.w3.org/mission/"
+relative = "/Consortium/contact.html"
+urljoin(url, relative)
+# = 'https://www.w3.org/Consortium/contact.html'
