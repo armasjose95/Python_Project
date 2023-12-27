@@ -7382,3 +7382,6 @@ url = "https://www.w3.org/mission/"
 relative = "/Consortium/contact.html"
 urljoin(url, relative)
 # = 'https://www.w3.org/Consortium/contact.html'
+
+
+from urllib.parse import urljoin
