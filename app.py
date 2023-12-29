@@ -7425,3 +7425,26 @@ class Collector(HTMLParser):
     def getLinks(self):
         "returns hyperlinks URLs in their absolute format"
         return self.links
+
+
+# Augment class Collector so that it also collects all the text data into a string that can be retrieved using method getData().
+
+
+from urllib.parse import urljoin
+from html.parser import HTMLParser
+
+
+class Collector(HTMLParser):
+    def __init__(self, url):
+        "initializes parser, the url, and a string"
+        HTMLParser.__init__(self)
+        self.url = url
+        self.links = ""
+
+
+url = "http://www.w3.org/Consortium/mission.html"
+resource = urlopen(url)
+content = resource.read().decode()
+collector = LinksCollector(url)
+collector.feed(content)
+collector.getData()
