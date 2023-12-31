@@ -7435,11 +7435,13 @@ from html.parser import HTMLParser
 
 
 class Collector(HTMLParser):
-    def __init__(self, url):
-        "initializes parser, the url, and a string"
-        HTMLParser.__init__(self)
-        self.url = url
-        self.links = ""
+    def __init__(self, data):
+        "collects and concatenates text data"
+        self.words += data
+
+    def getWords(self):
+        "returns the concatenation of all text data"
+        return self.words
 
 
 url = "http://www.w3.org/Consortium/mission.html"
@@ -7448,3 +7450,42 @@ content = resource.read().decode()
 collector = LinksCollector(url)
 collector.feed(content)
 collector.getData()
+
+
+from html.parser import HTMLParser
+from urllib.request import urlopen
+
+
+class Collector(HTMLParser):
+    def __init__(self, url):
+        super().__init__()
+        self.url = url
+        self.links = []
+        self.data = ""
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "a":
+            for attr, value in attrs:
+                if attr == "href":
+                    self.links.append(value)
+
+    def handle_data(self, data):
+        self.data += data
+
+    def getData(self):
+        return self.data
+
+
+# Example usage:
+url = "http://www.w3.org/Consortium/mission.html"
+resource = urlopen(url)
+content = resource.read().decode()
+
+collector = Collector(url)
+collector.feed(content)
+
+# Get links
+print("Links:", collector.links)
+
+# Get data
+print("Data:", collector.getData())
