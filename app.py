@@ -7235,7 +7235,7 @@ class MyHTMLParser(HTMLParser):
             print("{}{} end".format(self.indent * "", tag))
 
 
-infile = open("w3c.html")
+infile = open("mlb.com")
 content = infile.read()
 infile.close()
 myparser = MyHTMLParser()
@@ -7435,11 +7435,11 @@ from html.parser import HTMLParser
 
 
 class Collector(HTMLParser):
-    def __init__(self, data):
+    def handle_data(self, data):
         "collects and concatenates text data"
         self.words += data
 
-    def getWords(self):
+    def getData(self):
         "returns the concatenation of all text data"
         return self.words
 
@@ -7489,3 +7489,10 @@ print("Links:", collector.links)
 
 # Get data
 print("Data:", collector.getData())
+
+
+""" 
+In this modified class, I added a data attribute to store the text data, and in the handle_data method, 
+I append the data to this attribute. 
+The getData method is then used to retrieve the collected text data.
+"""
