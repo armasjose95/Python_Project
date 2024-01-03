@@ -7496,3 +7496,10 @@ In this modified class, I added a data attribute to store the text data, and in 
 I append the data to this attribute. 
 The getData method is then used to retrieve the collected text data.
 """
+
+
+import urllib.request
+
+x = urllib.request.urlopen("https://www.google.com/")
+print(x.read())
+# Prints The source code of the URL google.com
