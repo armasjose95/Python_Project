@@ -7499,7 +7499,22 @@ The getData method is then used to retrieve the collected text data.
 
 
 import urllib.request
+import urllib.parse
 
-x = urllib.request.urlopen("https://www.google.com/")
-print(x.read())
+# x = urllib.request.urlopen("https://www.google.com/")
+# print(x.read())
 # Prints The source code of the URL google.com
+
+
+url = "https://pythonprogramming.net/"
+values = {"q": "python"}  # dictionary
+
+data = urllib.parse.urlencode(values)  # encoding as it should be in the url
+data = data.encode("utf-8")  # encode as utf-8(type of encoding). Puts data into bytes
+# Requesting the url and data(encoded the data and it into utf-8. Passing variables in value that was encoded)
+request = urllib.request.Request(url, data)
+response = urllib.request.urlopen(request)  # visiing the url now
+respData = response.read()
+
+print(respData)
+# Prints The source code of the URL https://pythonprogramming.net/search/?q=python
