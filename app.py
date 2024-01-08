@@ -7497,7 +7497,7 @@ I append the data to this attribute.
 The getData method is then used to retrieve the collected text data.
 """
 
-
+# GET
 import urllib.request
 import urllib.parse
 
@@ -7518,3 +7518,47 @@ respData = response.read()
 
 print(respData)
 # Prints The source code of the URL https://pythonprogramming.net/search/?q=python
+
+
+import urllib.request
+import urllib.parse
+
+
+try:
+    x = urllib.request.urlopen(
+        "https://www.google.com/search?q=test"
+    )  # Q stands for query for google
+    print(x.read())  # Read the source code of the url search resut
+
+except (
+    Exception
+) as e:  # If we can't read the source code of the url, then throw the exception as e
+    print(str(e))  # print the string version of exception
+
+# = HTTP Error 403: Forbidden
+# Google knows I'm a program so they decline the request
+
+
+import urllib.request
+import urllib.parse
+
+
+try:
+    x = urllib.request.urlopen(
+        "https://www.google.com/search?q=test"
+    )  # Q stands for query for google
+    headers = {}  # Send in a header every time I visit a site & it contains info on me
+    """Piece of data called User-Agent Located within headers. User-Agent reveals what kind of browser I'm on, which is Python...
+    I'm no longer announcing myself as Python & switching u-agent to an internet browser"""
+    headers[
+        "User-Agent"
+    ] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"
+    req = urllib.request.Request(
+        url, headers=headers
+    )  # Being hardcoded, so no data needs to be passed through. Normally pass in values in post req
+    print(x.read())  # Read the source code of the url search resut
+
+except (
+    Exception
+) as e:  # If we can't read the source code of the url, then throw the exception as e
+    print(str(e))  # print the string version of exception
