@@ -7544,21 +7544,30 @@ import urllib.parse
 
 
 try:
-    x = urllib.request.urlopen(
-        "https://www.google.com/search?q=test"
-    )  # Q stands for query for google
+    url = "https://pythonprogramming.net/search/?q=python"
     headers = {}  # Send in a header every time I visit a site & it contains info on me
     """Piece of data called User-Agent Located within headers. User-Agent reveals what kind of browser I'm on, which is Python...
     I'm no longer announcing myself as Python & switching u-agent to an internet browser"""
     headers[
         "User-Agent"
     ] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"
-    req = urllib.request.Request(
-        url, headers=headers
-    )  # Being hardcoded, so no data needs to be passed through. Normally pass in values in post req
-    print(x.read())  # Read the source code of the url search resut
+    """URL Being hardcoded, so no data needs to be passed through. Normally pass in values in post req
+    # telling Python to visit url & instead of setting our normal default parameterheaders, I'm changing things up and calling the
+    headers where I switched the user agent to an internet browser
+    Makes sense to go into urllib.request.Request that is a function with function parameters & they define the new internet browser instead of
+    default parameters
+    """
+    req = urllib.request.Request(url, headers=headers)
+    resp = urllib.request.urlopen(req)
+    respData = resp.read()
 
-except (
-    Exception
-) as e:  # If we can't read the source code of the url, then throw the exception as e
-    print(str(e))  # print the string version of exception
+    saveFile = open("withHeaders.txt", "w")  # open the file with the intention to write
+    saveFile.write(
+        str(respData)
+    )  # Have to write the string version of respData because the response data isn't in string format
+    saveFile.close()
+
+except Exception as e:
+    print(str(e))  # Print string e in case we throw an exception
+
+# created data file of The source code of the URL "https://pythonprogramming.net/search/?q=python"
