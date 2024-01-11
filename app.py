@@ -7571,3 +7571,12 @@ except Exception as e:
     print(str(e))  # Print string e in case we throw an exception
 
 # created data file of The source code of the URL "https://pythonprogramming.net/search/?q=python"
+
+
+import urllib.request
+import urllib.parse
+import re  # regular expressions
+
+
+url = "http://pythonprogramming.net"
+values = ["s: basics"]
