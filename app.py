@@ -7579,4 +7579,13 @@ import re  # regular expressions
 
 
 url = "http://pythonprogramming.net"
-values = ["s: basics"]
+values = {"s": "search", "submit": "search"}
+
+data = urllib.parse.urlencode(values)
+data = data.encode("utf-8")
+req = urllib.request.Request(url, data)
+resp = urllib.request.urlopen(req)
+respData = resp.read()
+
+print(respData)
+# prints source code of the URL "https://pythonprogramming.net/search/?q=python"
