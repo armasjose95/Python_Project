@@ -7587,5 +7587,22 @@ req = urllib.request.Request(url, data)
 resp = urllib.request.urlopen(req)
 respData = resp.read()
 
-print(respData)
+# print(respData)
 # prints source code of the URL "https://pythonprogramming.net/search/?q=python"
+
+
+# about to parse out everything between paragraph tags
+
+
+""" r = regular expression we want is paragraph text
+() in between tags is what data you want to search for and output
+.*? = find everything between paragraph tags
+. = any character except for new line
+* = zero or more repititions, it applies to the "."
+? = match the zero or more repititions
+Looking for this in respData and it needs to be converted into a string
+"""
+paragraphs = re.findall(r"<p>(.*?)</p>", str(respData))
+
+for eachP in paragraphs:
+    print(eachP)
