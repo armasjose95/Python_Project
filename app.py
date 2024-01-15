@@ -7235,7 +7235,7 @@ class MyHTMLParser(HTMLParser):
             print("{}{} end".format(self.indent * "", tag))
 
 
-infile = open("mlb.com")
+infile = open("w3c.html")
 content = infile.read()
 infile.close()
 myparser = MyHTMLParser()
@@ -7366,6 +7366,9 @@ What we need is a way to construct an absolute URL from a relative URL (like /Co
 web page containing it (http://www.w3.org/Consortium/mission.html).
 The Python Standard Library module urllib.parse provides a few methods that operate on URLs, 
 including one that does exactly what we want, method urljoin().
+
+urllib.parse.urljoin(base, url)
+
 """
 
 from urllib.request import urlopen
@@ -7378,10 +7381,31 @@ linkparser.feed(content)
 
 from urllib.parse import urljoin
 
-url = "https://www.w3.org/mission/"
+url = "http://www.w3.org/Consortium/mission.html"
 relative = "/Consortium/contact.html"
 urljoin(url, relative)
 # = 'https://www.w3.org/Consortium/contact.html'
+
+
+""" 
+the first argument, base is like the page you are on in your browser. The second argument url is the href of an anchor on that page. 
+The result is the final url to which you will be directed should you click.
+If url is an absolute URL (that is, starting with //, http://, https://, ...), 
+the url’s host name and/or scheme will be present in the result. For example:
+"""
+
+from urllib.parse import urljoin
+
+url = "https://www.google.com"
+relative = "//www.microsoft.com"
+urljoin(url, relative)
+# 'https://www.microsoft.com'
+
+
+import urllib.parse
+
+urllib.parse.urljoin("https://www.google.com", "//www.microsoft.com")
+# 'https://www.microsoft.com'
 
 
 """ 
