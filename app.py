@@ -7369,7 +7369,35 @@ including one that does exactly what we want, method urljoin().
 
 urllib.parse.urljoin(base, url)
 
-"""
+Relative Urls-don't contain the full web address
+Generally used to link to resources within the same website
+
+    Path-Relative URL-File being linked is in the same folder as your HTML doc, then name of the file is listed
+    -If file is in the subfolder, then just include the subfolder before the file name
+    -Problem is that they can easily be broken
+    ex. <a href = "page2.html"> Page 2 </a>
+    
+    
+    Root-Relative URLs-Start with a slash "/"
+    -Always relative to the route of the site
+    -If file is in the subfolder, then just include the subfolder before the file name and start with a "/"
+    -From a developer's POV, relative URLS is the easiest and simplest thing to do
+    -Useful when moving code between servers & less likely to break
+    ex. <a href = "/page2.html"> Page 2 </a>
+    
+    
+    Protocol-Relative URLs include the hostname but the protocol isn't
+    -Start with a double slash "//"
+    -Browser uses whatever protocol is used by the page that contains the link
+    -They're best avoided
+    -Vulnerable to hacking
+    -Slower than absolute URLs
+    -May not load if you're using HTTP2 
+    ex. If site uses HTTP then this is the protocol that will be used in the request the resources
+    ex. If it's using HTTPS then the requested URS will use HTTPS
+    ex. < link rel = "stylesheet" href = "//cdn.example.com/theme.css">
+ """
+
 
 from urllib.request import urlopen
 
