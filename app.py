@@ -7442,15 +7442,7 @@ Collect only HTTP URLs and, instead of printing them out, it puts them into a li
 The URLs in the list will be in their absolute, rather than relative, format.
 """
 
-url = "http://www.w3.org/Consortium/mission.html"
-resource = urlopen(url)
-content = resource.read().decode()
-collector = Collector(url)
-collector.feed(content)
-for link in collector.getlinks():
-    print(link)
-
-
+from urllib.request import urlopen
 from urllib.parse import urljoin
 from html.parser import HTMLParser
 
@@ -7477,6 +7469,23 @@ class Collector(HTMLParser):
     def getLinks(self):
         "returns hyperlinks URLs in their absolute format"
         return self.links
+
+
+url = "http://www.w3.org/Consortium/mission.html"
+resource = urlopen(url)
+content = resource.read().decode()
+collector = Collector(url)
+collector.feed(content)
+for link in collector.getLinks():
+    print(link)
+
+
+""" 
+http://www.w3.org/Consortium/mission.html#main
+https://github.com/w3c/w3c-website
+https://www.w3.org/ja/
+.....
+"""
 
 
 # Augment class Collector so that it also collects all the text data into a string that can be retrieved using method getData().
