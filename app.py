@@ -7459,7 +7459,9 @@ class Collector(HTMLParser):
     def handle_starttag(self, tag, attrs):
         "collect hyperlink URLs in their absolute format"
         if tag == "a":
+            # This loop iterates over the attribute-value pairs of the anchor tag.
             for attr in attrs:
+                # This condition checks if the attribute is the "href" attribute, which typically contains the URL of the hyperlink.
                 if attr[0] == "href":
                     # construct absolute URL
                     absolute = urljoin(self.url, attr[1])
@@ -7485,6 +7487,14 @@ http://www.w3.org/Consortium/mission.html#main
 https://github.com/w3c/w3c-website
 https://www.w3.org/ja/
 .....
+"""
+
+"""Using attr[0] would give you the name of the attribute, and in this case, it checks if the attribute is "href." 
+However, to actually get the value of the "href" attribute (which is the URL you're interested in), you need to use attr[1].
+
+In this example, attr[0] would be "href" (the name of the attribute).
+attr[1] would be "http://www.w3.org/Consortium/mission.html (the value of the "href" attribute).
+
 """
 
 
