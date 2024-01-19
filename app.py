@@ -7503,9 +7503,14 @@ attr[1] would be "http://www.w3.org/Consortium/mission.html (the value of the "h
 
 from urllib.parse import urljoin
 from html.parser import HTMLParser
+from urllib.request import urlopen
 
 
 class Collector(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.words = ""
+
     def handle_data(self, data):
         "collects and concatenates text data"
         self.words += data
@@ -7518,10 +7523,12 @@ class Collector(HTMLParser):
 url = "http://www.w3.org/Consortium/mission.html"
 resource = urlopen(url)
 content = resource.read().decode()
-collector = LinksCollector(url)
+collector = Collector()
 collector.feed(content)
-collector.getData()
+print(collector.getData())
 
+
+# prints all text data from the url
 
 from html.parser import HTMLParser
 from urllib.request import urlopen
