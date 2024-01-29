@@ -7676,11 +7676,74 @@ respData = resp.read()
 () in between tags is what data you want to search for and output
 .*? = find everything between paragraph tags
 . = any character except for new line
-* = zero or more repititions, it applies to the "."
-? = match the zero or more repititions
+* = zero or more repititions of the regular expression immediately
+preceding it., it applies to the "." here
+? = match the zero or more repititions of the regular expression immediately
+preceding it.
 Looking for this in respData and it needs to be converted into a string
 """
 paragraphs = re.findall(r"<p>(.*?)</p>", str(respData))
 
 for eachP in paragraphs:
     print(eachP)
+
+
+"""
+Each of the listed cases gives a regular expression and a set of strings. Select those strings
+that are matched by the regular expression.
+Regular Expression              Strings
+(a) [Hh]ello                    ello, 
+
+Hello, hello
+
+
+
+(b) re-?sign                    re-sign, resign, re-?sign
+
+re-sign, resign,
+
+
+
+(c) [a-z]*                      aaa, Hello, F16, IBM, best
+
+
+aaa, best
+
+
+(d) [^a-z]*                     aaa, Hello, F16, IBM, best
+
+
+F16, IBM,
+
+(e) <.*>                        <h1>, 2 < 3, <<>>>>, ><
+
+
+<h1>, <<>>>>, 
+
+"""
+
+
+"""
+For each of the listed informal pattern descriptions or sets of strings, define a regular ex-
+pression that fits the pattern description or matches all the strings in the set and no other.
+
+(a) aac, abc, acc
+
+a[abc]c
+
+
+(b) abc, xyz
+
+
+abc|xyz
+
+(c) a, ab, abb, abbb, abbbb, . . .
+
+a[b]*
+
+
+(d) Nonempty strings consisting of lowercase letters in the alphabet (a, b, c, . . . , z)
+(e) Strings containing substring oe
+(f) String representing and HTML start or end tag
+
+"""
