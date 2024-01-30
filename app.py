@@ -7743,7 +7743,28 @@ a[b]*
 
 
 (d) Nonempty strings consisting of lowercase letters in the alphabet (a, b, c, . . . , z)
+
+[a-z]+
+
 (e) Strings containing substring oe
+
+
+[a-zA-Z]*oe[a-zA-Z]*
+
 (f) String representing and HTML start or end tag
+
+
+<[^>]*>
+
+< Matches the opening angle bracket <.
+[^>]* Matches zero or more characters that are not the closing angle bracket >.
+> Matches the closing angle bracket >.
+
+
+"""
+
+
+""" 
+Python Standard Library Module re
 
 """
