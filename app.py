@@ -7767,4 +7767,48 @@ a[b]*
 """ 
 Python Standard Library Module re
 
+
+The module re in the Standard Library is Python’s tool for regular expression processing.
+One of the methods defined in the module is method findall() that takes two inputs, a
+regular expression and a string, and returns a list of all substrings of the input string that the
+regular expression matches.
+
+"""
+
+
+from re import findall
+
+findall("best", "beetbtbelt?bet, best")
+["best"]
+
+
+findall("be.t", "beetbtbelt?bet, best")
+["beet", "belt", "best"]
+
+
+findall("be?t", "beetbtbelt?bet, best")
+[
+    "bet",
+    "bt",
+]
+
+
+findall("be*t", "beetbtbelt?bet, best")
+["beet", "bt", "bet"]
+
+
+findall("be+t", "beetbtbelt?bet, best")
+["beet", "bet"]
+
+
+# If the regular expression matches two substrings such that one is contained in the other, the function findall() will match the longer substring only.
+
+
+findall("e+", "beeeetbet bt")
+["eeee", "e"]
+
+
+""" 
+If the regular expression matches two overlapping substrings, the function findall() returns the left one. 
+The function findall() in fact scans the input string from left to right and collects matches into a list in the order found.
 """
