@@ -7779,36 +7779,82 @@ regular expression matches.
 from re import findall
 
 findall("best", "beetbtbelt?bet, best")
-["best"]
+# ["best"]
 
 
 findall("be.t", "beetbtbelt?bet, best")
-["beet", "belt", "best"]
+# ["beet", "belt", "best"]
 
 
 findall("be?t", "beetbtbelt?bet, best")
-[
-    "bet",
-    "bt",
-]
+# ["bet","bt",]
 
 
 findall("be*t", "beetbtbelt?bet, best")
-["beet", "bt", "bet"]
+# ["beet", "bt", "bet"]
 
 
 findall("be+t", "beetbtbelt?bet, best")
-["beet", "bet"]
+# ["beet", "bet"]
 
 
 # If the regular expression matches two substrings such that one is contained in the other, the function findall() will match the longer substring only.
 
 
 findall("e+", "beeeetbet bt")
-["eeee", "e"]
+# ["eeee", "e"]
 
 
 """ 
 If the regular expression matches two overlapping substrings, the function findall() returns the left one. 
 The function findall() in fact scans the input string from left to right and collects matches into a list in the order found.
 """
+
+
+findall("[^bt]+", "beetbtbelt?bet, best")
+# ['ee', 'el', '?', 'e', ',', 'es']
+
+
+findall("[bt]+", "beetbtbelt?bet, best")
+# ['b', 'tbtb', 't', 'b', 't', 'b', 't']
+
+
+""" 
+Develop function frequency() that takes a string as input, computes the frequency of every
+word in the string, and returns a dictionary that maps words in the string to their frequency.
+You should use a regular expression to obtain the list of all words in the string.
+"""
+
+
+from re import findall
+
+
+def frequency(string):
+    wordsList = content.split()
+    counters = {}
+    findall(wordsList, word)
+
+    for word in wordsList:
+        if word in counters:  # counter for word exists
+            counters[word] += 1
+        else:  # counter for word doesn't exist
+            counters[word] = 1
+
+    for word in counters:  # print word counts
+        if counters[word] == 1:
+            print("{:8} appears {} time.".format(word, counters[word]))
+        else:
+            print("{:8} appears {} times.".format(word, counters[word]))
+
+
+content = "The pure and simple truth is rarely pure and never simple."
+
+frequency(content)
+
+
+# Implement function wordcount() that takes as input a text—as a string— and prints the frequency of each word in the text.
+# You may assume that the text has no punctuation and words are separated by blank spaces.
+
+
+# tuple Objects Can Be Dictionary Keys
+# Because tuple objects are immutable, they can be used as dictionary keys.
