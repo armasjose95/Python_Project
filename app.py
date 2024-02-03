@@ -7828,33 +7828,35 @@ You should use a regular expression to obtain the list of all words in the strin
 
 from re import findall
 
-
-def frequency(string):
-    wordsList = content.split()
-    counters = {}
-    findall(wordsList, word)
-
-    for word in wordsList:
-        if word in counters:  # counter for word exists
-            counters[word] += 1
-        else:  # counter for word doesn't exist
-            counters[word] = 1
-
-    for word in counters:  # print word counts
-        if counters[word] == 1:
-            print("{:8} appears {} time.".format(word, counters[word]))
-        else:
-            print("{:8} appears {} times.".format(word, counters[word]))
-
-
 content = "The pure and simple truth is rarely pure and never simple."
+
+def frequency(content):
+    pattern = '[a-zA-Z]+'
+    #Use the findall function to find all occurrences of the defined pattern in the content string. This returns a list of words.
+    words = findall(pattern, content)
+    dictionary = {}
+
+    for word in words:
+        if word in dictionary:  # counter for word exists
+            dictionary[word] += 1
+        else:  # counter for word doesn't exist
+            dictionary[word] = 1
+            
+    return dictionary
+
 
 frequency(content)
 
-
-# Implement function wordcount() that takes as input a text—as a string— and prints the frequency of each word in the text.
-# You may assume that the text has no punctuation and words are separated by blank spaces.
+# = {'The': 1, 'pure': 2, 'and': 2, 'simple': 2, 'truth': 1, 'is': 1, 'rarely': 1, 'never': 1}
 
 
-# tuple Objects Can Be Dictionary Keys
-# Because tuple objects are immutable, they can be used as dictionary keys.
+
+""" 
+search(). 
+It also takes a regular expression and a string; it returns the first substring that is matched by the regular expression.
+You can think of it as a more powerful version of string method find().
+"""
+
+
+from re import search
+match =  
