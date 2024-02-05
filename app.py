@@ -7830,9 +7830,10 @@ from re import findall
 
 content = "The pure and simple truth is rarely pure and never simple."
 
+
 def frequency(content):
-    pattern = '[a-zA-Z]+'
-    #Use the findall function to find all occurrences of the defined pattern in the content string. This returns a list of words.
+    pattern = "[a-zA-Z]+"
+    # Use the findall function to find all occurrences of the defined pattern in the content string. This returns a list of words.
     words = findall(pattern, content)
     dictionary = {}
 
@@ -7841,14 +7842,13 @@ def frequency(content):
             dictionary[word] += 1
         else:  # counter for word doesn't exist
             dictionary[word] = 1
-            
+
     return dictionary
 
 
 frequency(content)
 
 # = {'The': 1, 'pure': 2, 'and': 2, 'simple': 2, 'truth': 1, 'is': 1, 'rarely': 1, 'never': 1}
-
 
 
 """ 
@@ -7859,4 +7859,33 @@ You can think of it as a more powerful version of string method find().
 
 
 from re import search
-match =  
+
+match = search("e+", "beetbtbelt?bet")
+type(match)
+# = <class 're.Match'>
+
+
+""" 
+Method search returns a reference to an object of type SRE_Match, informally referred to as a match object. 
+The type supports, for example, methods to find the start and end index of the match in the input string:
+starts at index 1 and ends before index 3.
+"""
+
+match.start()
+# = 1
+match.end()
+# = 3
+
+# Match objects also have an attribute variable called string that stores the searched string:
+
+match.string
+# = 'beetbtbelt?bet'
+
+# To find the matched substring, we need to get the slice of match.string from index match.start() to index match.end():
+
+match.string[match.start() : match.end()]  # 1:3
+# = 'ee'
+
+
+search("e+", "beetbtbelt?bet")
+# <re.Match object; span=(1, 3), match='ee'>
