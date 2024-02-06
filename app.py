@@ -7889,3 +7889,19 @@ match.string[match.start() : match.end()]  # 1:3
 
 search("e+", "beetbtbelt?bet")
 # <re.Match object; span=(1, 3), match='ee'>
+
+from re import findall
+[ab]
+aa, b, aabaa, aaaab, ba
+
+a.b.
+ab, acb, acbc, acbd
+
+a?b?
+ab, a, b, the empty string
+
+a*b+a*
+ab, a, b, the empty string
+          
+[^\d]+
+abc, 123, ?.?, 3M
