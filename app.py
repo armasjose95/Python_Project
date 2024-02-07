@@ -7892,7 +7892,8 @@ search("e+", "beetbtbelt?bet")
 
 from re import findall
 [ab]
-aa, b, aabaa, aaaab, ba
+ab, a, b, the empty string
+
 
 a.b.
 ab, acb, acbc, acbd
@@ -7901,7 +7902,14 @@ a?b?
 ab, a, b, the empty string
 
 a*b+a*
-ab, a, b, the empty string
+aa, b, aabaa, aaaab, ba
           
 [^\d]+
 abc, 123, ?.?, 3M
+
+
+For each informal pattern description or set of strings below, define a regular expres-
+sion that fits the pattern description or matches all the strings in the set and no other.
+
+#Strings containing an apostrophe (’)
+[^']*'[^']*
