@@ -6987,6 +6987,7 @@ else:
 # 3. It returns a complete HTTP response.
 
 """
+"""
 from urllib.request import urlopen
 
 response = urlopen("http://www.w3c.org/Consortium/facts.html")
@@ -6994,12 +6995,11 @@ type(response)
 
 # = <class 'http.client.HTTPResponse'>
 
-"""
 The object returned by function urlopen() is of type HTTPResponse, which is a type defined in Standard Library module http.client. 
 Objects of this type encapsulate the HTTP response from the server. 
 The HTTP response includes the requested resource but also additional information. 
 For example, the HTTPResponse method geturl() returns the URL of the requested resource:
-"""
+
 
 response.geturl()
 # = 'https://www.w3.org/about/history/'
@@ -7010,22 +7010,21 @@ response.geturl()
 for field in response.getheaders():
     print(field)
 
-"""
+
 =
 ('Date', 'Wed, 29 Nov 2023 03:03:57 GMT')
 ('Content-Type', 'text/html; charset=UTF-8')
 ('Transfer-Encoding', 'chunked')
 .....
-"""
 
 
-"""
+
+
 The HTTPResponse object returned by urlopen contains the requested resource. 
 The HTTPResponse class is said to be a filelike class because it supports methods read(), readline(), and readlines(), the same methods 
 supported by the types of objects returned by the file-opening function open(). 
 All these methods retrieve the content of the requested resource. 
 For example, let’s use the method read(): 
-"""
 
 
 html = response.read()
@@ -7033,7 +7032,7 @@ type(html)
 # = <class 'bytes'>
 
 
-""" 
+
 The method read() will return the content of the resource.
 If the file is an HTML document, for example, then its content is returned. 
 Note, however, that method read() returns an object of type bytes. 
@@ -7042,7 +7041,7 @@ The default behavior for urlopen() is to assume that the resource is a binary fi
 
 If the resource happens to be an HTML file (i.e., a text file), it makes sense to decode the
 sequence of bytes into the Unicode characters they represent.
-"""
+
 
 html = html.decode()
 type(html)
@@ -7050,12 +7049,10 @@ type(html)
 print(html)  # prints entire html of the web page
 
 
-""" 
 Decoding an HTML document into a Unicode string makes sense because an HTML document is a text file. 
 Once decoded into a string, we can use string operators and methods to process the document. 
 For example, we can now find out the number of times string 'Web' appears in (the source file of) web page:
 http://www.w3c.org/Consortium/facts.html
-"""
 
 html.count("Web")
 # = 31
@@ -7105,7 +7102,7 @@ news("http://bbc.co.uk", ["economy", "climate", "education"])
 # education appears 0 times
 
 
-""" 
+
 The process of analyzing a document in order to break it into components and obtain
 its structure is called parsing.
 The Python Standard Library module html.parser provides a class, HTMLParser, that
@@ -7116,7 +7113,6 @@ each one of them.
 The HMLPParser class supports method feed() that takes, as input, the content of an
 HTML source file, in string form. Therefore, to parse file w3c.html, we first need to read
 it into a string and then feed it to the parser:
-"""
 
 
 infile = open("w3c.html")
@@ -7128,7 +7124,6 @@ parser = HTMLParser()
 parser.feed(content)
 
 
-""" 
 When the last line is executed (i.e., when string content is fed to parser), this happens behind the scenes: 
 The parser divides the string content into tokens that correspond to
 HTML start tags, end tags, text data, and other HTML components, and then handles the
@@ -7151,10 +7146,10 @@ Method handle_starttag() takes, as input, the start tag element name and a list 
 (or None if the tag contains no attributes). 
 Each attribute is represented by a tuple storing the name and value of the attribute. 
 Method handle_data() takes just the text token as input.
-"""
 
 
-"""
+
+
 What do the HTMLParser class handler methods (like handle_starttag()) really do?
 Well, nothing. The handler methods of class HTMLParser are implemented to do nothing when called. 
 That is why nothing interesting happened when we executed:
@@ -7162,7 +7157,7 @@ That is why nothing interesting happened when we executed:
 The HTMLParser class handler methods are really meant to be overridden by user-defined handlers that implement the behavior desired by the programmer. 
 In other words, class HTMLParser is not supposed to be used directly but rather as a super class from which
 the developer derives a parser that exhibits the parsing behavior desired by the programmer.
-"""
+
 
 
 parser.feed(content)
@@ -7197,14 +7192,14 @@ linkparser.feed(content)
 # mailto:me@example.net
 
 
-""" 
+
 Print the names of the start and end tags in the order that they appear in the document, and
 with an indentation that is proportional to the element’s depth in the tree structure of the
 document.
 
 self = this instance of the class
 
-"""
+
 from html.parser import HTMLParser
 
 
@@ -7217,19 +7212,13 @@ class MyHTMLParser(HTMLParser):
         self.indent = 0  # initial indentation value
 
     def handle_starttag(self, tag, attrs):
-        """prints start tag with an indentation proportional
-        12 to the depth of the tag's element in the document
-        The indentation is an integer value that is incremented with every start tag token
-        """
+
         if tag in {"br", "p"}:
             print("{}{} start".format(self.indent * "", tag))
             self.indent += 4
 
     def handle_endtag(self, tag):
-        """prints start tag with an indentation proportional
-        12 to the depth of the tag's element in the document
-        The indentation is an integer value that is decremented with every end tag token
-        """
+
         if tag not in {"br", "p"}:
             self.indent -= 4
             print("{}{} end".format(self.indent * "", tag))
@@ -7242,14 +7231,14 @@ myparser = MyHTMLParser()
 myparser.feed(content)
 
 
-"""
+
 create a class object and assign it a name "Tweet"
 A Class object is like a factory providing default behavior and it's able to create objects in its image
 You can create instance objects by executing the class name for ex.("Tweet"), followed by a pair of parenthesis(calling the class)
 The objects created in this way are known as instance objects
 Instance objects start with a lowercase character & class objects to begin with an uppercase character
 instance objects inherits any class attributes and get their own namespace
-"""
+
 
 
 # empty body
@@ -7261,24 +7250,24 @@ a = Tweet()
 
 a.message = "25 wings."
 
-""" 
+
 if you want to access any attributes of that instance, for ex message, you can't just write message,
 you need to write the instance name(a for ex) and then a dot and then the instance(message)
 delineates the attributes that belong to the instance(ex. a) and those that belong elsewhere
 i've assigned a string to the instance attribute message and I access it the same way as we assigned to it
-"""
+
 
 
 print(a.message)
 # = 25 wings.
 
 
-""" 
+
 We get an attrribute error because it's as if the class object is a factory that provides default behavior and 
 when we create instance objects, we're getting items that we can change and any changes that we make 
 are not then propagated back up to the factory.
 they stay with the instance and die with the instance
-"""
+
 
 
 print(Tweet.message)
@@ -7298,7 +7287,6 @@ print(a.message)
 print(b.message)
 # A different message
 
-"""
 Methods that begin with double underscores(ex. __) and end in double underscores are special hooks in Python
 Known as Dunder Method 
 Method is called automatically at certain times
@@ -7310,14 +7298,13 @@ whenever we call class objects, the instance object is first created with the du
 any attributes are initialzed with the dunder init method
 Dunder init method is best known as the initializer method, although mostly referred as the constructor method
 Called automatically whenever an instance is created
-"""
 
 
-""" 
+
+
 Overridden the dunder init method and have it print hi
 Defining dunder init without any parameters is not what you normally see
 normally see self as the first parameter
-"""
 
 
 class Tweet:
@@ -7328,12 +7315,12 @@ class Tweet:
 a = Tweet()
 # = 'Hi'
 
-"""
+
 Whenever the class object is called the instance is always passed as the first argument
 init method is there to perform any initialization & make assignments to instance attributes
 Self in a class definition always refers to the particular instance
 Any other argumets that we pass in, will take up positions 2,3,4,etc
-"""
+
 
 
 class Tweet:
@@ -7346,17 +7333,17 @@ print(a.x)
 # = An instance
 
 
-""" 
+
 Created a seperate instance of the same class & passed in a diff. string
 both instances coexists
-"""
+
 
 b = Tweet("Another instance of Tweet")
 print(b.x)
 # = Another instance of Tweet
 
 
-""" 
+
 Module urllib.parse
 What if we are only interested in collecting the URLs that correspond to HTTP hy-
 perlinks (i.e., URLs whose scheme is the HTTP protocol)?
@@ -7396,7 +7383,7 @@ Generally used to link to resources within the same website
     ex. If site uses HTTP then this is the protocol that will be used in the request the resources
     ex. If it's using HTTPS then the requested URS will use HTTPS
     ex. < link rel = "stylesheet" href = "//cdn.example.com/theme.css">
- """
+
 
 
 from urllib.request import urlopen
@@ -7415,12 +7402,12 @@ urljoin(url, relative)
 # = 'https://www.w3.org/Consortium/contact.html'
 
 
-""" 
+
 the first argument, base is like the page you are on in your browser. The second argument url is the href of an anchor on that page. 
 The result is the final url to which you will be directed should you click.
 If url is an absolute URL (that is, starting with //, http://, https://, ...), 
 the url’s host name and/or scheme will be present in the result. For example:
-"""
+
 
 from urllib.parse import urljoin
 
@@ -7436,11 +7423,11 @@ urllib.parse.urljoin("https://www.google.com", "//www.microsoft.com")
 # 'https://www.microsoft.com'
 
 
-""" 
+
 Parser That Collects HTTP Hyperlinks
 Collect only HTTP URLs and, instead of printing them out, it puts them into a list.
 The URLs in the list will be in their absolute, rather than relative, format.
-"""
+
 
 from urllib.request import urlopen
 from urllib.parse import urljoin
@@ -7482,20 +7469,19 @@ for link in collector.getLinks():
     print(link)
 
 
-""" 
+ 
 http://www.w3.org/Consortium/mission.html#main
 https://github.com/w3c/w3c-website
 https://www.w3.org/ja/
 .....
-"""
 
-"""Using attr[0] would give you the name of the attribute, and in this case, it checks if the attribute is "href." 
+
+Using attr[0] would give you the name of the attribute, and in this case, it checks if the attribute is "href." 
 However, to actually get the value of the "href" attribute (which is the URL you're interested in), you need to use attr[1].
 
 In this example, attr[0] would be "href" (the name of the attribute).
 attr[1] would be "http://www.w3.org/Consortium/mission.html (the value of the "href" attribute).
 
-"""
 
 
 # Augment class Collector so that it also collects all the text data into a string that can be retrieved using method getData().
@@ -7569,11 +7555,11 @@ print("Links:", collector.links)
 print("Data:", collector.getData())
 
 
-""" 
+
 In this modified class, I added a data attribute to store the text data, and in the handle_data method, 
 I append the data to this attribute. 
 The getData method is then used to retrieve the collected text data.
-"""
+
 
 # GET
 import urllib.request
@@ -7624,17 +7610,17 @@ import urllib.parse
 try:
     url = "https://pythonprogramming.net/search/?q=python"
     headers = {}  # Send in a header every time I visit a site & it contains info on me
-    """Piece of data called User-Agent Located within headers. User-Agent reveals what kind of browser I'm on, which is Python...
-    I'm no longer announcing myself as Python & switching u-agent to an internet browser"""
+    ""Piece of data called User-Agent Located within headers. User-Agent reveals what kind of browser I'm on, which is Python...
+    I'm no longer announcing myself as Python & switching u-agent to an internet browser""
     headers[
         "User-Agent"
     ] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"
-    """URL Being hardcoded, so no data needs to be passed through. Normally pass in values in post req
+    ""URL Being hardcoded, so no data needs to be passed through. Normally pass in values in post req
     # telling Python to visit url & instead of setting our normal default parameterheaders, I'm changing things up and calling the
     headers where I switched the user agent to an internet browser
     Makes sense to go into urllib.request.Request that is a function with function parameters & they define the new internet browser instead of
     default parameters
-    """
+    ""
     req = urllib.request.Request(url, headers=headers)
     resp = urllib.request.urlopen(req)
     respData = resp.read()
@@ -7672,7 +7658,7 @@ respData = resp.read()
 # about to parse out everything between paragraph tags
 
 
-""" r = regular expression we want is paragraph text
+ r = regular expression we want is paragraph text
 () in between tags is what data you want to search for and output
 .*? = find everything between paragraph tags
 . = any character except for new line
@@ -7681,14 +7667,13 @@ preceding it., it applies to the "." here
 ? = match the zero or more repititions of the regular expression immediately
 preceding it.
 Looking for this in respData and it needs to be converted into a string
-"""
+
 paragraphs = re.findall(r"<p>(.*?)</p>", str(respData))
 
 for eachP in paragraphs:
     print(eachP)
 
 
-"""
 Each of the listed cases gives a regular expression and a set of strings. Select those strings
 that are matched by the regular expression.
 Regular Expression              Strings
@@ -7773,7 +7758,7 @@ One of the methods defined in the module is method findall() that takes two inpu
 regular expression and a string, and returns a list of all substrings of the input string that the
 regular expression matches.
 
-"""
+
 
 
 from re import findall
@@ -7805,10 +7790,10 @@ findall("e+", "beeeetbet bt")
 # ["eeee", "e"]
 
 
-""" 
+
 If the regular expression matches two overlapping substrings, the function findall() returns the left one. 
 The function findall() in fact scans the input string from left to right and collects matches into a list in the order found.
-"""
+
 
 
 findall("[^bt]+", "beetbtbelt?bet, best")
@@ -7819,11 +7804,11 @@ findall("[bt]+", "beetbtbelt?bet, best")
 # ['b', 'tbtb', 't', 'b', 't', 'b', 't']
 
 
-""" 
+
 Develop function frequency() that takes a string as input, computes the frequency of every
 word in the string, and returns a dictionary that maps words in the string to their frequency.
 You should use a regular expression to obtain the list of all words in the string.
-"""
+
 
 
 from re import findall
@@ -7851,11 +7836,10 @@ frequency(content)
 # = {'The': 1, 'pure': 2, 'and': 2, 'simple': 2, 'truth': 1, 'is': 1, 'rarely': 1, 'never': 1}
 
 
-""" 
 search(). 
 It also takes a regular expression and a string; it returns the first substring that is matched by the regular expression.
 You can think of it as a more powerful version of string method find().
-"""
+
 
 
 from re import search
@@ -7865,11 +7849,11 @@ type(match)
 # = <class 're.Match'>
 
 
-""" 
+
 Method search returns a reference to an object of type SRE_Match, informally referred to as a match object. 
 The type supports, for example, methods to find the start and end index of the match in the input string:
 starts at index 1 and ends before index 3.
-"""
+
 
 match.start()
 # = 1
@@ -7910,6 +7894,14 @@ abc, 123, ?.?, 3M
 
 For each informal pattern description or set of strings below, define a regular expres-
 sion that fits the pattern description or matches all the strings in the set and no other.
-
+"""
 #Strings containing an apostrophe (’)
-[^']*'[^']*
+#    .*'.*
+
+#Any sequence of three lowercase letters in the alphabet
+#   [a-z]{3}
+
+#(c) The string representation of a positive integer
+#   [^a-z-A-Z]
+[1-9]+
+
