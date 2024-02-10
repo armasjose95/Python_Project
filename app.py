@@ -7894,7 +7894,7 @@ abc, 123, ?.?, 3M
 
 For each informal pattern description or set of strings below, define a regular expres-
 sion that fits the pattern description or matches all the strings in the set and no other.
-"""
+
 #Strings containing an apostrophe (’)
 #    .*'.*
 
@@ -7922,3 +7922,52 @@ The string representation of a floating-point value using the decimal point nota
 -?\d+\.\d*
 
 -?+\.\+
+
+
+
+
+
+For each informal description listed next, write a regular expression that will match all the strings in file frankenstein.txt that match the description. Also find out the answer using the findall() function of the module re.
+"""
+
+
+#The enumerate() function is used to loop over the lines of the file while also keeping track of the line number (i) for each line.
+
+
+#String ‘Frankenstein’
+import re
+
+for i, line in enumerate(open("frankenstein.txt")):
+    for match in re.findall("Frankenstein",line):
+        print(match)
+print("\n")
+
+
+-?\d+
+#Numbers appearing in the text
+import re
+
+for i, line in enumerate(open("frankenstein.txt")):
+    for match in re.findall(r"\d",line):
+        print(match)
+print("\n")
+
+
+#Words that end with substring ‘ible’
+import re
+
+for i, line in enumerate(open("frankenstein.txt")):
+    for match in re.findall(r'\b(\w+ible)\b',line):
+        print(match)
+print("\n")
+
+
+#Words that start with an uppercase and end with ‘y’
+import re
+
+for i, line in enumerate(open("frankenstein.txt")):
+    for match in re.findall(r'\b[A-Z][a-zA-Z]*y\b',line):
+        print(match)
+print("\n")
+
+"[A-Z][A-Za-z]*\w+y"
