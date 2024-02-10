@@ -7901,7 +7901,24 @@ sion that fits the pattern description or matches all the strings in the set and
 #Any sequence of three lowercase letters in the alphabet
 #   [a-z]{3}
 
-#(c) The string representation of a positive integer
-#   [^a-z-A-Z]
+The string representation of a positive integer
 [1-9]+
 
+
+The string representation of a nonnegative integer 
+\d+
+
+
+
+The string representation of a negative integer
+-[1-9]+
+
+The string representation of an integer (whether positive or not)
+-?[1-9]+|\d+
+-?\d+
+
+
+The string representation of a floating-point value using the decimal point notation
+-?\d+\.\d*
+
+-?+\.\+
