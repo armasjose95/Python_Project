@@ -7971,3 +7971,31 @@ for i, line in enumerate(open("frankenstein.txt")):
 print("\n")
 
 "[A-Z][A-Za-z]*\w+y"
+
+
+#List of strings of the form ‘horror of <lowercase string> <lowercase string>’
+
+import re
+
+for i, line in enumerate(open("frankenstein.txt")):
+    for match in re.findall(r'\bhorror of + [a-z]+ [a-z]+\b',line):
+        print(match)
+print("\n")
+
+
+
+#Expressions consisting of a word followed by the word ‘death’
+
+for i, line in enumerate(open("frankenstein.txt")):
+    for match in re.findall(r'\bw+ death\b',line):
+        print(match)
+print("\n")
+
+
+
+#Sentences containing the word ‘laboratory’
+
+for i, line in enumerate(open("frankenstein.txt")):
+    for match in re.findall(r'\b.*?laboratory.*?\.',line):
+        print(match)
+print("\n")
