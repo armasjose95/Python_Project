@@ -7928,7 +7928,7 @@ The string representation of a floating-point value using the decimal point nota
 
 
 For each informal description listed next, write a regular expression that will match all the strings in file frankenstein.txt that match the description. Also find out the answer using the findall() function of the module re.
-"""
+
 
 
 #The enumerate() function is used to loop over the lines of the file while also keeping track of the line number (i) for each line.
@@ -7986,6 +7986,8 @@ print("\n")
 
 #Expressions consisting of a word followed by the word ‘death’
 
+import re
+
 for i, line in enumerate(open("frankenstein.txt")):
     for match in re.findall(r'\bw+ death\b',line):
         print(match)
@@ -7995,7 +7997,55 @@ print("\n")
 
 #Sentences containing the word ‘laboratory’
 
+import re
+
 for i, line in enumerate(open("frankenstein.txt")):
     for match in re.findall(r'\b.*?laboratory.*?\.',line):
         print(match)
 print("\n")
+
+
+
+#Write a regular expression that matches the attribute href and its value (found in an HTML start tag) in an HTML source file.
+
+
+#href\s*=\s*(['"])(.*?)\1
+import re
+
+# Sample HTML source code
+html_source = '<a href="https://mlb.com">Link</a>'
+
+# Define the regular expression pattern
+pattern = r'href\s*=\s*([\'"])(.*?)\1'
+
+# Find all matches in the HTML source code
+matches = re.findall(pattern, html_source)
+
+# Print the matches
+for match in matches:
+    print("Attribute: href")
+    print("Value:", match[1])
+    
+    
+
+Write a regular expression that matches strings that represent a price in U.S. dollars.
+Your expression should match strings such as '$13.29' and '$1,099.29', for example.
+Your expression does not have to match prices beyond $9,999.99.    
+
+$\d\(,).\\d
+\$\d{1,3}(,\d{3})*\.\d{2}
+"""
+
+import re
+
+# Sample text containing prices
+text = "The price is $13.29. Another product costs $1,099.29."
+
+# Define the regular expression pattern
+pattern = r"\$\d{1,3}(,\d{3})*\.\d{2}"
+
+# Find all matches in the text
+matches = re.findall(pattern, text)
+
+# Print the matches
+print(matches)
