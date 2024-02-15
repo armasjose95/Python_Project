@@ -8034,7 +8034,7 @@ Your expression does not have to match prices beyond $9,999.99.
 
 $\d\(,).\\d
 \$\d{1,3}(,\d{3})*\.\d{2}
-"""
+
 
 import re
 
@@ -8049,3 +8049,20 @@ matches = re.findall(pattern, text)
 
 # Print the matches
 print(matches)
+
+
+Write a regular expression that matches a string that represents a date given in the for-
+mat DD/MM/YYY (where DD is a 2-digit day in the month, MM is a 2-digit representation of a month, and YYYY is a 4-digit year).
+
+\d{2}\/\d{2}\/\d{4} or
+\b\d{2}/\d{2}/\d{4}\b
+
+
+Write a regular expression that matches an email address. This is not easy so your
+goal should be to create an expression that matches email addresses as closely as you can.
+"""
+
+j@aa.com
+
+
+[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}
