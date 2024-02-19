@@ -8060,9 +8060,40 @@ mat DD/MM/YYY (where DD is a 2-digit day in the month, MM is a 2-digit represent
 
 Write a regular expression that matches an email address. This is not easy so your
 goal should be to create an expression that matches email addresses as closely as you can.
-"""
+
 
 j@aa.com
 
-
+r[\w\.-]+@[\w\.-]+
 [A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}
+
+
+Write a regular expression that matches an absolute URL that uses the HTTP protocol.
+
+
+
+https?://(?:www\.)?[a-zA-Z0-9.-]+\.(?:com|edu|org)(?:/[^\s]*)?
+https?://(?:www\.)?[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:/[^\s]*)?
+"""
+
+
+class ListCollector:
+    def handle_starttag(self, tag, attrs):
+        if tag in {"ul", "ol"}:
+            for attr in attrs:
+                if attr[0] == "href":
+                    print(attr[1])
+
+
+class LinkParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        "print value of href attribute if any"
+        if tag == "a":  # if an anchor tag appears
+            # search for href attribute and print its value
+            for attr in attrs:
+                if attr[0] == "href":
+                    print(attr[1])
+
+        if tag in {"br", "p"}:
+            print("{}{} start".format(self.indent * "", tag))
+            self.indent += 4
