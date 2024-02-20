@@ -8076,24 +8076,41 @@ https?://(?:www\.)?[a-zA-Z0-9.-]+\.(?:com|edu|org)(?:/[^\s]*)?
 https?://(?:www\.)?[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:/[^\s]*)?
 """
 
+from html.parser import HTMLParser
 
-class ListCollector:
+
+class ListCollector(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.lists = []  # Initialize a list to store Python lists for each HTML list
+        self.current_list = (
+            []
+        )  # Initialize a list to store items of the current HTML list
+
     def handle_starttag(self, tag, attrs):
+        if tag == "ol" or tag == "ul":
+            # Start of an ordered or unordered list, reset the current list
+            self.current_list = []
+
+    def handle_data(self, data):
+        # Collect text data within <li> elements and append to the current list
+        if (
+            data.strip()
+        ):  # This line checks if the text data (after stripping leading and trailing whitespace) is not empty
+            self.current_list.append(data.strip())
+
+    def handle_endtag(self, tag):
         if tag in {"ul", "ol"}:
-            for attr in attrs:
-                if attr[0] == "href":
-                    print(attr[1])
+            # End of an ordered or unordered list, append the current list to the lists
+            self.lists.append(self.current_list)
+
+    def getLists(self):
+        return self.lists
 
 
-class LinkParser(HTMLParser):
-    def handle_starttag(self, tag, attrs):
-        "print value of href attribute if any"
-        if tag == "a":  # if an anchor tag appears
-            # search for href attribute and print its value
-            for attr in attrs:
-                if attr[0] == "href":
-                    print(attr[1])
-
-        if tag in {"br", "p"}:
-            print("{}{} start".format(self.indent * "", tag))
-            self.indent += 4
+infile = open("lists.html")
+content = infile.read()
+infile.close()
+myparser = ListCollector()
+lists = myparser.feed(content)
+print(lists)
