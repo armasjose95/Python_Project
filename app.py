@@ -8074,7 +8074,7 @@ Write a regular expression that matches an absolute URL that uses the HTTP proto
 
 https?://(?:www\.)?[a-zA-Z0-9.-]+\.(?:com|edu|org)(?:/[^\s]*)?
 https?://(?:www\.)?[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:/[^\s]*)?
-"""
+
 
 from html.parser import HTMLParser
 
@@ -8114,3 +8114,50 @@ infile.close()
 myparser = ListCollector()
 lists = myparser.feed(content)
 print(lists)
+
+
+You would like to produce a unique scary dictionary but have a hard time remem-
+bering the thousands of words that should go into a dictionary. Your brilliant idea is to im-
+plement function scary() that reads in an electronic version of a scary book, say Franken-
+stein by Mary Wollstonecraft Shelley, picks up all the words in it using a regular expression,
+writes them in alphabetic order in a new file called dictionary.txt, and prints them as
+well. Your function should take the filename (e.g., frankenstein.txt) as input. The first
+few lines in dictionary.txt should be:
+"""
+
+print
+
+import re
+def scary(file):
+    pattern = "[a-zA-Z]+"
+    words = findall(pattern, content)
+    dictionary = {}
+
+    
+    for i, line in enumerate(open("frankenstein.txt")):
+        for match in re.findall( \w ,line):
+            print(match)
+    
+    
+
+from re import findall
+
+content = "The pure and simple truth is rarely pure and never simple."
+
+
+def frequency(content):
+    pattern = "[a-zA-Z]+"
+    # Use the findall function to find all occurrences of the defined pattern in the content string. This returns a list of words.
+    words = findall(pattern, content)
+    dictionary = {}
+
+    for word in words:
+        if word in dictionary:  # counter for word exists
+            dictionary[word] += 1
+        else:  # counter for word doesn't exist
+            dictionary[word] = 1
+
+    return dictionary
+
+
+frequency(content)
