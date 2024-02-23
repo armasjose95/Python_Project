@@ -8127,37 +8127,18 @@ few lines in dictionary.txt should be:
 
 print
 
-import re
-def scary(file):
-    pattern = "[a-zA-Z]+"
-    words = findall(pattern, content)
-    dictionary = {}
-
-    
-    for i, line in enumerate(open("frankenstein.txt")):
-        for match in re.findall( \w ,line):
-            print(match)
-    
-    
-
 from re import findall
 
-content = "The pure and simple truth is rarely pure and never simple."
 
-
-def frequency(content):
+def scary(file):
     pattern = "[a-zA-Z]+"
-    # Use the findall function to find all occurrences of the defined pattern in the content string. This returns a list of words.
-    words = findall(pattern, content)
+    words = findall(pattern, file)
     dictionary = {}
 
     for word in words:
         if word in dictionary:  # counter for word exists
             dictionary[word] += 1
-        else:  # counter for word doesn't exist
-            dictionary[word] = 1
-
-    return dictionary
+            print(dictionary)
 
 
-frequency(content)
+scary(frankenstein.txt)
