@@ -8131,14 +8131,23 @@ from re import findall
 
 
 def scary(file):
-    pattern = "[a-zA-Z]+"
-    words = findall(pattern, file)
-    dictionary = {}
+    # Open a file
+    with open("frankenstein.txt", "r") as file:  # 'r' mode for reading
+        text = file.read()
 
+    words = findall(r"\b\w+\b", text)
+    # Read the contents of the file
+    words = sorted(set(word.lower() for word in words))
+
+    # Write sorted words to dictionary.txt
+    with open("dictionary.txt", "w") as outfile:
+        for word in words:
+            outfile.write(word + "\n")
+
+    # Print the sorted words
     for word in words:
-        if word in dictionary:  # counter for word exists
-            dictionary[word] += 1
-            print(dictionary)
+        print(word)
 
 
-scary(frankenstein.txt)
+# Example usage:
+scary("frankenstein.txt")
