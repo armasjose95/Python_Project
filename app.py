@@ -8123,7 +8123,7 @@ stein by Mary Wollstonecraft Shelley, picks up all the words in it using a regul
 writes them in alphabetic order in a new file called dictionary.txt, and prints them as
 well. Your function should take the filename (e.g., frankenstein.txt) as input. The first
 few lines in dictionary.txt should be:
-"""
+
 
 print
 
@@ -8151,3 +8151,17 @@ def scary(file):
 
 # Example usage:
 scary("frankenstein.txt")
+
+
+
+Implement function getContent() that takes as input a URL (as a string) and prints
+only the text data content of the associated web page (i.e., no tags). Avoid printing blank
+lines that follow a blank line and strip the whitespace in every line printed.
+"""
+
+
+def getContent(url):
+    "returns the content of resource specified by url as a string"
+    response = urlopen(url)
+    html = response.read()
+    return html.decode()  # returns entire html of the web page
