@@ -8165,3 +8165,24 @@ def getContent(url):
     response = urlopen(url)
     html = response.read()
     return html.decode()  # returns entire html of the web page
+
+
+class Collector(HTMLParser):
+    def __init__(self, url):
+        super().__init__()
+        self.url = url
+        self.links = []
+        self.data = ""
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "a":
+            for attr, value in attrs:
+                if attr == "href":
+                    self.links.append(value)
+
+    def handle_data(self, data):
+        data.strip()
+        print(self.data)
+
+
+getContent("http://www.nytimes.com/")
