@@ -8160,29 +8160,26 @@ lines that follow a blank line and strip the whitespace in every line printed.
 """
 
 
+import requests
+from bs4 import BeautifulSoup
+
+
 def getContent(url):
-    "returns the content of resource specified by url as a string"
-    response = urlopen(url)
-    html = response.read()
-    return html.decode()  # returns entire html of the web page
+    # Fetch the HTML content of the webpage
+    response = requests.get(url)
+    html_content = response.text
 
+    # Parse the HTML content using BeautifulSoup
+    soup = BeautifulSoup(html_content, "html.parser")
 
-class Collector(HTMLParser):
-    def __init__(self, url):
-        super().__init__()
-        self.url = url
-        self.links = []
-        self.data = ""
+    # Extract text data content
+    text_content = soup.get_text()
 
-    def handle_starttag(self, tag, attrs):
-        if tag == "a":
-            for attr, value in attrs:
-                if attr == "href":
-                    self.links.append(value)
-
-    def handle_data(self, data):
-        data.strip()
-        print(self.data)
+    # Print the text data content while handling blank lines
+    for line in text_content.splitlines():
+        line = line.strip()  # Strip leading and trailing whitespace
+        if line:  # Check if the line is not empty
+            print(line)
 
 
 getContent("http://www.nytimes.com/")
