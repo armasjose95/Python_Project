@@ -8157,7 +8157,7 @@ scary("frankenstein.txt")
 Implement function getContent() that takes as input a URL (as a string) and prints
 only the text data content of the associated web page (i.e., no tags). Avoid printing blank
 lines that follow a blank line and strip the whitespace in every line printed.
-"""
+
 
 
 import requests
@@ -8183,3 +8183,31 @@ def getContent(url):
 
 
 getContent("http://www.nytimes.com/")
+
+
+
+
+
+Write function emails() that takes a document (as a string) as input and returns the
+set of email addresses (i.e., strings) appearing in it. You should use a regular expression to
+find the email addresses in the document.
+"""
+from urllib.request import urlopen
+import urllib.parse
+from re import findall
+from html.parser import HTMLParser
+
+
+class MyHTMLParser(HTMLParser):
+    def emails(doc):
+        emails = {}
+        pattern = dd
+        handle_data(self, data):
+            list_of_emails = re.findall(pattern, emails)
+            for email in data:
+                if email == pattern:
+                    self.emails.append(email)
+                    return self.emails
+                
+                
+                
