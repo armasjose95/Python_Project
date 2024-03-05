@@ -8192,22 +8192,37 @@ Write function emails() that takes a document (as a string) as input and returns
 set of email addresses (i.e., strings) appearing in it. You should use a regular expression to
 find the email addresses in the document.
 """
+
+
+import re
+
+
+def emails(doc):
+    # Regular expression for matching email addresses
+    pattern = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+
+    # Find all non-overlapping matches of the regex in the document
+    list_of_emails = re.findall(pattern, doc)
+
+    # Convert the list of found emails to a set to remove duplicates
+    unique_emails = set(list_of_emails)
+
+    return unique_emails
+
+
+# Example usage:
 from urllib.request import urlopen
-import urllib.parse
-from re import findall
-from html.parser import HTMLParser
 
+url = "https://www.w3.org/contact/"
+content = urlopen(url).read().decode()
+print(emails(content))
 
-class MyHTMLParser(HTMLParser):
-    def emails(doc):
-        emails = {}
-        pattern = dd
-        handle_data(self, data):
-            list_of_emails = re.findall(pattern, emails)
-            for email in data:
-                if email == pattern:
-                    self.emails.append(email)
-                    return self.emails
-                
-                
-                
+{
+    "team-liaisons@w3.org",
+    "sysreq@w3.org",
+    "contact@w3.org",
+    "public-website-redesign@w3.org",
+    "membership@w3.org",
+    "w3t-pr@w3.org",
+    "invoicing@w3.org",
+}
