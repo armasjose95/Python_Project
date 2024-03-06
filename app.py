@@ -8191,7 +8191,6 @@ getContent("http://www.nytimes.com/")
 Write function emails() that takes a document (as a string) as input and returns the
 set of email addresses (i.e., strings) appearing in it. You should use a regular expression to
 find the email addresses in the document.
-"""
 
 
 import re
@@ -8217,6 +8216,8 @@ url = "https://www.w3.org/contact/"
 content = urlopen(url).read().decode()
 print(emails(content))
 
+
+=
 {
     "team-liaisons@w3.org",
     "sysreq@w3.org",
@@ -8226,3 +8227,19 @@ print(emails(content))
     "w3t-pr@w3.org",
     "invoicing@w3.org",
 }
+
+
+
+Develop an application that implements the web search algorithm we developed in
+Section 1.4. Your application should take as input a list of web page addresses and a list of
+target prices of the same size; it should print those web page addresses that correspond to
+products whose price is less than the target price. Use your solution to Problem 11.11 to
+find the price in an HTML source file.
+"""
+
+
+import re
+
+
+addresses = []
+targets = []
