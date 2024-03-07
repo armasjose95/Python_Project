@@ -8240,6 +8240,16 @@ find the price in an HTML source file.
 
 import re
 
+pattern = "^(?!,$)[\d,.$]{1,9}$"
 
-addresses = []
+N = the number of products in list Addresses.
+webAddress = the address of a web page
+page = content of a web page
+currentPrice = []
+targetPrice = target prices
+addresses = ['amazon.com','target.com','bestbuy.com']
 targets = []
+
+
+if currentPrice < targetPrice:
+    print(webAddress)
